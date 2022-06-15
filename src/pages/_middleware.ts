@@ -18,8 +18,26 @@ export default function middleware(req: NextRequest) {
 		});
 	}
 
+	const currentHost =
+		process.env.NODE_ENV === "production" && process.env.VERCEL === "1"
+			? hostname.replace(".alpost.org", "").replace("alpost.vercel.app", "")
+			: hostname.replace(".localhost:3000", "");
+
+	// logging
+	console.log({ pathname, hostname, currentHost });
+
+	if (pathname.startsWith("/_sites")) {
+		return new Response(null, {
+			status: 404,
+		});
+	}
+
 	if (hostname === "localhost:3000" || hostname === "alpost.vercel.app") {
 		url.pathname = `/home${pathname}`;
 		return NextResponse.rewrite(url);
 	}
+
+	url.pathname = `/_sites/${currentHost}${pathname}`;
+	console.log({ pathname, hostname, currentHost, newUrl: url.pathname });
+	return NextResponse.rewrite(url);
 }
