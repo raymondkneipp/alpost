@@ -32,7 +32,11 @@ export default function middleware(req: NextRequest) {
 		});
 	}
 
-	if (hostname === "localhost:3000" || hostname === "alpost.vercel.app") {
+	if (
+		hostname === "localhost:3000" ||
+		hostname === "alpost.vercel.app" ||
+		hostname === "alpost.org"
+	) {
 		url.pathname = `/home${pathname}`;
 		return NextResponse.rewrite(url);
 	}
