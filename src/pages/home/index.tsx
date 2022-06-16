@@ -3,6 +3,7 @@ import Link from "next/link";
 import { trpc } from "@/utils/trpc";
 import getBgColor from "@/utils/get-bg-color";
 import getDomain from "@/utils/get-domain";
+import { Container } from "@/components";
 
 const Home: NextPage = () => {
 	const { data, isLoading } = trpc.useQuery(["sites.get-all-sites"]);
@@ -22,34 +23,34 @@ const Home: NextPage = () => {
 	}
 
 	return (
-		<div className="bg-black h-screen flex items-center justify-center flex-col space-y-4">
-			<h1 className="text-white font-bold text-2xl mb-12">Alpost</h1>
-			<h2 className="text-white font-bold text-xl border-b w-full max-w-xs pb-1 border-neutral-600">
-				Current Posts
-			</h2>
-			<div className="flex flex-col max-w-xs w-full space-y-2">
-				{data.map((site) => (
-					<a
-						key={site.id}
-						href={getDomain(site)}
-						className={`text-gray-200 rounded-md hover:text-white border border-neutral-600 hover:border-white p-3 ${getBgColor(
-							site.color
-						)}`}
-					>
-						<div className="flex items-start justify-between">
-							<div>{site.name}</div>
-							<div>{site.subdomain}</div>
-						</div>
-						<div className="text-sm">{getDomain(site)}</div>
-					</a>
-				))}
-
+		<div className="bg-black min-h-screen flex items-center justify-center flex-col">
+			<Container>
+				<h1 className="text-white font-bold text-2xl mb-5 border-b border-neutral-600 pb-1">
+					Alpost
+				</h1>
+				<div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-5">
+					{data.map((site) => (
+						<a
+							key={site.id}
+							href={getDomain(site)}
+							className={`text-gray-200 rounded-md hover:text-white border border-neutral-600 hover:border-white p-3 h-36 flex items-stretch justify-between flex-col ${getBgColor(
+								site.color
+							)}`}
+						>
+							<div className="flex items-start justify-between">
+								<div>{site.name}</div>
+								<div>{site.subdomain}</div>
+							</div>
+							<div className="text-sm">{getDomain(site)}</div>
+						</a>
+					))}
+				</div>
 				<Link href="/create">
-					<a className="bg-white text-black p-3 rounded-md text-center">
+					<a className="inline-block mt-5 bg-white text-black p-3 rounded-md text-center">
 						Create new post!
 					</a>
 				</Link>
-			</div>
+			</Container>
 		</div>
 	);
 };

@@ -18,7 +18,9 @@
 		"paths": {
 			"@/db/*": ["db/*"],
 			"@/backend/*": ["backend/*"],
-			"@/utils/*": ["utils/*"]
+			"@/utils/*": ["utils/*"],
+			"@/components/*": ["components/*"],
+			"@/components": ["components/index"]
 		}
 	},
 	"include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],
