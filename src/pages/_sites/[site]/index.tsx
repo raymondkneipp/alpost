@@ -12,7 +12,7 @@ interface IndexProps {
 }
 
 export default function Index(props: IndexProps) {
-	console.log(props.site.name);
+	console.log(props.site?.name);
 	return (
 		<div>
 			<h1>hey world</h1>
