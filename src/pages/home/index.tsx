@@ -9,6 +9,16 @@ const Home: NextPage = () => {
 		return <div>Loading...</div>;
 	}
 
+	let domain: string;
+	let proto: string;
+	if (process.env.NODE_ENV === "development") {
+		proto = "http";
+		domain = "localhost:3000";
+	} else {
+		proto = "https";
+		domain = "alpost.org";
+	}
+
 	return (
 		<div className="bg-red-700 h-screen flex items-center justify-center flex-col space-y-4">
 			<h1 className="text-red-100 font-bold text-2xl">Alpost</h1>
@@ -17,7 +27,7 @@ const Home: NextPage = () => {
 				{data.map((site) => (
 					<a
 						key={site.id}
-						href={`http://${site.subdomain}.localhost:3000`}
+						href={`${proto}://${site.subdomain}.${domain}`}
 						className="text-red-300 bg-red-800 rounded-md hover:text-white border border-transparent hover:border-red-900 hover:bg-red-700 p-3"
 					>
 						{site.name}
