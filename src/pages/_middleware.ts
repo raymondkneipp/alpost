@@ -23,25 +23,24 @@ export default function middleware(req: NextRequest) {
 			? hostname.replace(".alpost.org", "").replace("alpost.vercel.app", "")
 			: hostname.replace(".localhost:3000", "");
 
-	// logging
-	console.log({ pathname, hostname, currentHost });
-
 	if (pathname.startsWith("/_sites")) {
 		return new Response(null, {
 			status: 404,
 		});
 	}
 
-	if (
-		hostname === "localhost:3000" ||
-		hostname === "alpost.vercel.app" ||
-		hostname === "alpost.org"
-	) {
-		url.pathname = `/home${pathname}`;
+	if (!pathname.includes(".") && !pathname.startsWith("/api")) {
+		if (
+			hostname === "localhost:3000" ||
+			hostname === "alpost.vercel.app" ||
+			hostname === "alpost.org"
+		) {
+			url.pathname = `/home${pathname}`;
+			return NextResponse.rewrite(url);
+		}
+
+		url.pathname = `/_sites/${currentHost}${pathname}`;
+		console.log({ pathname, hostname, currentHost, newUrl: url.pathname });
 		return NextResponse.rewrite(url);
 	}
-
-	url.pathname = `/_sites/${currentHost}${pathname}`;
-	console.log({ pathname, hostname, currentHost, newUrl: url.pathname });
-	return NextResponse.rewrite(url);
 }
