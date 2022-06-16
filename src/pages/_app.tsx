@@ -19,6 +19,11 @@ export default withTRPC<AppRouter>({
 			: "http://localhost:3000/api/trpc";
 
 		return {
+			headers() {
+				return {
+					"Access-Control-Allow-Origin": "*",
+				};
+			},
 			url,
 			transformer: superjson,
 			/**
