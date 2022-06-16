@@ -16,6 +16,7 @@ const Home: NextPage = () => {
 			<div className="flex flex-col max-w-xs w-full space-y-2">
 				{data.map((site) => (
 					<a
+						key={site.id}
 						href={`http://${site.subdomain}.localhost:3000`}
 						className="text-red-300 bg-red-800 rounded-md hover:text-white border border-transparent hover:border-red-900 hover:bg-red-700 p-3"
 					>
