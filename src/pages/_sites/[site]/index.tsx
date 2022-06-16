@@ -1,20 +1,20 @@
 import { GetStaticPaths, GetStaticProps } from "next";
 import { ParsedUrlQuery } from "querystring";
 import { prisma } from "@/db/client";
+import { Site } from "@prisma/client";
 
 interface PathProps extends ParsedUrlQuery {
 	site: string;
 }
 
 interface IndexProps {
-	stringifiedData: string;
+	site: Site;
 }
 
-export default function Index({ stringifiedData }: IndexProps) {
-	console.log(stringifiedData);
+export default function Index(props: IndexProps) {
 	return (
 		<div>
-			<h1>site</h1>
+			<h1>{props.site.name}</h1>
 		</div>
 	);
 }
@@ -59,7 +59,7 @@ export const getStaticProps: GetStaticProps<IndexProps, PathProps> = async ({
 
 	return {
 		props: {
-			stringifiedData: JSON.stringify(data),
+			site: data,
 		},
 		revalidate: 3600,
 	};
