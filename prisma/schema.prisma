@@ -13,6 +13,7 @@ datasource db {
 }
 
 model Site {
-  id   String @id
-  name String
+  id        String @id @default(cuid())
+  name      String
+  subdomain String @unique
 }
