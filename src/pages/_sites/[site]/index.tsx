@@ -57,6 +57,8 @@ export const getStaticProps: GetStaticProps<IndexProps, PathProps> = async ({
 		return { notFound: true, revalidate: 10 };
 	}
 
+	console.log("data?", data);
+
 	return {
 		props: {
 			site: data,
