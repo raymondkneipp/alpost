@@ -16,7 +16,7 @@ model Site {
   id        String @id @default(cuid())
   name      String
   subdomain String @unique
-  color     Color  @default(PURPLE)
+  color     Color  @default(AMBER)
 }
 
 enum Color {

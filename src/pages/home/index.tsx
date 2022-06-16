@@ -24,7 +24,7 @@ const Home: NextPage = () => {
 	return (
 		<div className="bg-black h-screen flex items-center justify-center flex-col space-y-4">
 			<h1 className="text-white font-bold text-2xl mb-12">Alpost</h1>
-			<h2 className="text-white font-bold text-xl border-b w-full max-w-xs pb-1 border-gray-600">
+			<h2 className="text-white font-bold text-xl border-b w-full max-w-xs pb-1 border-neutral-600">
 				Current Posts
 			</h2>
 			<div className="flex flex-col max-w-xs w-full space-y-2">
@@ -32,11 +32,14 @@ const Home: NextPage = () => {
 					<a
 						key={site.id}
 						href={getDomain(site)}
-						className={`text-gray-300 rounded-md hover:text-white border border-transparent hover:border-white p-3 ${getBgColor(
+						className={`text-gray-200 rounded-md hover:text-white border border-neutral-600 hover:border-white p-3 ${getBgColor(
 							site.color
 						)}`}
 					>
-						<div>{site.name}</div>
+						<div className="flex items-start justify-between">
+							<div>{site.name}</div>
+							<div>{site.subdomain}</div>
+						</div>
 						<div className="text-sm">{getDomain(site)}</div>
 					</a>
 				))}
