@@ -12,10 +12,11 @@ interface IndexProps {
 }
 
 export default function Index(props: IndexProps) {
-	console.log(props.site?.name);
 	return (
-		<div>
-			<h1>hey world</h1>
+		<div className="h-screen bg-emerald-700 flex items-center justify-center">
+			<h1 className="text-2xl font-bold text-emerald-100">
+				{props.site?.name}
+			</h1>
 		</div>
 	);
 }
