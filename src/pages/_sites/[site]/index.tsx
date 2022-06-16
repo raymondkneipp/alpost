@@ -12,9 +12,10 @@ interface IndexProps {
 }
 
 export default function Index(props: IndexProps) {
+	console.log(props);
 	return (
 		<div>
-			<h1>{props.site.name}</h1>
+			<h1>hey world</h1>
 		</div>
 	);
 }
@@ -56,8 +57,6 @@ export const getStaticProps: GetStaticProps<IndexProps, PathProps> = async ({
 	if (!data) {
 		return { notFound: true, revalidate: 10 };
 	}
-
-	console.log("data?", data);
 
 	return {
 		props: {
