@@ -1,8 +1,9 @@
+import Link from "next/link";
 import React from "react";
 import cn from "variant-classnames";
 
-export type Variant = "h1" | "h2" | "h3" | "h4" | "h5" | "h6" | "p";
-type Element = Variant | "span" | "a";
+export type Variant = "h1" | "h2" | "h3" | "h4" | "h5" | "h6" | "p" | "a";
+type Element = Variant | "span" | "li" | "dd" | "dt";
 export type Color = "dark" | "light" | "primary";
 export type Size = "sm" | "md" | "lg";
 
@@ -13,7 +14,9 @@ type Props = {
 	size?: Size;
 	className?: string;
 	children: React.ReactNode;
-	[rest: string]: any;
+	cap?: boolean;
+	href?: string;
+	// [rest: string]: any;
 };
 
 const Text: React.FC<Props> = ({
@@ -21,9 +24,11 @@ const Text: React.FC<Props> = ({
 	element = variant,
 	color = "dark",
 	size = "md",
+	href,
 	className = "",
 	children,
-	...rest
+	cap,
+	//...rest
 }) => {
 	const headingColors = {
 		dark: "text-neutral-900 dark:text-neutral-100",
@@ -37,8 +42,15 @@ const Text: React.FC<Props> = ({
 		primary: "text-red-700 dark:text-red-500",
 	};
 
+	const linkColors = {
+		dark: `${regularColors.dark} decoration-neutral-700/40 dark:decoration-neutral-300/40 hover:text-black dark:hover:text-white hover:decoration-black dark:hover:decoration-white`,
+		light: `${regularColors.light} decoration-neutral-100/40 dark:decoration-neutral-300/40 hover:text-white dark:hover:text-white hover:decoration-white dark:hover:decoration-white`,
+		primary: `${regularColors.primary} decoration-red-700/40 dark:decoration-red-500/40 hover:text-red-700 dark:hover:text-red-500 hover:decoration-red-700 dark:hover:decoration-red-500`,
+	};
+
 	const variants = {
-		$all: className,
+		$all: `${className} transition-colors`,
+		cap: "uppercase",
 		variant: {
 			h1: {
 				$all: "font-bold",
@@ -103,14 +115,33 @@ const Text: React.FC<Props> = ({
 					lg: "text-lg",
 				},
 			},
+			a: {
+				$all: "underline",
+				color: linkColors,
+				size: {
+					sm: "text-sm",
+					md: "text-base",
+					lg: "text-lg",
+				},
+			},
 		},
 	};
+
+	const styles = cn(variants, { variant, color, size, cap });
+
+	if (href) {
+		return (
+			<Link href={href}>
+				<a className={styles}>{children}</a>
+			</Link>
+		);
+	}
 
 	return React.createElement(
 		element,
 		{
-			className: cn(variants, { variant, color, size }),
-			...rest,
+			className: styles,
+			//...rest,
 		},
 		children
 	);

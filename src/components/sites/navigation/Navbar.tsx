@@ -8,7 +8,7 @@ const Navbar: React.FC = () => {
 					<div className="flex items-center space-x-2">
 						<Logo />
 						<Text variant="h5" element="span" color="primary">
-							Post ___
+							Post
 						</Text>
 					</div>
 

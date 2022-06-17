@@ -3,7 +3,7 @@ import { Text, Container } from "@/components";
 import { Color, Size, Variant } from "@/components/Text";
 
 const TestingPage: NextPage = () => {
-	const variants = ["h1", "h2", "h3", "h4", "h5", "h6", "p"];
+	const variants = ["h1", "h2", "h3", "h4", "h5", "h6", "p", "a"];
 	const colors = ["dark", "light", "primary"];
 	const sizes = ["sm", "md", "lg"];
 
@@ -23,6 +23,7 @@ const TestingPage: NextPage = () => {
 											variant={v as Variant}
 											color={c as Color}
 											size={s as Size}
+											href="/"
 										>
 											Hello
 										</Text>

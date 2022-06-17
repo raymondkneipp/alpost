@@ -3,7 +3,7 @@ import { ParsedUrlQuery } from "querystring";
 import { prisma } from "@/db/client";
 import { Site } from "@prisma/client";
 import getBgColor from "@/utils/get-bg-color";
-import { Navbar, Text } from "@/components";
+import { Footer, Navbar, Text } from "@/components";
 
 interface PathProps extends ParsedUrlQuery {
 	site: string;
@@ -31,7 +31,7 @@ export default function Index(props: IndexProps) {
 				<Text variant="p" color="light">
 					subdomain: {props.site?.subdomain}
 				</Text>
-				<Text variant="p" color="light">
+				<Text variant="a" color="light" href="/">
 					color: {props.site?.color}
 				</Text>
 			</div>
@@ -40,6 +40,10 @@ export default function Index(props: IndexProps) {
 			<Text variant="p">id: {props.site?.id}</Text>
 			<Text variant="p">subdomain: {props.site?.subdomain}</Text>
 			<Text variant="p">color: {props.site?.color}</Text>
+			<Text variant="a" color="primary" href="/">
+				color: {props.site?.color}
+			</Text>
+			<Footer />
 		</>
 	);
 }
