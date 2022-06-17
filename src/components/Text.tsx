@@ -106,11 +106,14 @@ const Text: React.FC<Props> = ({
 		},
 	};
 
-	return React.createElement(element, {
-		className: cn(variants, { variant, color, size }),
-		...rest,
-		children,
-	});
+	return React.createElement(
+		element,
+		{
+			className: cn(variants, { variant, color, size }),
+			...rest,
+		},
+		children
+	);
 };
 
 export default Text;
