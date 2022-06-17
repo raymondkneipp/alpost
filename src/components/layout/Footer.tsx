@@ -1,3 +1,10 @@
+import {
+	FaFacebook,
+	FaInstagram,
+	FaLinkedin,
+	FaTwitter,
+	FaYoutube,
+} from "react-icons/fa";
 import { Container, Logo, Text, List, Item } from "@/components";
 const Footer: React.FC = () => {
 	return (
@@ -59,30 +66,39 @@ const Footer: React.FC = () => {
 				<List title="Social">
 					<Item>
 						<Text href="https://facebook.com" variant="a">
+							<FaFacebook size={18} className="mr-2" />
 							Facebook
 						</Text>
 					</Item>
 					<Item>
 						<Text href="https://instagram.com" variant="a">
+							<FaInstagram size={18} className="mr-2" />
 							Instagram
 						</Text>
 					</Item>
 					<Item>
 						<Text href="https://twitter.com" variant="a">
+							<FaTwitter size={18} className="mr-2" />
 							Twitter
 						</Text>
 					</Item>
 					<Item>
 						<Text href="https://youtube.com" variant="a">
+							<FaYoutube size={18} className="mr-2" />
 							YouTube
 						</Text>
 					</Item>
 					<Item>
 						<Text href="https://linkedin.com" variant="a">
+							<FaLinkedin size={18} className="mr-2" />
 							LinkedIn
 						</Text>
 					</Item>
 				</List>
+
+				<Text href="https://alpost.org" variant="a">
+					Website By ALPost
+				</Text>
 			</Container>
 		</footer>
 	);

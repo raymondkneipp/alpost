@@ -49,7 +49,7 @@ const Text: React.FC<Props> = ({
 	};
 
 	const variants = {
-		$all: `${className} transition-colors`,
+		$all: `${className} transition-colors flex items-center`,
 		cap: "uppercase",
 		variant: {
 			h1: {
