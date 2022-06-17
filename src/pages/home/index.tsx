@@ -34,7 +34,7 @@ const Home: NextPage = () => {
 						<a
 							key={site.id}
 							href={getDomain(site)}
-							className={`text-gray-200 rounded-md hover:text-white border border-neutral-600 hover:border-white p-3 h-36 flex items-stretch justify-between flex-col ${getBgColor(
+							className={`transition-colors text-gray-200 rounded-md hover:text-white border border-neutral-600 hover:border-white p-3 h-36 flex items-stretch justify-between flex-col ${getBgColor(
 								site.color
 							)}`}
 						>
