@@ -3,7 +3,7 @@ type Props = {
 };
 
 const Container: React.FC<Props> = ({ children }) => {
-	return <div className="container mx-auto p-4">{children}</div>;
+	return <div className="container mx-auto px-4 py-2">{children}</div>;
 };
 
 export default Container;

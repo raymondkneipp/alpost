@@ -14,7 +14,12 @@ const NavLink: React.FC<Props> = ({ href, children }) => {
 
 	return (
 		<Link href={href} passHref>
-			<Text variant="p" element="a" color={active ? "primary" : "dark"}>
+			<Text
+				variant="p"
+				element="a"
+				color={active ? "primary" : "dark"}
+				className="px-4 py-2 rounded-md hover:bg-neutral-200"
+			>
 				{children}
 			</Text>
 		</Link>
