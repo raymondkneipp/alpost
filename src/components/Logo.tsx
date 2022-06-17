@@ -5,8 +5,10 @@ const Logo: React.FC = () => {
 		<Image
 			src="/American-Legion-Emblem.png"
 			layout="fixed"
-			width="100"
-			height="100"
+			width="80"
+			height="80"
+			objectFit="contain"
+			alt="American Legion Logo"
 		/>
 	);
 };

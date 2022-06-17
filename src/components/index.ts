@@ -4,4 +4,6 @@ export { default as Logo } from "./Logo";
 export { default as Text } from "./Text";
 
 // Site components
-export { default as Navbar } from "./sites/Navbar";
+// Navigation components
+export { default as Navbar } from "./sites/navigation/Navbar";
+export { default as NavLink } from "./sites/navigation/NavLink";
