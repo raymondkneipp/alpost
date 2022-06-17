@@ -5,4 +5,11 @@ import { appRouter } from "@/backend/router";
 export default trpcNext.createNextApiHandler({
 	router: appRouter,
 	createContext: () => null,
+	responseMeta() {
+		return {
+			headers: {
+				"Access-Control-Allow-Origin": "*",
+			},
+		};
+	},
 });
