@@ -3,7 +3,7 @@ import Link from "next/link";
 import { trpc } from "@/utils/trpc";
 import getBgColor from "@/utils/get-bg-color";
 import getDomain from "@/utils/get-domain";
-import { Container } from "@/components";
+import { Container, Logo } from "@/components";
 
 const Home: NextPage = () => {
 	const { data, isLoading } = trpc.useQuery(["sites.get-all-sites"]);
@@ -25,6 +25,7 @@ const Home: NextPage = () => {
 	return (
 		<div className="bg-black min-h-screen flex items-center justify-center flex-col">
 			<Container>
+				<Logo />
 				<h1 className="text-white font-bold text-2xl mb-5 border-b border-neutral-600 pb-1">
 					Alpost
 				</h1>

@@ -3,6 +3,7 @@ import { ParsedUrlQuery } from "querystring";
 import { prisma } from "@/db/client";
 import { Color, Site } from "@prisma/client";
 import getBgColor from "@/utils/get-bg-color";
+import { Navbar } from "@/components";
 
 interface PathProps extends ParsedUrlQuery {
 	site: string;
@@ -19,6 +20,7 @@ export default function Index(props: IndexProps) {
 				props.site?.color
 			)}`}
 		>
+			<Navbar />
 			<h1 className="text-2xl font-bold text-white">
 				Name: {props.site?.name}
 			</h1>
