@@ -9,6 +9,7 @@ const Logo: React.FC = () => {
 			height="80"
 			objectFit="contain"
 			alt="American Legion Logo"
+			priority={true}
 		/>
 	);
 };
