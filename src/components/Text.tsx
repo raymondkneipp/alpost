@@ -130,6 +130,19 @@ const Text: React.FC<Props> = ({
 	const styles = cn(variants, { variant, color, size, cap });
 
 	if (href) {
+		const external = href.startsWith("http");
+		if (external) {
+			return (
+				<a
+					href={href}
+					className={styles}
+					target="_blank"
+					rel="noopener noreferrer"
+				>
+					{children}
+				</a>
+			);
+		}
 		return (
 			<Link href={href}>
 				<a className={styles}>{children}</a>

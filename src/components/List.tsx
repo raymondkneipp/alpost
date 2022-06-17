@@ -32,16 +32,22 @@ export const List: React.FC<ListProps> = ({ children, title }) => {
 		React.cloneElement(item, { element: listItemElement, key: i })
 	);
 
-	const list = React.createElement(listElement, { className: "" }, items);
-
-	return (
+	const listWithTitle = (
 		<>
 			{title && (
 				<Text element="dt" variant="h6" cap>
 					{title}
 				</Text>
 			)}
-			{list}
+			{items}
 		</>
 	);
+
+	const list = React.createElement(
+		listElement,
+		{ className: "flex flex-col space-y-4" },
+		listWithTitle
+	);
+
+	return list;
 };
