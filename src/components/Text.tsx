@@ -26,15 +26,15 @@ const Text: React.FC<Props> = ({
 	...rest
 }) => {
 	const headingColors = {
-		dark: "text-neutral-900",
-		light: "text-neutral-600",
-		primary: "text-red-800",
+		dark: "text-neutral-900 dark:text-neutral-100",
+		light: "text-white dark:text-neutral-100",
+		primary: "text-red-700 dark:text-red-500",
 	};
 
 	const regularColors = {
-		dark: "text-neutral-700",
-		light: "text-neutral-500",
-		primary: "text-red-500",
+		dark: "text-neutral-700 dark:text-neutral-300",
+		light: "text-neutral-100 dark:text-neutral-300",
+		primary: "text-red-700 dark:text-red-500",
 	};
 
 	const variants = {

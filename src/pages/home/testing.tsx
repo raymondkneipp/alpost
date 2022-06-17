@@ -16,7 +16,7 @@ const TestingPage: NextPage = () => {
 							<div key={ke}>
 								{colors.map((c, key) => (
 									<div
-										className={s === "md" ? "border" : "bg-red-500"}
+										className={s === "md" ? "border border-red-500" : ""}
 										key={key}
 									>
 										<Text

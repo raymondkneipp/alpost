@@ -2,7 +2,7 @@ import { Container, Logo, NavLink, Text } from "@/components";
 
 const Navbar: React.FC = () => {
 	return (
-		<nav className="bg-white fixed top-0 left-0 right-0">
+		<nav className="bg-neutral-100 dark:bg-neutral-900 fixed top-0 left-0 right-0">
 			<Container>
 				<div className="flex items-center justify-between">
 					<div className="flex items-center space-x-2">

@@ -6,6 +6,7 @@ import {
 import { zodResolver } from "@hookform/resolvers/zod";
 import { trpc } from "@/utils/trpc";
 import Link from "next/link";
+import { Text } from "@/components";
 
 export default function CreatePage() {
 	const {
@@ -34,12 +35,10 @@ export default function CreatePage() {
 	});
 
 	return (
-		<div className="bg-black h-screen flex flex-col space-y-4 items-center justify-center">
-			<h1 className="font-bold text-2xl text-white">Create Post</h1>
-			<Link href="/">
-				<a className="text-neutral-400 hover:text-white underline max-w-xs w-full">
-					Back
-				</a>
+		<div className="h-screen flex flex-col space-y-4 items-center justify-center">
+			<Text variant="h1">Create Post</Text>
+			<Link href="/" passHref>
+				<Text element="a">Back</Text>
 			</Link>
 			<form
 				className="flex flex-col space-y-4 max-w-xs w-full"
@@ -52,10 +51,10 @@ export default function CreatePage() {
 					{...register("name")}
 					type="text"
 					placeholder="Name"
-					className="rounded-md bg-neutral-900 text-white placeholder:text-neutral-400 border-transparent focus:border-neutral-700 focus:bg-black focus:ring-0 form-input"
+					className="rounded-md dark:bg-neutral-800 bg-neutral-200 text-black dark:text-white placeholder:text-neutral-400 border-transparent focus:border-neutral-300 dark:focus:border-neutral-700 focus:bg-transparent focus:ring-0 form-input"
 				/>
 				{errors.name && (
-					<div className="bg-red-900 text-red-100 p-2 rounded-md text-sm">
+					<div className="bg-red-700 dark:bg-red-900 text-white dark:text-red-100 p-2 rounded-md text-sm">
 						{errors.name.message}
 					</div>
 				)}
@@ -64,10 +63,10 @@ export default function CreatePage() {
 					{...register("subdomain")}
 					type="text"
 					placeholder="Post #"
-					className="rounded-md bg-neutral-900 text-white placeholder:text-neutral-400 border-transparent focus:border-neutral-700 focus:bg-black focus:ring-0 form-input"
+					className="rounded-md dark:bg-neutral-800 bg-neutral-200 text-black dark:text-white placeholder:text-neutral-400 border-transparent focus:border-neutral-300 dark:focus:border-neutral-700 focus:bg-transparent focus:ring-0 form-input"
 				/>
 				{errors.subdomain && (
-					<div className="bg-red-900 text-red-100 p-2 rounded-md text-sm">
+					<div className="bg-red-700 dark:bg-red-900 text-white dark:text-red-100 p-2 rounded-md text-sm">
 						{errors.subdomain.message}
 					</div>
 				)}
@@ -75,7 +74,7 @@ export default function CreatePage() {
 					disabled={isLoading}
 					type="submit"
 					value="Create"
-					className="bg-white rounded-md p-2"
+					className="dark:bg-white dark:text-black bg-black text-white rounded-md p-2"
 				/>
 			</form>
 		</div>

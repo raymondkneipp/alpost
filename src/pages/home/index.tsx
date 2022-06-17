@@ -3,7 +3,7 @@ import Link from "next/link";
 import { trpc } from "@/utils/trpc";
 import getBgColor from "@/utils/get-bg-color";
 import getDomain from "@/utils/get-domain";
-import { Container, Logo } from "@/components";
+import { Container, Logo, Text } from "@/components";
 
 const Home: NextPage = () => {
 	const { data, isLoading } = trpc.useQuery(["sites.get-all-sites"]);
@@ -23,12 +23,12 @@ const Home: NextPage = () => {
 	}
 
 	return (
-		<div className="bg-black min-h-screen flex items-center justify-center flex-col">
+		<div className="min-h-screen flex items-center justify-center flex-col">
 			<Container>
 				<Logo />
-				<h1 className="text-white font-bold text-2xl mb-5 border-b border-neutral-600 pb-1">
-					Alpost
-				</h1>
+				<Text variant="h1">Alpost</Text>
+				<Text size="lg">Welcome to American Legion Post Creator!</Text>
+
 				<div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-5">
 					{data.map((site) => (
 						<a
@@ -39,15 +39,17 @@ const Home: NextPage = () => {
 							)}`}
 						>
 							<div className="flex items-start justify-between">
-								<div>{site.name}</div>
-								<div>{site.subdomain}</div>
+								<Text color="light">{site.name}</Text>
+								<Text color="light">{site.subdomain}</Text>
 							</div>
-							<div className="text-sm">{getDomain(site)}</div>
+							<Text color="light" size="sm">
+								{getDomain(site)}
+							</Text>
 						</a>
 					))}
 				</div>
 				<Link href="/create">
-					<a className="inline-block mt-5 bg-white text-black p-3 rounded-md text-center">
+					<a className="inline-block mt-5 dark:bg-white bg-black text-white dark:text-black p-3 rounded-md text-center">
 						Create new post!
 					</a>
 				</Link>

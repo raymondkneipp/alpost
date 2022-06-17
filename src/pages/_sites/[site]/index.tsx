@@ -1,9 +1,9 @@
 import { GetStaticPaths, GetStaticProps } from "next";
 import { ParsedUrlQuery } from "querystring";
 import { prisma } from "@/db/client";
-import { Color, Site } from "@prisma/client";
+import { Site } from "@prisma/client";
 import getBgColor from "@/utils/get-bg-color";
-import { Navbar } from "@/components";
+import { Navbar, Text } from "@/components";
 
 interface PathProps extends ParsedUrlQuery {
 	site: string;
@@ -15,19 +15,32 @@ interface IndexProps {
 
 export default function Index(props: IndexProps) {
 	return (
-		<div
-			className={`h-screen flex items-center justify-center flex-col ${getBgColor(
-				props.site?.color
-			)}`}
-		>
-			<Navbar />
-			<h1 className="text-2xl font-bold text-white">
-				Name: {props.site?.name}
-			</h1>
-			<p className="text-white">id: {props.site?.id}</p>
-			<p className="text-white">subdomain: {props.site?.subdomain}</p>
-			<p className="text-white">color: {props.site?.color}</p>
-		</div>
+		<>
+			<div
+				className={`h-screen flex items-center justify-center flex-col ${getBgColor(
+					props.site?.color
+				)}`}
+			>
+				<Navbar />
+				<Text variant="h1" color="light">
+					Name: {props.site?.name}
+				</Text>
+				<Text variant="p" color="light">
+					id: {props.site?.id}
+				</Text>
+				<Text variant="p" color="light">
+					subdomain: {props.site?.subdomain}
+				</Text>
+				<Text variant="p" color="light">
+					color: {props.site?.color}
+				</Text>
+			</div>
+
+			<Text variant="h1">Name: {props.site?.name}</Text>
+			<Text variant="p">id: {props.site?.id}</Text>
+			<Text variant="p">subdomain: {props.site?.subdomain}</Text>
+			<Text variant="p">color: {props.site?.color}</Text>
+		</>
 	);
 }
 

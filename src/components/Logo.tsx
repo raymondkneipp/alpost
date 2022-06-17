@@ -3,7 +3,7 @@ import Image from "next/image";
 const Logo: React.FC = () => {
 	return (
 		<Image
-			src="/American-Legion-Emblem.png"
+			src="/American-Legion-Emblem-borderless.png"
 			layout="fixed"
 			width="80"
 			height="80"
