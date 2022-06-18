@@ -21,7 +21,7 @@ export default function Index(props: IndexProps) {
 					props.site?.color
 				)}`}
 			>
-				<Navbar />
+				<Navbar color={props.site?.color} />
 				<Text variant="h1" color="light">
 					Name: {props.site?.name}
 				</Text>
@@ -36,13 +36,6 @@ export default function Index(props: IndexProps) {
 				</Text>
 			</div>
 
-			<Text variant="h1">Name: {props.site?.name}</Text>
-			<Text variant="p">id: {props.site?.id}</Text>
-			<Text variant="p">subdomain: {props.site?.subdomain}</Text>
-			<Text variant="p">color: {props.site?.color}</Text>
-			<Text variant="a" color="primary" href="/">
-				color: {props.site?.color}
-			</Text>
 			<Footer />
 		</>
 	);

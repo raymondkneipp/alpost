@@ -1,8 +1,6 @@
 import { Color } from "@prisma/client";
 
 export default function getBgColor(color: Color) {
-	let bg;
-
 	switch (color) {
 		case Color.BLACK:
 			return "bg-black dark:bg-black";

@@ -4,7 +4,7 @@ import { Color, Size, Variant } from "@/components/Text";
 
 const TestingPage: NextPage = () => {
 	const variants = ["h1", "h2", "h3", "h4", "h5", "h6", "p", "a"];
-	const colors = ["dark", "light", "primary"];
+	const colors = ["dark", "light"];
 	const sizes = ["sm", "md", "lg"];
 
 	return (

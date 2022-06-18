@@ -4,7 +4,7 @@ import cn from "variant-classnames";
 
 export type Variant = "h1" | "h2" | "h3" | "h4" | "h5" | "h6" | "p" | "a";
 type Element = Variant | "span" | "li" | "dd" | "dt";
-export type Color = "dark" | "light" | "primary";
+export type Color = "dark" | "light";
 export type Size = "sm" | "md" | "lg";
 
 type Props = {
@@ -33,19 +33,16 @@ const Text: React.FC<Props> = ({
 	const headingColors = {
 		dark: "text-neutral-900 dark:text-neutral-100",
 		light: "text-white dark:text-neutral-100",
-		primary: "text-red-700 dark:text-red-500",
 	};
 
 	const regularColors = {
 		dark: "text-neutral-700 dark:text-neutral-300",
 		light: "text-neutral-100 dark:text-neutral-300",
-		primary: "text-red-700 dark:text-red-500",
 	};
 
 	const linkColors = {
 		dark: `${regularColors.dark} decoration-neutral-700/40 dark:decoration-neutral-300/40 hover:text-black dark:hover:text-white hover:decoration-black dark:hover:decoration-white`,
 		light: `${regularColors.light} decoration-neutral-100/40 dark:decoration-neutral-300/40 hover:text-white dark:hover:text-white hover:decoration-white dark:hover:decoration-white`,
-		primary: `${regularColors.primary} decoration-red-700/40 dark:decoration-red-500/40 hover:text-red-700 dark:hover:text-red-500 hover:decoration-red-700 dark:hover:decoration-red-500`,
 	};
 
 	const variants = {

@@ -40,7 +40,9 @@ const Home: NextPage = () => {
 						>
 							<div className="flex items-start justify-between">
 								<Text color="light">{site.name}</Text>
-								<Text color="light">{site.subdomain}</Text>
+								<Text color="light" variant="h5">
+									{site.subdomain}
+								</Text>
 							</div>
 							<Text color="light" size="sm">
 								{getDomain(site)}
