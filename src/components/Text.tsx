@@ -15,6 +15,7 @@ type Props = {
 	className?: string;
 	children: React.ReactNode;
 	cap?: boolean;
+	center?: boolean;
 	href?: string;
 	// [rest: string]: any;
 };
@@ -28,6 +29,7 @@ const Text: React.FC<Props> = ({
 	className = "",
 	children,
 	cap,
+	center,
 	//...rest
 }) => {
 	const headingColors = {
@@ -46,8 +48,9 @@ const Text: React.FC<Props> = ({
 	};
 
 	const variants = {
-		$all: `${className} transition-colors flex items-center`,
+		$all: `${className} transition-colors inline-flex items-center`,
 		cap: "uppercase",
+		center: "text-center",
 		variant: {
 			h1: {
 				$all: "font-bold",
@@ -124,7 +127,7 @@ const Text: React.FC<Props> = ({
 		},
 	};
 
-	const styles = cn(variants, { variant, color, size, cap });
+	const styles = cn(variants, { variant, color, size, cap, center });
 
 	if (href) {
 		const external = href.startsWith("http");

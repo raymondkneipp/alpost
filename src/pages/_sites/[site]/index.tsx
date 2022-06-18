@@ -21,7 +21,7 @@ export default function Index(props: IndexProps) {
 					props.site?.color
 				)}`}
 			>
-				<Navbar color={props.site?.color} />
+				<Navbar post={props.site?.subdomain} color={props.site?.color} />
 				<Text variant="h1" color="light">
 					Name: {props.site?.name}
 				</Text>
@@ -36,7 +36,9 @@ export default function Index(props: IndexProps) {
 				</Text>
 			</div>
 
-			<Footer />
+			<Footer
+				content={`${props.site?.name} American Legion Post ${props.site?.subdomain} located on INSET ADDRESS HERE`}
+			/>
 		</>
 	);
 }

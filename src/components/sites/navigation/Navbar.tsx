@@ -4,9 +4,10 @@ import { Color } from "@prisma/client";
 
 type Props = {
 	color: Color;
+	post: string;
 };
 
-const Navbar: React.FC<Props> = ({ color }) => {
+const Navbar: React.FC<Props> = ({ color, post }) => {
 	return (
 		<nav className="bg-neutral-100 dark:bg-neutral-900 fixed top-0 left-0 right-0 shadow-md z-40">
 			<Container>
@@ -14,7 +15,7 @@ const Navbar: React.FC<Props> = ({ color }) => {
 					<div className="flex items-center space-x-2">
 						<Logo />
 						<Text variant="h5" element="span" className={getTextColor(color)}>
-							Post
+							Post {post}
 						</Text>
 					</div>
 
