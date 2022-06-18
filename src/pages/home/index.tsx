@@ -24,7 +24,7 @@ const Home: NextPage = () => {
 
 	return (
 		<div className="min-h-screen flex items-center justify-center flex-col">
-			<Container>
+			<Container spacer>
 				<Wide
 					master={
 						<>
@@ -36,7 +36,7 @@ const Home: NextPage = () => {
 						</>
 					}
 				>
-					<div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-5 col-span-full">
+					<>
 						{data.map((site) => (
 							<a
 								key={site.id}
@@ -56,7 +56,7 @@ const Home: NextPage = () => {
 								</Text>
 							</a>
 						))}
-					</div>
+					</>
 				</Wide>
 
 				<Link href="/create">
@@ -64,9 +64,8 @@ const Home: NextPage = () => {
 						Create new post!
 					</a>
 				</Link>
-
-				<Pricing />
 			</Container>
+			<Pricing />
 		</div>
 	);
 };
