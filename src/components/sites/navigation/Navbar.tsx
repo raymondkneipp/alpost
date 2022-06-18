@@ -8,7 +8,7 @@ type Props = {
 
 const Navbar: React.FC<Props> = ({ color }) => {
 	return (
-		<nav className="bg-neutral-100 dark:bg-neutral-900 fixed top-0 left-0 right-0 shadow-md">
+		<nav className="bg-neutral-100 dark:bg-neutral-900 fixed top-0 left-0 right-0 shadow-md z-40">
 			<Container>
 				<div className="flex items-center justify-between">
 					<div className="flex items-center space-x-2">
