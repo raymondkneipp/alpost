@@ -15,3 +15,4 @@ export { default as Hero } from "./sites/Hero";
 export { default as Navbar } from "./sites/Navbar";
 export { default as NavLink } from "./sites/NavLink";
 export { default as Footer } from "./sites/Footer";
+export { default as CTA } from "./sites/CTA";
