@@ -1,53 +1,18 @@
 import { Text } from "@/components";
 import React from "react";
 
-type ListItemElement = "li" | "dd";
-type ListElement = "ul" | "dl";
-
 type ItemProps = {
 	children: React.ReactNode;
-	element?: ListItemElement;
-	key?: any;
 };
 
-export const Item: React.FC<ItemProps> = ({ element, children }) => {
-	return <Text element={element}>{children}</Text>;
+export const Item: React.FC<ItemProps> = ({ children }) => {
+	return <Text element="li">{children}</Text>;
 };
 
 type ListProps = {
-	children: React.ReactElement<ItemProps>[];
-	title?: string;
+	children: React.ReactNode;
 };
 
-export const List: React.FC<ListProps> = ({ children, title }) => {
-	let listElement: ListElement = "ul";
-	let listItemElement: ListItemElement = "li";
-
-	if (title) {
-		listElement = "dl";
-		listItemElement = "dd";
-	}
-
-	const items = children.map((item, i) =>
-		React.cloneElement(item, { element: listItemElement, key: i })
-	);
-
-	const listWithTitle = (
-		<>
-			{title && (
-				<Text element="dt" variant="h6" cap>
-					{title}
-				</Text>
-			)}
-			{items}
-		</>
-	);
-
-	const list = React.createElement(
-		listElement,
-		{ className: "flex flex-col space-y-4" },
-		listWithTitle
-	);
-
-	return list;
+export const List: React.FC<ListProps> = ({ children }) => {
+	return <ul className="flex flex-col space-y-4">{children}</ul>;
 };

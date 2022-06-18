@@ -21,8 +21,8 @@ const PricingItem: React.FC<PricingItemProps> = ({ name, price, perks }) => {
 			</div>
 
 			<List>
-				{perks.map((perk) => (
-					<Item>
+				{perks.map((perk, i) => (
+					<Item key={`${i}${name}`}>
 						<FaCheck className="mr-2 text-green-600 dark:text-green-400" />
 						{perk}
 					</Item>

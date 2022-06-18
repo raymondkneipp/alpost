@@ -4,6 +4,8 @@ import { prisma } from "@/db/client";
 import { Site } from "@prisma/client";
 import getBgColor from "@/utils/get-bg-color";
 import { Footer, Navbar, Text } from "@/components";
+import { useEffect } from "react";
+import { useSocials, useTheme } from "@/store";
 
 interface PathProps extends ParsedUrlQuery {
 	site: string;
@@ -14,14 +16,24 @@ interface IndexProps {
 }
 
 export default function Index(props: IndexProps) {
+	const { setColor, color } = useTheme();
+	const { setSocials } = useSocials();
+
+	useEffect(() => {
+		setColor(props.site.color);
+
+		const { facebook, instagram, twitter, youtube } = props.site;
+		setSocials({ facebook, instagram, twitter, youtube });
+	}, [props]);
+
 	return (
 		<>
 			<div
 				className={`h-screen flex items-center justify-center flex-col ${getBgColor(
-					props.site?.color
+					color
 				)}`}
 			>
-				<Navbar post={props.site?.subdomain} color={props.site?.color} />
+				<Navbar post={props.site?.subdomain} />
 				<Text variant="h1" color="light">
 					Name: {props.site?.name}
 				</Text>
@@ -32,13 +44,11 @@ export default function Index(props: IndexProps) {
 					subdomain: {props.site?.subdomain}
 				</Text>
 				<Text variant="a" color="light" href="/">
-					color: {props.site?.color}
+					color: {color}
 				</Text>
 			</div>
 
-			<Footer
-				content={`${props.site?.name} American Legion Post ${props.site?.subdomain} located on INSET ADDRESS HERE`}
-			/>
+			<Footer />
 		</>
 	);
 }

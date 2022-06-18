@@ -17,6 +17,10 @@ model Site {
   name      String
   subdomain String @unique
   color     Color  @default(BLACK)
+  facebook  String @default("")
+  instagram String @default("")
+  twitter   String @default("")
+  youtube   String @default("")
 }
 
 enum Color {

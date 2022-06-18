@@ -1,10 +1,12 @@
 import Link from "next/link";
 import React from "react";
+import { useTheme } from "@/store";
 import cn from "variant-classnames";
+import getTextColor from "@/utils/get-text-color";
 
 export type Variant = "h1" | "h2" | "h3" | "h4" | "h5" | "h6" | "p" | "a";
 type Element = Variant | "span" | "li" | "dd" | "dt";
-export type Color = "dark" | "light";
+export type Color = "dark" | "light" | "primary";
 export type Size = "sm" | "md" | "lg";
 
 type Props = {
@@ -32,19 +34,24 @@ const Text: React.FC<Props> = ({
 	center,
 	//...rest
 }) => {
+	const { color: themeColor } = useTheme();
+
 	const headingColors = {
 		dark: "text-neutral-900 dark:text-neutral-100",
 		light: "text-white dark:text-neutral-100",
+		primary: getTextColor(themeColor),
 	};
 
 	const regularColors = {
 		dark: "text-neutral-700 dark:text-neutral-300",
 		light: "text-neutral-100 dark:text-neutral-300",
+		primary: getTextColor(themeColor),
 	};
 
 	const linkColors = {
 		dark: `${regularColors.dark} decoration-neutral-700/40 dark:decoration-neutral-300/40 hover:text-black dark:hover:text-white hover:decoration-black dark:hover:decoration-white`,
 		light: `${regularColors.light} decoration-neutral-100/40 dark:decoration-neutral-300/40 hover:text-white dark:hover:text-white hover:decoration-white dark:hover:decoration-white`,
+		primary: getTextColor(themeColor),
 	};
 
 	const variants = {

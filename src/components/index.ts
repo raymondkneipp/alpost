@@ -1,6 +1,7 @@
 // Shared components
 export { default as Logo } from "./Logo";
 export { default as Text } from "./Text";
+export { DList, DItem } from "./DList";
 export { List, Item } from "./List";
 
 // Shared layout components
