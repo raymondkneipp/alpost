@@ -3,7 +3,15 @@ import { ParsedUrlQuery } from "querystring";
 import { prisma } from "@/db/client";
 import { Site } from "@prisma/client";
 import getBgColor from "@/utils/get-bg-color";
-import { CTA, Footer, Hero, Navbar, Text } from "@/components";
+import {
+	Button,
+	Container,
+	CTA,
+	Footer,
+	Hero,
+	Navbar,
+	Text,
+} from "@/components";
 import { useEffect } from "react";
 import { useAddress, usePost, useSocials, useTheme } from "@/store";
 
@@ -20,8 +28,6 @@ export default function Index(props: IndexProps) {
 	const { setSocials } = useSocials();
 	const { setName, setNum } = usePost();
 	const { setAddress } = useAddress();
-
-	console.log(props);
 
 	useEffect(() => {
 		setColor(props.site?.color);

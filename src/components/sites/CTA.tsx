@@ -1,4 +1,4 @@
-import { Container, Logo, NavLink, Text } from "@/components";
+import { Container, Logo, NavLink, Text, Button } from "@/components";
 import { useTheme } from "@/store";
 import getBgColor from "@/utils/get-bg-color";
 
@@ -15,6 +15,9 @@ const CTA: React.FC = () => {
 					Join our post and be a part of the largest veteran organization
 					reaching over two million members.
 				</Text>
+				<Button href="/" color="light" size="lg">
+					Become a Member
+				</Button>
 			</Container>
 		</section>
 	);
