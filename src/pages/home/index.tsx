@@ -3,7 +3,7 @@ import Link from "next/link";
 import { trpc } from "@/utils/trpc";
 import getBgColor from "@/utils/get-bg-color";
 import getDomain from "@/utils/get-domain";
-import { Container, Logo, Pricing, Text } from "@/components";
+import { Container, Logo, Pricing, Text, Wide } from "@/components";
 
 const Home: NextPage = () => {
 	const { data, isLoading } = trpc.useQuery(["sites.get-all-sites"]);
@@ -25,31 +25,40 @@ const Home: NextPage = () => {
 	return (
 		<div className="min-h-screen flex items-center justify-center flex-col">
 			<Container>
-				<Logo />
-				<Text variant="h1">Alpost</Text>
-				<Text size="lg">Welcome to American Legion Post Creator!</Text>
-
-				<div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-5">
-					{data.map((site) => (
-						<a
-							key={site.id}
-							href={getDomain(site)}
-							className={`transition-colors text-gray-200 rounded-md hover:text-white border border-neutral-600 hover:border-white p-3 h-36 flex items-stretch justify-between flex-col ${getBgColor(
-								site.color
-							)}`}
-						>
-							<div className="flex items-start justify-between">
-								<Text color="light">{site.name}</Text>
-								<Text color="light" variant="h5">
-									{site.subdomain}
-								</Text>
+				<Wide
+					master={
+						<>
+							<Logo />
+							<div>
+								<Text variant="h1">ALPost</Text>
+								<Text size="lg">Welcome to American Legion Post Creator!</Text>
 							</div>
-							<Text color="light" size="sm">
-								{getDomain(site)}
-							</Text>
-						</a>
-					))}
-				</div>
+						</>
+					}
+				>
+					<div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-5 col-span-full">
+						{data.map((site) => (
+							<a
+								key={site.id}
+								href={getDomain(site)}
+								className={`transition-colors text-gray-200 rounded-md hover:text-white border border-neutral-600 hover:border-white p-3 h-36 flex items-stretch justify-between flex-col ${getBgColor(
+									site.color
+								)}`}
+							>
+								<div className="flex items-start justify-between">
+									<Text color="light">{site.name}</Text>
+									<Text color="light" variant="h5">
+										{site.subdomain}
+									</Text>
+								</div>
+								<Text color="light" size="sm">
+									{getDomain(site)}
+								</Text>
+							</a>
+						))}
+					</div>
+				</Wide>
+
 				<Link href="/create">
 					<a className="inline-block mt-5 dark:bg-white bg-black text-white dark:text-black p-3 rounded-md text-center">
 						Create new post!

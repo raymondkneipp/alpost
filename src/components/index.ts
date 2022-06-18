@@ -5,6 +5,7 @@ export { DList, DItem } from "./DList";
 export { List, Item } from "./List";
 export { default as Container } from "./Container";
 export { default as Tall } from "./Tall";
+export { default as Wide } from "./Wide";
 
 // Home components
 export { default as Pricing } from "./home/Pricing";

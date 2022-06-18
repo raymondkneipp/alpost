@@ -55,7 +55,7 @@ const Text: React.FC<Props> = ({
 	};
 
 	const variants = {
-		$all: `${className} transition-colors inline-flex items-center`,
+		$all: `${className} transition-colors flex items-center`,
 		cap: "uppercase",
 		center: "text-center",
 		variant: {
