@@ -5,7 +5,7 @@ import { Site } from "@prisma/client";
 import getBgColor from "@/utils/get-bg-color";
 import { Footer, Hero, Navbar, Text } from "@/components";
 import { useEffect } from "react";
-import { usePost, useSocials, useTheme } from "@/store";
+import { useAddress, usePost, useSocials, useTheme } from "@/store";
 
 interface PathProps extends ParsedUrlQuery {
 	site: string;
@@ -19,6 +19,9 @@ export default function Index(props: IndexProps) {
 	const { setColor, color } = useTheme();
 	const { setSocials } = useSocials();
 	const { setName, setNum } = usePost();
+	const { setAddress } = useAddress();
+
+	console.log(props);
 
 	useEffect(() => {
 		setColor(props.site?.color);
@@ -31,6 +34,13 @@ export default function Index(props: IndexProps) {
 
 		setName(props.site?.name);
 		setNum(props.site?.subdomain);
+
+		const street = props.site?.street;
+		const city = props.site?.city;
+		const state = props.site?.state;
+		const zip = props.site?.zip;
+
+		setAddress({ street, city, state, zip });
 	}, [props]);
 
 	return (

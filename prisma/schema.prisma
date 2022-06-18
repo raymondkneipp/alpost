@@ -17,10 +17,16 @@ model Site {
   name      String
   subdomain String @unique
   color     Color  @default(BLACK)
+  // Social media
   facebook  String @default("")
   instagram String @default("")
   twitter   String @default("")
   youtube   String @default("")
+  // Address
+  street    String @default("")
+  city      String @default("")
+  state     String @default("")
+  zip       String @default("")
 }
 
 enum Color {

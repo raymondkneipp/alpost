@@ -14,6 +14,7 @@ const Hero: React.FC = () => {
 				alt="American flag"
 				layout="fill"
 				objectFit="cover"
+				priority={true}
 			/>
 			<div className="relative min-h-screen bg-opacity-70 flex flex-col items-center justify-center bg-black">
 				<Container className="max-w-screen-md">

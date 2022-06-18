@@ -1,17 +1,15 @@
-import {
-	FaFacebook,
-	FaInstagram,
-	FaLinkedin,
-	FaTwitter,
-	FaYoutube,
-} from "react-icons/fa";
+import { FaFacebook, FaInstagram, FaTwitter, FaYoutube } from "react-icons/fa";
 import { Tall, Container, Logo, Text, DList, DItem } from "@/components";
 import useSocials from "store/socials";
+import usePost from "store/post";
+import useAddress from "store/address";
 
 const Footer: React.FC = () => {
+	const { name, num } = usePost();
 	const { facebook, twitter, instagram, youtube } = useSocials();
 	const socials =
 		facebook !== "" || twitter !== "" || instagram !== "" || youtube !== "";
+	const { street, city, state, zip } = useAddress();
 
 	return (
 		<footer className="py-8">
@@ -21,10 +19,8 @@ const Footer: React.FC = () => {
 						<>
 							<Logo />
 							<Text>
-								Lorem ipsum dolor sit amet consectetur, adipisicing elit. Unde
-								expedita, inventore ducimus officia libero nobis quidem
-								reprehenderit soluta, nesciunt at hic velit tempora ullam, quo
-								consequuntur vitae cupiditate corporis assumenda?
+								{name} American Legion Post {num} located on {street} {city},{" "}
+								{state} {zip}
 							</Text>
 						</>
 					}
