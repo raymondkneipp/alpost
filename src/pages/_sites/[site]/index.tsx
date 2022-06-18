@@ -3,9 +3,9 @@ import { ParsedUrlQuery } from "querystring";
 import { prisma } from "@/db/client";
 import { Site } from "@prisma/client";
 import getBgColor from "@/utils/get-bg-color";
-import { Footer, Navbar, Text } from "@/components";
+import { Footer, Hero, Navbar, Text } from "@/components";
 import { useEffect } from "react";
-import { useSocials, useTheme } from "@/store";
+import { usePost, useSocials, useTheme } from "@/store";
 
 interface PathProps extends ParsedUrlQuery {
 	site: string;
@@ -18,35 +18,25 @@ interface IndexProps {
 export default function Index(props: IndexProps) {
 	const { setColor, color } = useTheme();
 	const { setSocials } = useSocials();
+	const { setName, setNum } = usePost();
 
 	useEffect(() => {
-		setColor(props.site.color);
+		setColor(props.site?.color);
 
-		const { facebook, instagram, twitter, youtube } = props.site;
+		const facebook = props.site?.facebook;
+		const instagram = props.site?.instagram;
+		const twitter = props.site?.twitter;
+		const youtube = props.site?.youtube;
 		setSocials({ facebook, instagram, twitter, youtube });
+
+		setName(props.site?.name);
+		setNum(props.site?.subdomain);
 	}, [props]);
 
 	return (
 		<>
-			<div
-				className={`h-screen flex items-center justify-center flex-col ${getBgColor(
-					color
-				)}`}
-			>
-				<Navbar post={props.site?.subdomain} />
-				<Text variant="h1" color="light">
-					Name: {props.site?.name}
-				</Text>
-				<Text variant="p" color="light">
-					id: {props.site?.id}
-				</Text>
-				<Text variant="p" color="light">
-					subdomain: {props.site?.subdomain}
-				</Text>
-				<Text variant="a" color="light" href="/">
-					color: {color}
-				</Text>
-			</div>
+			<Navbar post={props.site?.subdomain} />
+			<Hero />
 
 			<Footer />
 		</>

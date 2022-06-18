@@ -12,6 +12,9 @@ export { default as Tall } from "./layout/Tall";
 // Home components
 export { default as Pricing } from "./home/Pricing";
 
+// Site components
+export { default as Hero } from "./sites/Hero";
+
 // Site Navigation components
 export { default as Navbar } from "./sites/navigation/Navbar";
 export { default as NavLink } from "./sites/navigation/NavLink";
