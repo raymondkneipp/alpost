@@ -7,7 +7,7 @@ interface ThemeState {
 }
 
 const useTheme = create<ThemeState>((set) => ({
-	color: Color.RED,
+	color: Color.SKY,
 	setColor: (newColor) => set((state) => ({ color: newColor })),
 }));
 

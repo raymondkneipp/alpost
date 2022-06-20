@@ -1,4 +1,4 @@
-import { Container, Text, List, Item, Wide } from "@/components";
+import { Button, Container, Text, List, Item, Wide } from "@/components";
 import { FaCheck } from "react-icons/fa";
 
 type PricingItemProps = {
@@ -28,6 +28,10 @@ const PricingItem: React.FC<PricingItemProps> = ({ name, price, perks }) => {
 					</Item>
 				))}
 			</List>
+
+			<div className="flex flex-col justify-end flex-1">
+				<Button href="/create">Buy {name}</Button>
+			</div>
 		</div>
 	);
 };
@@ -37,18 +41,28 @@ const Pricing: React.FC = () => {
 		<Container spacer>
 			<Wide master={<Text variant="h2">Pricing Plans</Text>}>
 				<PricingItem
-					name="Basic"
-					price={9}
-					perks={["SSL Encryption", "Light & Dark Mode", "3 Themes"]}
+					name="Budget"
+					price={14}
+					perks={[
+						"SSL Encryption",
+						"Light & Dark Mode",
+						"3 Themes",
+						"Free Subdomain",
+					]}
 				/>
 				<PricingItem
-					name="Plus"
-					price={14}
-					perks={["SSL Encryption", "Light & Dark Mode", "6 Themes"]}
+					name="Basic"
+					price={19}
+					perks={[
+						"SSL Encryption",
+						"Light & Dark Mode",
+						"6 Themes",
+						"Custom Domain",
+					]}
 				/>
 				<PricingItem
 					name="Pro"
-					price={19}
+					price={24}
 					perks={["SSL Encryption", "Light & Dark Mode", "9 Themes"]}
 				/>
 			</Wide>

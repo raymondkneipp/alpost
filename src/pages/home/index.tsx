@@ -3,7 +3,7 @@ import Link from "next/link";
 import { trpc } from "@/utils/trpc";
 import getBgColor from "@/utils/get-bg-color";
 import getDomain from "@/utils/get-domain";
-import { Container, Logo, Pricing, Text, Wide } from "@/components";
+import { Button, Container, Logo, Pricing, Text, Wide } from "@/components";
 
 const Home: NextPage = () => {
 	const { data, isLoading } = trpc.useQuery(["sites.get-all-sites"]);
@@ -56,14 +56,11 @@ const Home: NextPage = () => {
 								</Text>
 							</a>
 						))}
+						<Button href="/create" size="lg" color="primary">
+							Create a New Post!
+						</Button>
 					</>
 				</Wide>
-
-				<Link href="/create">
-					<a className="inline-block mt-5 dark:bg-white bg-black text-white dark:text-black p-3 rounded-md text-center">
-						Create new post!
-					</a>
-				</Link>
 			</Container>
 			<Pricing />
 		</div>

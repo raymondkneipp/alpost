@@ -9,13 +9,15 @@ type Size = "sm" | "md" | "lg";
 
 type Props = {
 	children: React.ReactNode;
-	href: string;
+	href?: string;
+	onClick?: () => void;
 	color?: Color;
 	size?: Size;
 };
 
 const Button: React.FC<Props> = ({
 	href,
+	onClick,
 	children,
 	color = "primary",
 	size = "md",
@@ -23,7 +25,7 @@ const Button: React.FC<Props> = ({
 	const { color: themeColor } = useTheme();
 
 	const variants = {
-		$all: "inline-flex rounded-md font-bold transition hover:scale-105 active:scale-100",
+		$all: "inline-flex rounded-md font-bold text-center justify-center items-center transition hover:scale-105 active:scale-95",
 		color: {
 			primary: `${getBgColor(themeColor)} text-white`,
 			dark: "bg-neutral-800 text-white",
@@ -36,11 +38,15 @@ const Button: React.FC<Props> = ({
 		},
 	};
 
-	return (
-		<Link href={href}>
-			<a className={cn(variants, { color, size })}>{children}</a>
-		</Link>
-	);
+	if (href) {
+		return (
+			<Link href={href}>
+				<a className={cn(variants, { color, size })}>{children}</a>
+			</Link>
+		);
+	}
+
+	return <button className={cn(variants, { color, size })}>{children}</button>;
 };
 
 export default Button;

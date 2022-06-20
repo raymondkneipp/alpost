@@ -6,9 +6,18 @@ import {
 import { zodResolver } from "@hookform/resolvers/zod";
 import { trpc } from "@/utils/trpc";
 import Link from "next/link";
-import { Text } from "@/components";
+import { Step, Text } from "@/components";
+import { useState } from "react";
+import getDomain from "@/utils/get-domain";
 
 export default function CreatePage() {
+	const headers = [
+		"What legion do you operate?",
+		"Where is your legion located?",
+		"What accounts does your legion use?",
+	];
+	const [stage, setStage] = useState(1);
+
 	const {
 		register,
 		handleSubmit,
@@ -20,26 +29,20 @@ export default function CreatePage() {
 
 	const { mutate, isLoading, data } = trpc.useMutation("sites.create", {
 		onSuccess: (data) => {
-			let domain: string;
-			let proto: string;
-			if (process.env.NODE_ENV === "development") {
-				proto = "http";
-				domain = "localhost:3000";
-			} else {
-				proto = "https";
-				domain = "alpost.org";
-			}
-
-			window.location.replace(`${proto}://${data.subdomain}.${domain}`);
+			window.location.replace(getDomain(data));
 		},
 	});
 
 	return (
 		<div className="h-screen flex flex-col space-y-4 items-center justify-center">
 			<Text variant="h1">Create Post</Text>
-			<Link href="/" passHref>
-				<Text element="a">Back</Text>
-			</Link>
+			<Text href="/" variant="a">
+				Back
+			</Text>
+			<Text variant="p" size="lg">
+				{headers[stage - 1]}
+			</Text>
+			<Step step={stage} total={headers.length} />
 			<form
 				className="flex flex-col space-y-4 max-w-xs w-full"
 				onSubmit={handleSubmit((data) => {

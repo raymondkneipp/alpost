@@ -15,7 +15,7 @@ const Container: React.FC<Props> = ({
 }) => {
 	const variants = {
 		$all: `container mx-auto px-4 py-2 ${className}`,
-		centered: "flex flex-col items-center justify-center h-full",
+		centered: "flex flex-col items-center justify-center h-full text-center",
 		spacer: "py-24",
 	};
 
