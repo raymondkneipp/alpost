@@ -20,3 +20,4 @@ export { default as Footer } from "./sites/Footer";
 export { default as CTA } from "./sites/CTA";
 export { default as News } from "./sites/News";
 export { default as NewsSkeleton } from "./sites/NewsSkeleton";
+export { default as NewsEmpty } from "./sites/NewsEmpty";

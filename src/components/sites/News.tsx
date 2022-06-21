@@ -1,4 +1,4 @@
-import { Text, Container, Wide, NewsSkeleton } from "@/components";
+import { Text, Container, Wide, NewsSkeleton, NewsEmpty } from "@/components";
 import { trpc } from "@/utils/trpc";
 import { News } from "@prisma/client";
 import Image from "next/image";
@@ -61,6 +61,7 @@ const News: React.FC<Props> = ({ simple }) => {
 						<NewsSkeleton />
 					) : (
 						<>
+							{data.news.length == 0 && <NewsEmpty />}
 							{data.news.map((item) => (
 								<NewsItem news={item} key={item.id} />
 							))}
