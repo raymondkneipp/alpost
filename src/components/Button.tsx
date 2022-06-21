@@ -1,6 +1,7 @@
 import { Container, Logo, NavLink, Text } from "@/components";
 import { useTheme } from "@/store";
 import getBgColor from "@/utils/get-bg-color";
+import getRadius from "@/utils/get-radius";
 import Link from "next/link";
 import cn from "variant-classnames";
 
@@ -22,10 +23,12 @@ const Button: React.FC<Props> = ({
 	color = "primary",
 	size = "md",
 }) => {
-	const { color: themeColor } = useTheme();
+	const { color: themeColor, radius } = useTheme();
 
 	const variants = {
-		$all: "inline-flex rounded-md font-bold text-center justify-center items-center transition hover:scale-105 active:scale-100",
+		$all: `inline-flex font-bold text-center justify-center items-center transition hover:scale-105 active:scale-100 ${getRadius(
+			radius
+		)}`,
 		color: {
 			primary: `${getBgColor(themeColor)} text-white`,
 			secondary:

@@ -1,4 +1,4 @@
-import { Color } from "@prisma/client";
+import { Color, Radius } from "@prisma/client";
 import { z } from "zod";
 
 export const createSiteValidator = z.object({
@@ -13,6 +13,7 @@ export const createSiteValidator = z.object({
 	twitter: z.literal("").or(z.string().url()),
 	youtube: z.literal("").or(z.string().url()),
 	color: z.nativeEnum(Color),
+	radius: z.nativeEnum(Radius),
 });
 
 export type CreateSiteInputType = z.infer<typeof createSiteValidator>;

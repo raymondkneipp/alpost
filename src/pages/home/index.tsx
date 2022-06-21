@@ -4,6 +4,7 @@ import { trpc } from "@/utils/trpc";
 import getBgColor from "@/utils/get-bg-color";
 import getDomain from "@/utils/get-domain";
 import { Button, Container, Logo, Pricing, Text, Wide } from "@/components";
+import getRadius from "@/utils/get-radius";
 
 const Home: NextPage = () => {
 	const { data, isLoading } = trpc.useQuery(["sites.get-all-sites"]);
@@ -41,9 +42,9 @@ const Home: NextPage = () => {
 							<a
 								key={site.id}
 								href={getDomain(site)}
-								className={`transition-colors text-gray-200 rounded-md hover:text-white border border-neutral-600 hover:border-white p-3 h-36 flex items-stretch justify-between flex-col ${getBgColor(
+								className={`transition-colors text-gray-200 hover:text-white border border-neutral-600 hover:border-white p-3 h-36 flex items-stretch justify-between flex-col ${getBgColor(
 									site.color
-								)}`}
+								)} ${getRadius(site.radius)}`}
 							>
 								<div className="flex items-start justify-between">
 									<Text color="light">{site.name}</Text>

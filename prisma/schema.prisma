@@ -16,7 +16,9 @@ model Site {
   id        String @id @default(cuid())
   name      String
   subdomain String @unique
+  // Theme
   color     Color  @default(BLACK)
+  radius    Radius @default(REGULAR)
   // Social media
   facebook  String @default("")
   instagram String @default("")
@@ -64,4 +66,15 @@ enum Color {
   FUCHSIA
   PINK
   ROSE
+}
+
+enum Radius {
+  NONE
+  SMALL
+  REGULAR
+  MEDIUM
+  LARGE
+  XL
+  XXL
+  XXXL
 }

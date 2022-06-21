@@ -25,13 +25,14 @@ interface IndexProps {
 }
 
 export default function Index(props: IndexProps) {
-	const { setColor, color } = useTheme();
+	const { setColor, color, setRadius, radius } = useTheme();
 	const { setSocials } = useSocials();
 	const { setName, setNum } = usePost();
 	const { setAddress } = useAddress();
 
 	useEffect(() => {
 		setColor(props.site?.color);
+		setRadius(props.site?.radius);
 
 		const facebook = props.site?.facebook;
 		const instagram = props.site?.instagram;

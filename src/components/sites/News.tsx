@@ -1,16 +1,24 @@
 import { Text, Container, Wide, NewsSkeleton, NewsEmpty } from "@/components";
+import getRadius from "@/utils/get-radius";
 import { trpc } from "@/utils/trpc";
 import { News } from "@prisma/client";
 import Image from "next/image";
 import usePost from "store/post";
+import useTheme from "store/theme";
 
 type NewsItemProps = {
 	news: News;
 };
 
 const NewsItem: React.FC<NewsItemProps> = ({ news }) => {
+	const { radius } = useTheme();
+
 	return (
-		<article className="bg-neutral-200 dark:bg-neutral-800 rounded-md overflow-hidden">
+		<article
+			className={`bg-neutral-200 dark:bg-neutral-800 rounded-md overflow-hidden ${getRadius(
+				radius
+			)}`}
+		>
 			<Image
 				src="/hero.jpg"
 				width={200}

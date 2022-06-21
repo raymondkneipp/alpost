@@ -7,8 +7,9 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { trpc } from "@/utils/trpc";
 import { Button, Container, Error, Input, Logo, Text } from "@/components";
 import getDomain from "@/utils/get-domain";
-import { Color } from "@prisma/client";
+import { Color, Radius } from "@prisma/client";
 import getBgColor from "@/utils/get-bg-color";
+import getRadius from "@/utils/get-radius";
 
 export default function CreatePage() {
 	const {
@@ -19,9 +20,14 @@ export default function CreatePage() {
 		formState: { errors },
 	} = useForm<CreateSiteInputType>({
 		resolver: zodResolver(createSiteValidator),
+		defaultValues: {
+			color: Color.RED,
+			radius: Radius.REGULAR,
+		},
 	});
 
 	const watchColor = watch("color");
+	const watchRadius = watch("radius");
 
 	const { mutate, isLoading, data } = trpc.useMutation("sites.create", {
 		onSuccess: (data) => {
@@ -139,6 +145,10 @@ export default function CreatePage() {
 
 						<Error error={errors.youtube} />
 
+						<Text variant="p" element="h2" center>
+							How would you like your site to look?
+						</Text>
+
 						<div className="flex flex-col space-y-1 flex-1">
 							<Text variant="h6" element="label" htmlFor="color">
 								Color
@@ -149,18 +159,49 @@ export default function CreatePage() {
 									className="rounded-md dark:bg-neutral-800 bg-neutral-200 text-black dark:text-white placeholder:text-neutral-400 border-transparent focus:border-neutral-300 dark:focus:border-neutral-700 focus:bg-transparent focus:ring-0 form-input disabled:cursor-not-allowed disabled:text-opacity-30 dark:disabled:text-opacity-30 flex-1"
 									id="color"
 								>
-									{Object.keys(Color).map((color) => (
-										<option value={color}>{color}</option>
+									{Object.keys(Color).map((color, i) => (
+										<option key={color} value={color}>
+											{color}
+										</option>
 									))}
 								</select>
 
 								<div
-									className={`${getBgColor(watchColor)} rounded-md w-10`}
+									className={`${getBgColor(
+										watchColor
+									)} rounded-md w-10 border border-black dark:border-white`}
 								></div>
 							</div>
 						</div>
 
 						<Error error={errors.color} />
+
+						<div className="flex flex-col space-y-1 flex-1">
+							<Text variant="h6" element="label" htmlFor="radius">
+								Radius
+							</Text>
+							<div className="flex space-x-2">
+								<select
+									{...register("radius")}
+									className="rounded-md dark:bg-neutral-800 bg-neutral-200 text-black dark:text-white placeholder:text-neutral-400 border-transparent focus:border-neutral-300 dark:focus:border-neutral-700 focus:bg-transparent focus:ring-0 form-input disabled:cursor-not-allowed disabled:text-opacity-30 dark:disabled:text-opacity-30 flex-1"
+									id="color"
+								>
+									{Object.keys(Radius).map((radius, i) => (
+										<option key={radius} value={radius}>
+											{radius}
+										</option>
+									))}
+								</select>
+
+								<div
+									className={`${getRadius(
+										watchRadius
+									)} w-10 bg-transparent border-black dark:border-white border-2`}
+								></div>
+							</div>
+						</div>
+
+						<Error error={errors.radius} />
 
 						<input
 							disabled={isLoading}
