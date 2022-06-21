@@ -27,6 +27,17 @@ model Site {
   city      String @default("")
   state     String @default("")
   zip       String @default("")
+
+  news News[]
+}
+
+model News {
+  id        String   @id @default(cuid())
+  createdAt DateTime @default(now())
+  title     String   @db.VarChar(100)
+  content   String   @db.VarChar(2000)
+  site      Site?    @relation(fields: [siteId], references: [id])
+  siteId    String?
 }
 
 enum Color {

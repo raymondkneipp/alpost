@@ -10,6 +10,7 @@ import {
 	Footer,
 	Hero,
 	Navbar,
+	News,
 	Text,
 } from "@/components";
 import { useEffect } from "react";
@@ -53,6 +54,7 @@ export default function Index(props: IndexProps) {
 		<>
 			<Navbar post={props.site?.subdomain} />
 			<Hero />
+			<News simple />
 			<CTA />
 
 			<Footer />
