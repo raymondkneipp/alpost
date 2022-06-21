@@ -4,7 +4,7 @@ import getBgColor from "@/utils/get-bg-color";
 import Link from "next/link";
 import cn from "variant-classnames";
 
-type Color = "primary" | "dark" | "light";
+type Color = "primary" | "secondary" | "light" | "ghost";
 type Size = "sm" | "md" | "lg";
 
 type Props = {
@@ -25,10 +25,13 @@ const Button: React.FC<Props> = ({
 	const { color: themeColor } = useTheme();
 
 	const variants = {
-		$all: "inline-flex rounded-md font-bold text-center justify-center items-center transition hover:scale-105 active:scale-95",
+		$all: "inline-flex rounded-md font-bold text-center justify-center items-center transition hover:scale-105 active:scale-100",
 		color: {
 			primary: `${getBgColor(themeColor)} text-white`,
-			dark: "bg-neutral-800 text-white",
+			secondary:
+				"bg-neutral-200 dark:bg-neutral-800 text-neutral-600 dark:text-neutral-400",
+			ghost:
+				"hover:bg-neutral-200 hover:dark:bg-neutral-800 text-neutral-600 dark:text-neutral-400",
 			light: "bg-neutral-200 text-neutral-900",
 		},
 		size: {

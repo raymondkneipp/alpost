@@ -7,10 +7,11 @@ export { default as Container } from "./Container";
 export { default as Tall } from "./Tall";
 export { default as Wide } from "./Wide";
 export { default as Button } from "./Button";
+export { default as Input } from "./Input";
+export { default as Error } from "./Error";
 
 // Home components
 export { default as Pricing } from "./home/Pricing";
-export { default as Step } from "./home/Step";
 
 // Site components
 export { default as Hero } from "./sites/Hero";

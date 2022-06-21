@@ -5,27 +5,23 @@ import {
 } from "shared/create-site-validator";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { trpc } from "@/utils/trpc";
-import Link from "next/link";
-import { Step, Text } from "@/components";
-import { useState } from "react";
+import { Button, Container, Error, Input, Logo, Text } from "@/components";
 import getDomain from "@/utils/get-domain";
+import { Color } from "@prisma/client";
+import getBgColor from "@/utils/get-bg-color";
 
 export default function CreatePage() {
-	const headers = [
-		"What legion do you operate?",
-		"Where is your legion located?",
-		"What accounts does your legion use?",
-	];
-	const [stage, setStage] = useState(1);
-
 	const {
 		register,
 		handleSubmit,
 		watch,
+		getValues,
 		formState: { errors },
 	} = useForm<CreateSiteInputType>({
 		resolver: zodResolver(createSiteValidator),
 	});
+
+	const watchColor = watch("color");
 
 	const { mutate, isLoading, data } = trpc.useMutation("sites.create", {
 		onSuccess: (data) => {
@@ -34,52 +30,151 @@ export default function CreatePage() {
 	});
 
 	return (
-		<div className="h-screen flex flex-col space-y-4 items-center justify-center">
-			<Text variant="h1">Create Post</Text>
-			<Text href="/" variant="a">
-				Back
-			</Text>
-			<Text variant="p" size="lg">
-				{headers[stage - 1]}
-			</Text>
-			<Step step={stage} total={headers.length} />
-			<form
-				className="flex flex-col space-y-4 max-w-xs w-full"
-				onSubmit={handleSubmit((data) => {
-					mutate(data);
-				})}
-			>
-				<input
-					disabled={isLoading}
-					{...register("name")}
-					type="text"
-					placeholder="Name"
-					className="rounded-md dark:bg-neutral-800 bg-neutral-200 text-black dark:text-white placeholder:text-neutral-400 border-transparent focus:border-neutral-300 dark:focus:border-neutral-700 focus:bg-transparent focus:ring-0 form-input"
-				/>
-				{errors.name && (
-					<div className="bg-red-700 dark:bg-red-900 text-white dark:text-red-100 p-2 rounded-md text-sm">
-						{errors.name.message}
-					</div>
-				)}
-				<input
-					disabled={isLoading}
-					{...register("subdomain")}
-					type="text"
-					placeholder="Post #"
-					className="rounded-md dark:bg-neutral-800 bg-neutral-200 text-black dark:text-white placeholder:text-neutral-400 border-transparent focus:border-neutral-300 dark:focus:border-neutral-700 focus:bg-transparent focus:ring-0 form-input"
-				/>
-				{errors.subdomain && (
-					<div className="bg-red-700 dark:bg-red-900 text-white dark:text-red-100 p-2 rounded-md text-sm">
-						{errors.subdomain.message}
-					</div>
-				)}
-				<input
-					disabled={isLoading}
-					type="submit"
-					value="Create"
-					className="dark:bg-white dark:text-black bg-black text-white rounded-md p-2"
-				/>
-			</form>
-		</div>
+		<Container spacer>
+			<div className="absolute top-0 left-0 right-0 min-h-screen flex flex-col space-y-4 items-center justify-center">
+				<div className="max-w-sm w-full flex flex-col space-y-4">
+					<Text variant="h1" center>
+						Create
+					</Text>
+
+					<Text variant="p" element="h2" center>
+						What legion do you operate?
+					</Text>
+					<form
+						className="flex flex-col space-y-4 w-full"
+						onSubmit={handleSubmit((data) => {
+							mutate(data);
+						})}
+					>
+						<Input
+							disabled={isLoading}
+							label="Legion Name"
+							register={register("name")}
+							placeholder="Ex. John Doe"
+						/>
+
+						<Error error={errors.name} />
+
+						<Input
+							disabled={isLoading}
+							label="Post Number"
+							register={register("subdomain")}
+							placeholder="Ex. 123"
+							type="number"
+						/>
+
+						<Error error={errors.subdomain} />
+
+						<Text variant="p" element="h2" center>
+							Where is you legion located?
+						</Text>
+
+						<Input
+							disabled={isLoading}
+							label="Street"
+							register={register("street")}
+							placeholder="Ex. 123 Main Street"
+						/>
+
+						<Error error={errors.street} />
+
+						<Input
+							disabled={isLoading}
+							label="City"
+							register={register("city")}
+							placeholder="Ex. Exampleville"
+						/>
+
+						<Error error={errors.city} />
+
+						<Input
+							disabled={isLoading}
+							label="State"
+							register={register("state")}
+						/>
+
+						<Error error={errors.state} />
+
+						<Input
+							disabled={isLoading}
+							label="Zip"
+							register={register("zip")}
+						/>
+
+						<Error error={errors.zip} />
+
+						<Text variant="p" element="h2" center>
+							What social media accounts does your legion use?
+						</Text>
+
+						<Input
+							disabled={isLoading}
+							label="Facebook"
+							register={register("facebook")}
+						/>
+
+						<Error error={errors.facebook} />
+
+						<Input
+							disabled={isLoading}
+							label="Instagram"
+							register={register("instagram")}
+						/>
+
+						<Error error={errors.instagram} />
+
+						<Input
+							disabled={isLoading}
+							label="Twitter"
+							register={register("twitter")}
+						/>
+
+						<Error error={errors.twitter} />
+
+						<Input
+							disabled={isLoading}
+							label="YouTube"
+							register={register("youtube")}
+						/>
+
+						<Error error={errors.youtube} />
+
+						<div className="flex flex-col space-y-1 flex-1">
+							<Text variant="h6" element="label" htmlFor="color">
+								Color
+							</Text>
+							<div className="flex space-x-2">
+								<select
+									{...register("color")}
+									className="rounded-md dark:bg-neutral-800 bg-neutral-200 text-black dark:text-white placeholder:text-neutral-400 border-transparent focus:border-neutral-300 dark:focus:border-neutral-700 focus:bg-transparent focus:ring-0 form-input disabled:cursor-not-allowed disabled:text-opacity-30 dark:disabled:text-opacity-30 flex-1"
+									id="color"
+								>
+									{Object.keys(Color).map((color) => (
+										<option value={color}>{color}</option>
+									))}
+								</select>
+
+								<div
+									className={`${getBgColor(watchColor)} rounded-md w-10`}
+								></div>
+							</div>
+						</div>
+
+						<Error error={errors.color} />
+
+						<input
+							disabled={isLoading}
+							type="submit"
+							value="Create"
+							className="dark:bg-white dark:text-black bg-black text-white rounded-md p-2"
+						/>
+
+						<Button color="ghost" href="/">
+							Cancel
+						</Button>
+					</form>
+				</div>
+			</div>
+		</Container>
 	);
 }

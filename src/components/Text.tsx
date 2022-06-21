@@ -5,7 +5,7 @@ import cn from "variant-classnames";
 import getTextColor from "@/utils/get-text-color";
 
 export type Variant = "h1" | "h2" | "h3" | "h4" | "h5" | "h6" | "p" | "a";
-type Element = Variant | "span" | "li" | "dd" | "dt";
+type Element = Variant | "span" | "li" | "dd" | "dt" | "label";
 export type Color = "dark" | "light" | "primary";
 export type Size = "sm" | "md" | "lg";
 
@@ -19,7 +19,7 @@ type Props = {
 	cap?: boolean;
 	center?: boolean;
 	href?: string;
-	// [rest: string]: any;
+	[rest: string]: any;
 };
 
 const Text: React.FC<Props> = ({
@@ -32,7 +32,7 @@ const Text: React.FC<Props> = ({
 	children,
 	cap,
 	center,
-	//...rest
+	...rest
 }) => {
 	const { color: themeColor } = useTheme();
 
@@ -57,7 +57,7 @@ const Text: React.FC<Props> = ({
 	const variants = {
 		$all: `${className} transition-colors flex items-center`,
 		cap: "uppercase",
-		center: "text-center",
+		center: "text-center justify-center",
 		variant: {
 			h1: {
 				$all: "font-bold",
@@ -108,9 +108,9 @@ const Text: React.FC<Props> = ({
 				$all: "font-bold text-sm",
 				color: headingColors,
 				size: {
-					sm: "text-sm   sm:text-sm   md:text-base lg:text-lg",
-					md: "text-base sm:text-base md:text-lg   lg:text-xl",
-					lg: "text-lg   sm:text-lg   md:text-xl   lg:text-2xl",
+					sm: "text-sm",
+					md: "text-base",
+					lg: "text-lg",
 				},
 			},
 			p: {
@@ -161,7 +161,7 @@ const Text: React.FC<Props> = ({
 		element,
 		{
 			className: styles,
-			//...rest,
+			...rest,
 		},
 		children
 	);

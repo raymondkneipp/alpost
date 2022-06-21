@@ -19,6 +19,15 @@ export const siteRouter = trpc
 				data: {
 					name: input.name,
 					subdomain: input.subdomain,
+					street: input.street,
+					city: input.city,
+					state: input.state,
+					zip: input.zip,
+					facebook: input.facebook,
+					instagram: input.instagram,
+					twitter: input.twitter,
+					youtube: input.youtube,
+					color: input.color,
 				},
 			});
 		},
