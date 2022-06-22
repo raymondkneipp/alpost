@@ -72,7 +72,7 @@ export default function CreatePage() {
 						<Error error={errors.subdomain} />
 
 						<Text variant="p" element="h2" center>
-							Where is you legion located?
+							Where is your legion located?
 						</Text>
 
 						<Input
@@ -169,7 +169,7 @@ export default function CreatePage() {
 								<div
 									className={`${getBgColor(
 										watchColor
-									)} rounded-md w-10 border border-black dark:border-white`}
+									)} rounded-md w-10 border-2 border-black dark:border-white`}
 								></div>
 							</div>
 						</div>
