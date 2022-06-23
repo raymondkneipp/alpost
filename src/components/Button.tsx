@@ -52,7 +52,11 @@ const Button: React.FC<Props> = ({
 		);
 	}
 
-	return <button className={cn(variants, { color, size })}>{children}</button>;
+	return (
+		<button className={cn(variants, { color, size })} onClick={onClick}>
+			{children}
+		</button>
+	);
 };
 
 export default Button;

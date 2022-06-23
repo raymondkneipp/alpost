@@ -13,16 +13,6 @@ const Home: NextPage = () => {
 		return <div>Loading...</div>;
 	}
 
-	let domain: string;
-	let proto: string;
-	if (process.env.NODE_ENV === "development") {
-		proto = "http";
-		domain = "localhost:3000";
-	} else {
-		proto = "https";
-		domain = "alpost.org";
-	}
-
 	return (
 		<div className="min-h-screen flex items-center justify-center flex-col">
 			<Container spacer>
@@ -34,6 +24,9 @@ const Home: NextPage = () => {
 								<Text variant="h1">ALPost</Text>
 								<Text size="lg">Welcome to American Legion Post Creator!</Text>
 							</div>
+							<Button href="/login" size="lg" color="primary">
+								Sign Up
+							</Button>
 						</>
 					}
 				>
@@ -57,9 +50,6 @@ const Home: NextPage = () => {
 								</Text>
 							</a>
 						))}
-						<Button href="/create" size="lg" color="primary">
-							Create a New Post!
-						</Button>
 					</>
 				</Wide>
 			</Container>
