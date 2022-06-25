@@ -63,9 +63,9 @@ const Text: React.FC<Props> = ({
 				$all: "font-medium font-display",
 				color: headingColors,
 				size: {
-					sm: "text-3xl sm:text-3xl md:text-4xl lg:text-5xl",
-					md: "text-4xl sm:text-4xl md:text-5xl lg:text-6xl",
-					lg: "text-5xl sm:text-5xl md:text-6xl lg:text-7xl",
+					sm: "text-3xl sm:text-4xl md:text-4xl lg:text-5xl",
+					md: "text-4xl sm:text-5xl md:text-5xl lg:text-6xl",
+					lg: "text-5xl sm:text-6xl md:text-6xl lg:text-7xl",
 				},
 			},
 			h2: {

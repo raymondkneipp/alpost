@@ -3,7 +3,7 @@ import { trpc } from "@/utils/trpc";
 import getBgColor from "@/utils/get-bg-color";
 import getDomain from "@/utils/get-domain";
 import { Button, Container, Logo, Text, Wide } from "@/components";
-import { Navbar, Pricing } from "@/components/home";
+import { Hero, Navbar, Pricing } from "@/components/home";
 import getRadius from "@/utils/get-radius";
 
 const Home: NextPage = () => {
@@ -16,6 +16,7 @@ const Home: NextPage = () => {
 	return (
 		<>
 			<Navbar />
+			<Hero />
 			<div className="min-h-screen flex items-center justify-center flex-col">
 				<Container spacer>
 					<Wide
