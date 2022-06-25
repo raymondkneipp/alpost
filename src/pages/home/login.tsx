@@ -37,7 +37,8 @@ export default function SignUp() {
 						<div className="flex flex-col items-center">
 							<Logo />
 							<Text variant="h4" element="h1">
-								AL<span className={getTextColor(color)}>Post</span>
+								<span className={getTextColor("RED")}>A</span>L
+								<span className={getTextColor(color)}>Post</span>
 							</Text>
 							<div className="flex-1 flex flex-col self-stretch space-y-4 mt-4">
 								<Button

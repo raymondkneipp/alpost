@@ -6,7 +6,9 @@ const Hero: React.FC = () => {
 	return (
 		<section>
 			<Container spacer centered className="max-w-screen-md">
-				<Text variant="h1">A Cool Tagline For a Cool Product</Text>
+				<Text variant="h1" color="usa">
+					A Cool Tagline For a Cool Product
+				</Text>
 				<Text variant="p" size="lg">
 					Lorem ipsum dolor sit amet consectetur adipisicing elit. Consectetur
 					saepe accusamus fugit id voluptatibus beatae sint, iusto sit

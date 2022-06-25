@@ -14,9 +14,8 @@ const Navbar: React.FC = () => {
 				<Link href="/">
 					<a className="flex items-center space-x-2">
 						<Logo />
-						<Text variant="h5" size="sm" element="span">
-							AL
-							<span className={getTextColor(color)}>Post</span>
+						<Text variant="h5" size="sm" element="span" color="usa">
+							ALPost
 						</Text>
 					</a>
 				</Link>

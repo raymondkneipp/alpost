@@ -6,7 +6,7 @@ import getTextColor from "@/utils/get-text-color";
 
 export type Variant = "h1" | "h2" | "h3" | "h4" | "h5" | "h6" | "p" | "a";
 type Element = Variant | "span" | "li" | "dd" | "dt" | "label";
-export type Color = "dark" | "light" | "primary";
+export type Color = "dark" | "light" | "primary" | "usa";
 export type Size = "sm" | "md" | "lg";
 
 type Props = {
@@ -40,6 +40,7 @@ const Text: React.FC<Props> = ({
 		dark: "text-neutral-900 dark:text-neutral-100",
 		light: "text-white dark:text-neutral-100",
 		primary: getTextColor(themeColor),
+		usa: "text-transparent bg-clip-text bg-gradient-to-r dark:from-red-500 dark:via-neutral-100 dark:to-sky-500 from-red-700 via-neutral-700 to-sky-700",
 	};
 
 	const regularColors = {
