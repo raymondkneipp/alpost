@@ -4,6 +4,9 @@ import type { AppRouter } from "../backend/router";
 import superjson from "superjson";
 import { SessionProvider } from "next-auth/react";
 import "../styles/globals.css";
+import "@fontsource/lexend/600.css";
+import "@fontsource/lexend/400.css";
+import "@fontsource/inter/400.css";
 
 const MyApp: AppType = ({
 	Component,
