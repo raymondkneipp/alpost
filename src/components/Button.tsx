@@ -15,6 +15,7 @@ type Props = {
 	onClick?: () => void;
 	color?: Color;
 	size?: Size;
+	className?: string;
 };
 
 const Button: React.FC<Props> = ({
@@ -23,11 +24,12 @@ const Button: React.FC<Props> = ({
 	children,
 	color = "primary",
 	size = "md",
+	className = "",
 }) => {
 	const { color: themeColor, radius } = useTheme();
 
 	const variants = {
-		$all: `inline-flex font-semibold text-center justify-center items-center transition hover:scale-105 active:scale-100 font-body ${getRadius(
+		$all: `${className} inline-flex font-semibold text-center justify-center items-center transition hover:scale-105 active:scale-100 font-body ${getRadius(
 			radius
 		)}`,
 		color: {

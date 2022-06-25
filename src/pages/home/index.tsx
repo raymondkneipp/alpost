@@ -21,25 +21,16 @@ const Home: NextPage = () => {
 				<Container spacer>
 					<Wide
 						master={
-							<>
-								<Logo />
-								<div>
-									<Text variant="h1">ALPost</Text>
-									<Text size="lg">
-										Welcome to American Legion Post Creator!
-									</Text>
-								</div>
-								<Button href="/login" size="lg" color="primary">
-									Sign Up
-								</Button>
-							</>
+							<Text variant="h2" center>
+								Join the {data.length} legions using ALPost!
+							</Text>
 						}
 					>
 						<>
 							{data.map((site) => (
 								<a
 									key={site.id}
-									href={getDomain(site)}
+									href={getDomain(site.subdomain)}
 									className={`transition-colors text-gray-200 hover:text-white border border-neutral-600 hover:border-white p-3 h-36 flex items-stretch justify-between flex-col ${getBgColor(
 										site.color
 									)} ${getRadius(site.radius)}`}
@@ -51,7 +42,7 @@ const Home: NextPage = () => {
 										</Text>
 									</div>
 									<Text color="light" size="sm">
-										{getDomain(site)}
+										{getDomain(site.subdomain)}
 									</Text>
 								</a>
 							))}

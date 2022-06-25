@@ -5,15 +5,20 @@ import {
 } from "shared/create-site-validator";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { trpc } from "@/utils/trpc";
-import { Button, Container, Error, Input, Logo, Text } from "@/components";
+import { Button, Container, Error, Input, Text } from "@/components";
+import { Logo } from "@/components/home";
 import getDomain from "@/utils/get-domain";
 import { Color, Radius } from "@prisma/client";
 import getBgColor from "@/utils/get-bg-color";
 import getRadius from "@/utils/get-radius";
 import { useSession, signIn, signOut } from "next-auth/react";
+import { FaGithub, FaGoogle } from "react-icons/fa";
+import getTextColor from "@/utils/get-text-color";
+import useTheme from "store/theme";
 
 export default function SignUp() {
 	const { data: session } = useSession();
+	const { color } = useTheme();
 
 	return (
 		<Container spacer>
@@ -29,14 +34,26 @@ export default function SignUp() {
 							</Button>
 						</>
 					) : (
-						<>
-							<Text variant="h1" center>
-								Sign Up
+						<div className="flex flex-col items-center">
+							<Logo />
+							<Text variant="h4" element="h1">
+								AL<span className={getTextColor(color)}>Post</span>
 							</Text>
-							<Button color="secondary" onClick={() => signIn("github")}>
-								Sign Up with Github
-							</Button>
-						</>
+							<div className="flex-1 flex flex-col self-stretch space-y-4 mt-4">
+								<Button
+									color="secondary"
+									onClick={() => signIn("github")}
+									size="lg"
+								>
+									<FaGithub size={30} className="mr-2" />
+									Continue with Github
+								</Button>
+								<Button color="secondary" size="lg">
+									<FaGoogle size={30} className="mr-2" />
+									Continue with Google
+								</Button>
+							</div>
+						</div>
 					)}
 				</div>
 			</div>

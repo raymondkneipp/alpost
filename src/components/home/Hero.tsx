@@ -1,22 +1,23 @@
 import { Container, Text, Button } from "@/components";
+import getDomain from "@/utils/get-domain";
 import { FaPlay } from "react-icons/fa";
 
 const Hero: React.FC = () => {
 	return (
 		<section>
-			<Container spacer centered>
+			<Container spacer centered className="max-w-screen-md">
 				<Text variant="h1">A Cool Tagline For a Cool Product</Text>
 				<Text variant="p" size="lg">
 					Lorem ipsum dolor sit amet consectetur adipisicing elit. Consectetur
 					saepe accusamus fugit id voluptatibus beatae sint, iusto sit
 				</Text>
 				<div className="flex space-x-4">
-					<Button href="/" color="primary" size="lg">
-						Free Trial
+					<Button href="/login" color="primary" size="lg">
+						Get Started
 					</Button>
-					<Button href="/" color="ghost" size="lg">
+					<Button href={getDomain("demo")} color="ghost" size="lg">
 						<FaPlay className="mr-2" />
-						Watch Video
+						View Demo
 					</Button>
 				</div>
 			</Container>
