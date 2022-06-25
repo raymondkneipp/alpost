@@ -1,4 +1,5 @@
-import { Container, Logo, NavLink, Text } from "@/components";
+import { Container, Logo, Text } from "@/components";
+import { NavLink } from "@/components/sites";
 import getTextColor from "@/utils/get-text-color";
 import { Color } from "@prisma/client";
 import { useTheme } from "@/store";

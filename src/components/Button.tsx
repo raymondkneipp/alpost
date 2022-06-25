@@ -1,4 +1,5 @@
-import { Container, Logo, NavLink, Text } from "@/components";
+import { Container, Logo, Text } from "@/components";
+import { NavLink } from "@/components/sites";
 import { useTheme } from "@/store";
 import getBgColor from "@/utils/get-bg-color";
 import getRadius from "@/utils/get-radius";
@@ -26,7 +27,7 @@ const Button: React.FC<Props> = ({
 	const { color: themeColor, radius } = useTheme();
 
 	const variants = {
-		$all: `inline-flex font-bold text-center justify-center items-center transition hover:scale-105 active:scale-100 ${getRadius(
+		$all: `inline-flex font-semibold text-center justify-center items-center transition hover:scale-105 active:scale-100 font-body ${getRadius(
 			radius
 		)}`,
 		color: {

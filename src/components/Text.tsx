@@ -60,7 +60,7 @@ const Text: React.FC<Props> = ({
 		center: "text-center justify-center",
 		variant: {
 			h1: {
-				$all: "font-bold",
+				$all: "font-medium font-display",
 				color: headingColors,
 				size: {
 					sm: "text-3xl sm:text-3xl md:text-4xl lg:text-5xl",
@@ -69,7 +69,7 @@ const Text: React.FC<Props> = ({
 				},
 			},
 			h2: {
-				$all: "font-bold",
+				$all: "font-medium font-display",
 				color: headingColors,
 				size: {
 					sm: "text-2xl  sm:text-2xl md:text-3xl lg:text-4xl",
@@ -78,7 +78,7 @@ const Text: React.FC<Props> = ({
 				},
 			},
 			h3: {
-				$all: "font-bold",
+				$all: "font-medium font-display",
 				color: headingColors,
 				size: {
 					sm: "text-xl  sm:text-xl  md:text-2xl lg:text-3xl",
@@ -87,7 +87,7 @@ const Text: React.FC<Props> = ({
 				},
 			},
 			h4: {
-				$all: "font-bold",
+				$all: "font-medium font-display",
 				color: headingColors,
 				size: {
 					sm: "text-lg  sm:text-lg  md:text-xl  lg:text-2xl",
@@ -96,7 +96,7 @@ const Text: React.FC<Props> = ({
 				},
 			},
 			h5: {
-				$all: "font-bold",
+				$all: "font-medium font-display",
 				color: headingColors,
 				size: {
 					sm: "text-base sm:text-base md:text-lg  lg:text-xl",
@@ -105,7 +105,7 @@ const Text: React.FC<Props> = ({
 				},
 			},
 			h6: {
-				$all: "font-bold text-sm",
+				$all: "font-medium font-display text-sm",
 				color: headingColors,
 				size: {
 					sm: "text-sm",
@@ -114,7 +114,7 @@ const Text: React.FC<Props> = ({
 				},
 			},
 			p: {
-				$all: "",
+				$all: "font-body",
 				color: regularColors,
 				size: {
 					sm: "text-sm",
@@ -123,7 +123,7 @@ const Text: React.FC<Props> = ({
 				},
 			},
 			a: {
-				$all: "underline",
+				$all: "underline font-body",
 				color: linkColors,
 				size: {
 					sm: "text-sm",

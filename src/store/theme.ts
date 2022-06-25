@@ -9,9 +9,9 @@ interface ThemeState {
 }
 
 const useTheme = create<ThemeState>((set) => ({
-	color: Color.SKY,
+	color: Color.RED,
 	setColor: (newColor) => set((state) => ({ color: newColor })),
-	radius: Radius.REGULAR,
+	radius: Radius.XXXL,
 	setRadius: (newRadius) => set((state) => ({ radius: newRadius })),
 }));
 

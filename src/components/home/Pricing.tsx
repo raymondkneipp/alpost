@@ -18,6 +18,10 @@ const PricingItem: React.FC<PricingItemProps> = ({ name, price, perks }) => {
 				<Text variant="h2" element="h4">
 					${price}
 				</Text>
+
+				<Text variant="p" size="sm" element="h5">
+					per month
+				</Text>
 			</div>
 
 			<List>
@@ -42,7 +46,7 @@ const Pricing: React.FC = () => {
 			<Wide master={<Text variant="h2">Pricing Plans</Text>}>
 				<PricingItem
 					name="Budget"
-					price={14}
+					price={15}
 					perks={[
 						"SSL Encryption",
 						"Light & Dark Mode",

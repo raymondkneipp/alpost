@@ -1,4 +1,5 @@
-import { Text, Container, Wide, NewsSkeleton, NewsEmpty } from "@/components";
+import { Text, Container, Wide } from "@/components";
+import { NewsSkeleton, NewsEmpty } from "@/components/sites";
 import getRadius from "@/utils/get-radius";
 import { trpc } from "@/utils/trpc";
 import { News } from "@prisma/client";

@@ -3,16 +3,8 @@ import { ParsedUrlQuery } from "querystring";
 import { prisma } from "@/db/client";
 import { Site } from "@prisma/client";
 import getBgColor from "@/utils/get-bg-color";
-import {
-	Button,
-	Container,
-	CTA,
-	Footer,
-	Hero,
-	Navbar,
-	News,
-	Text,
-} from "@/components";
+import { Button, Container, Text } from "@/components";
+import { CTA, Footer, Hero, Navbar, News } from "@/components/sites";
 import { useEffect } from "react";
 import { useAddress, usePost, useSocials, useTheme } from "@/store";
 

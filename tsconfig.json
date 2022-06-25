@@ -19,7 +19,8 @@
 			"@/db/*": ["db/*"],
 			"@/backend/*": ["backend/*"],
 			"@/utils/*": ["utils/*"],
-			"@/components/*": ["components/*"],
+			"@/components/sites": ["components/sites/index"],
+			"@/components/home": ["components/home/index"],
 			"@/components": ["components/index"],
 			"@/store": ["store/index"]
 		}

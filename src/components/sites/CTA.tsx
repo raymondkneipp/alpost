@@ -1,4 +1,5 @@
-import { Container, Logo, NavLink, Text, Button } from "@/components";
+import { Container, Logo, Text, Button } from "@/components";
+import { NavLink } from "@/components/sites";
 import { useTheme } from "@/store";
 import getBgColor from "@/utils/get-bg-color";
 
