@@ -9,7 +9,6 @@ import Image from "next/image";
 const TestimonialItem: React.FC<{ site: Site }> = ({ site }) => {
 	return (
 		<a
-			key={site.id}
 			href={getDomain(site.subdomain)}
 			className="p-8 rounded-3xl shadow-xl bg-white dark:bg-neutral-800"
 		>
@@ -58,7 +57,7 @@ const Testimonials: React.FC = () => {
 			>
 				<>
 					{data.map((site) => (
-						<TestimonialItem site={site} />
+						<TestimonialItem site={site} key={site.id} />
 					))}
 				</>
 			</Wide>
