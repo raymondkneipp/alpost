@@ -1,6 +1,6 @@
 import { useState, Fragment } from "react";
 import { Text, Button, Container } from "@/components";
-import { Logo } from "@/components/home";
+import { Brand } from "@/components/home";
 import getTextColor from "@/utils/get-text-color";
 import Link from "next/link";
 import { FaBars, FaTimes } from "react-icons/fa";
@@ -16,10 +16,7 @@ const Navbar: React.FC = () => {
 			<Container className="flex items-center justify-between md:space-x-8 relative">
 				<Link href="/">
 					<a className="flex items-center space-x-2">
-						<Logo />
-						<Text variant="h4" size="sm" element="span">
-							ALPost
-						</Text>
+						<Brand />
 					</a>
 				</Link>
 				<div className={`flex-1 hidden space-x-2 md:flex`}>

@@ -6,7 +6,7 @@ import {
 import { zodResolver } from "@hookform/resolvers/zod";
 import { trpc } from "@/utils/trpc";
 import { Button, Container, Error, Input, Text } from "@/components";
-import { Logo } from "@/components/home";
+import { Brand, Logo } from "@/components/home";
 import getDomain from "@/utils/get-domain";
 import { Color, Radius } from "@prisma/client";
 import getBgColor from "@/utils/get-bg-color";
@@ -14,11 +14,9 @@ import getRadius from "@/utils/get-radius";
 import { useSession, signIn, signOut } from "next-auth/react";
 import { FaGithub, FaGoogle } from "react-icons/fa";
 import getTextColor from "@/utils/get-text-color";
-import useTheme from "store/theme";
 
 export default function SignUp() {
 	const { data: session } = useSession();
-	const { color } = useTheme();
 
 	return (
 		<Container spacer>
@@ -35,10 +33,7 @@ export default function SignUp() {
 						</>
 					) : (
 						<div className="flex flex-col items-center">
-							<Logo />
-							<Text variant="h3" element="h1" color="usa">
-								ALPost
-							</Text>
+							<Brand />
 							<div className="flex-1 flex flex-col self-stretch space-y-4 mt-4">
 								<Button
 									color="secondary"

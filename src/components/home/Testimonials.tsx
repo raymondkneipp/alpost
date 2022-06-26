@@ -49,7 +49,7 @@ const Testimonials: React.FC = () => {
 			<Wide
 				master={
 					<div className="max-w-screen-md mx-auto space-y-8">
-						<Text variant="h2" center className={getTextColor("RED")}>
+						<Text variant="h2" center>
 							Loved by legions worldwide
 						</Text>
 						<Text center>

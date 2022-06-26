@@ -1,5 +1,5 @@
 import type { NextPage } from "next";
-import { Hero, Navbar, Pricing, Testimonials } from "@/components/home";
+import { Hero, Navbar, Pricing, Testimonials, Footer } from "@/components/home";
 
 const Home: NextPage = () => {
 	return (
@@ -8,6 +8,7 @@ const Home: NextPage = () => {
 			<Hero />
 			<Testimonials />
 			<Pricing />
+			<Footer />
 		</>
 	);
 };
