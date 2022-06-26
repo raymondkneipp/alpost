@@ -36,7 +36,7 @@ export default function SignUp() {
 					) : (
 						<div className="flex flex-col items-center">
 							<Logo />
-							<Text variant="h4" element="h1" color="usa">
+							<Text variant="h3" element="h1" color="usa">
 								ALPost
 							</Text>
 							<div className="flex-1 flex flex-col self-stretch space-y-4 mt-4">

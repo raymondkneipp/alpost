@@ -15,7 +15,7 @@ const PricingItem: React.FC<PricingItemProps> = ({ name, price, perks }) => {
 
 	return (
 		<div
-			className={`bg-neutral-200 dark:bg-neutral-800 p-4 flex flex-col space-y-4 ${getRadius(
+			className={`shadow-xl bg-white dark:bg-neutral-800 p-4 flex flex-col space-y-4 ${getRadius(
 				radius
 			)}`}
 		>
