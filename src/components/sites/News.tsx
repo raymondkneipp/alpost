@@ -26,6 +26,7 @@ const NewsItem: React.FC<NewsItemProps> = ({ news }) => {
 				height={100}
 				layout="responsive"
 				objectFit="cover"
+				alt="american flag"
 			/>
 			<div className="p-4">
 				<Text variant="h5" element="h3">
