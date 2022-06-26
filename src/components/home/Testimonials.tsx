@@ -5,12 +5,16 @@ import getBgColor from "@/utils/get-bg-color";
 import getDomain from "@/utils/get-domain";
 import { Site } from "@prisma/client";
 import Image from "next/image";
+import useTheme from "store/theme";
 
 const TestimonialItem: React.FC<{ site: Site }> = ({ site }) => {
+	const { radius } = useTheme();
 	return (
 		<a
 			href={getDomain(site.subdomain)}
-			className="p-8 rounded-3xl shadow-xl bg-white dark:bg-neutral-800"
+			className={`p-8 shadow-xl bg-white dark:bg-neutral-800 ${getRadius(
+				radius
+			)}`}
 		>
 			<div>
 				<Text size="lg">

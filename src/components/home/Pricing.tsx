@@ -1,5 +1,7 @@
 import { Button, Container, Text, List, Item, Wide } from "@/components";
+import getRadius from "@/utils/get-radius";
 import { FaCheck } from "react-icons/fa";
+import useTheme from "store/theme";
 
 type PricingItemProps = {
 	name: string;
@@ -8,8 +10,14 @@ type PricingItemProps = {
 };
 
 const PricingItem: React.FC<PricingItemProps> = ({ name, price, perks }) => {
+	const { radius } = useTheme();
+
 	return (
-		<div className="bg-neutral-200 dark:bg-neutral-800 rounded-md p-4 flex flex-col space-y-4">
+		<div
+			className={`bg-neutral-200 dark:bg-neutral-800 p-4 flex flex-col space-y-4 ${getRadius(
+				radius
+			)}`}
+		>
 			<div className="flex flex-col">
 				<Text variant="h5" element="h3">
 					{name}
