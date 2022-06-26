@@ -6,7 +6,7 @@ import getRadius from "@/utils/get-radius";
 import Link from "next/link";
 import cn from "variant-classnames";
 
-type Color = "primary" | "secondary" | "light" | "ghost";
+type Color = "primary" | "secondary" | "light" | "ghost" | "usa";
 type Size = "sm" | "md" | "lg";
 
 type Props = {
@@ -39,6 +39,7 @@ const Button: React.FC<Props> = ({
 			ghost:
 				"hover:bg-neutral-200 hover:dark:bg-neutral-800 text-neutral-600 dark:text-neutral-400",
 			light: "bg-neutral-200 text-neutral-900",
+			usa: "text-white dark:text-black bg-gradient-to-r dark:from-red-500 dark:to-sky-500 from-red-700 to-sky-700",
 		},
 		size: {
 			sm: "py-1 px-2 text-sm",

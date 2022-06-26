@@ -1,5 +1,6 @@
 import { Button, Container, Text, List, Item, Wide } from "@/components";
 import getRadius from "@/utils/get-radius";
+import getTextColor from "@/utils/get-text-color";
 import { FaCheck } from "react-icons/fa";
 import useTheme from "store/theme";
 
@@ -10,7 +11,7 @@ type PricingItemProps = {
 };
 
 const PricingItem: React.FC<PricingItemProps> = ({ name, price, perks }) => {
-	const { radius } = useTheme();
+	const { radius, color } = useTheme();
 
 	return (
 		<div
@@ -35,14 +36,16 @@ const PricingItem: React.FC<PricingItemProps> = ({ name, price, perks }) => {
 			<List>
 				{perks.map((perk, i) => (
 					<Item key={`${i}${name}`}>
-						<FaCheck className="mr-2 text-green-600 dark:text-green-400" />
+						<FaCheck className={`mr-2 ${getTextColor(color)}`} />
 						{perk}
 					</Item>
 				))}
 			</List>
 
 			<div className="flex flex-col justify-end flex-1">
-				<Button href="/create">Buy {name}</Button>
+				<Button href="/create" color="usa">
+					Buy {name}
+				</Button>
 			</div>
 		</div>
 	);

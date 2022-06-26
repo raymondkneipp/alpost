@@ -6,7 +6,7 @@ const Hero: React.FC = () => {
 	return (
 		<section>
 			<Container spacer centered className="max-w-screen-md">
-				<Text variant="h1" color="usa">
+				<Text variant="h1" color="primary">
 					A Cool Tagline For a Cool Product
 				</Text>
 				<Text variant="p" size="lg">
@@ -14,7 +14,7 @@ const Hero: React.FC = () => {
 					saepe accusamus fugit id voluptatibus beatae sint, iusto sit
 				</Text>
 				<div className="flex space-x-4">
-					<Button href="/login" color="primary" size="lg">
+					<Button href="/login" color="usa" size="lg">
 						Get Started
 					</Button>
 					<Button href={getDomain("demo")} color="ghost" size="lg">

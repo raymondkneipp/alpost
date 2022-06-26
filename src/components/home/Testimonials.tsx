@@ -6,6 +6,7 @@ import getDomain from "@/utils/get-domain";
 import { Site } from "@prisma/client";
 import Image from "next/image";
 import useTheme from "store/theme";
+import getTextColor from "@/utils/get-text-color";
 
 const TestimonialItem: React.FC<{ site: Site }> = ({ site }) => {
 	const { radius } = useTheme();
@@ -48,7 +49,7 @@ const Testimonials: React.FC = () => {
 			<Wide
 				master={
 					<div className="max-w-screen-md mx-auto space-y-8">
-						<Text variant="h2" center>
+						<Text variant="h2" center className={getTextColor("RED")}>
 							Loved by legions worldwide
 						</Text>
 						<Text center>

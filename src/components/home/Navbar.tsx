@@ -17,7 +17,7 @@ const Navbar: React.FC = () => {
 				<Link href="/">
 					<a className="flex items-center space-x-2">
 						<Logo />
-						<Text variant="h4" size="sm" element="span" color="usa">
+						<Text variant="h4" size="sm" element="span">
 							ALPost
 						</Text>
 					</a>
@@ -31,7 +31,9 @@ const Navbar: React.FC = () => {
 					<div className="hidden md:block">
 						<NavLink href="/login">Sign In</NavLink>
 					</div>
-					<Button href="/login">Get Started</Button>
+					<Button href="/login" color="usa">
+						Get Started
+					</Button>
 
 					<Popover className="md:hidden">
 						{({ open }) => (
