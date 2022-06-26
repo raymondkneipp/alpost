@@ -1,4 +1,5 @@
 import { Button, Container, Text, List, Item, Wide } from "@/components";
+import getBgColor from "@/utils/get-bg-color";
 import getRadius from "@/utils/get-radius";
 import getTextColor from "@/utils/get-text-color";
 import { FaCheck } from "react-icons/fa";
@@ -8,16 +9,24 @@ type PricingItemProps = {
 	name: string;
 	price: number;
 	perks: string[];
+	special?: boolean;
 };
 
-const PricingItem: React.FC<PricingItemProps> = ({ name, price, perks }) => {
+const PricingItem: React.FC<PricingItemProps> = ({
+	name,
+	price,
+	perks,
+	special,
+}) => {
 	const { radius, color } = useTheme();
 
 	return (
 		<div
-			className={`shadow-xl bg-white dark:bg-neutral-800 p-4 flex flex-col space-y-4 ${getRadius(
-				radius
-			)}`}
+			className={`p-4 flex flex-col space-y-4 ${getRadius(radius)} ${
+				special
+					? "bg-white dark:bg-neutral-800 shadow-xl order-first md:order-none"
+					: ""
+			}`}
 		>
 			<div className="flex flex-col">
 				<Text variant="h5" element="h3">
@@ -43,7 +52,7 @@ const PricingItem: React.FC<PricingItemProps> = ({ name, price, perks }) => {
 			</List>
 
 			<div className="flex flex-col justify-end flex-1">
-				<Button href="/create" color="usa">
+				<Button href="/create" color={special ? "usa" : "secondary"}>
 					Buy {name}
 				</Button>
 			</div>
@@ -66,6 +75,7 @@ const Pricing: React.FC = () => {
 					]}
 				/>
 				<PricingItem
+					special
 					name="Basic"
 					price={19}
 					perks={[
