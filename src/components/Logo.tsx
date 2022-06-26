@@ -1,12 +1,16 @@
 import Image from "next/image";
 
-const Logo: React.FC = () => {
+type Props = {
+	size?: number;
+};
+
+const Logo: React.FC<Props> = ({ size = 80 }) => {
 	return (
 		<Image
 			src="/American-Legion-Emblem-borderless.png"
 			layout="fixed"
-			width="80"
-			height="80"
+			width={size}
+			height={size}
 			objectFit="contain"
 			alt="American Legion Logo"
 			priority={true}

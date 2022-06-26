@@ -17,7 +17,7 @@ const Navbar: React.FC = () => {
 				<Link href="/">
 					<a className="flex items-center space-x-2">
 						<Logo />
-						<Text variant="h5" size="sm" element="span" color="usa">
+						<Text variant="h4" size="sm" element="span" color="usa">
 							ALPost
 						</Text>
 					</a>
