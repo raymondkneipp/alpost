@@ -14,11 +14,7 @@ const Navbar: React.FC = () => {
 	return (
 		<nav className="py-10">
 			<Container className="flex items-center justify-between md:space-x-8 relative">
-				<Link href="/">
-					<a className="flex items-center space-x-2">
-						<Brand />
-					</a>
-				</Link>
+				<Brand />
 				<div className={`flex-1 hidden space-x-2 md:flex`}>
 					<NavLink href="/#features">Features</NavLink>
 					<NavLink href="/#testimonials">Testimonials</NavLink>

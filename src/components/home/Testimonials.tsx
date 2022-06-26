@@ -45,28 +45,30 @@ const Testimonials: React.FC = () => {
 	}
 
 	return (
-		<Container spacer>
-			<Wide
-				master={
-					<div className="max-w-screen-md mx-auto space-y-8">
-						<Text variant="h2" center>
-							Loved by legions worldwide
-						</Text>
-						<Text center>
-							Our software is so simple that people can’t help but fall in love
-							with it. Simplicity is easy when you just skip tons of
-							mission-critical features.
-						</Text>
-					</div>
-				}
-			>
-				<>
-					{data.map((site) => (
-						<TestimonialItem site={site} key={site.id} />
-					))}
-				</>
-			</Wide>
-		</Container>
+		<section id="testimonials">
+			<Container spacer>
+				<Wide
+					master={
+						<div className="max-w-screen-md mx-auto space-y-8">
+							<Text variant="h2" center>
+								Loved by legions worldwide
+							</Text>
+							<Text center>
+								Our software is so simple that people can’t help but fall in
+								love with it. Simplicity is easy when you just skip tons of
+								mission-critical features.
+							</Text>
+						</div>
+					}
+				>
+					<>
+						{data.map((site) => (
+							<TestimonialItem site={site} key={site.id} />
+						))}
+					</>
+				</Wide>
+			</Container>
+		</section>
 	);
 };
 

@@ -62,36 +62,38 @@ const PricingItem: React.FC<PricingItemProps> = ({
 
 const Pricing: React.FC = () => {
 	return (
-		<Container spacer>
-			<Wide master={<Text variant="h2">Pricing Plans</Text>}>
-				<PricingItem
-					name="Budget"
-					price={15}
-					perks={[
-						"SSL Encryption",
-						"Light & Dark Mode",
-						"3 Themes",
-						"Free Subdomain",
-					]}
-				/>
-				<PricingItem
-					special
-					name="Basic"
-					price={19}
-					perks={[
-						"SSL Encryption",
-						"Light & Dark Mode",
-						"6 Themes",
-						"Custom Domain",
-					]}
-				/>
-				<PricingItem
-					name="Pro"
-					price={24}
-					perks={["SSL Encryption", "Light & Dark Mode", "9 Themes"]}
-				/>
-			</Wide>
-		</Container>
+		<section id="pricing">
+			<Container spacer>
+				<Wide master={<Text variant="h2">Pricing Plans</Text>}>
+					<PricingItem
+						name="Budget"
+						price={15}
+						perks={[
+							"SSL Encryption",
+							"Light & Dark Mode",
+							"3 Themes",
+							"Free Subdomain",
+						]}
+					/>
+					<PricingItem
+						special
+						name="Basic"
+						price={19}
+						perks={[
+							"SSL Encryption",
+							"Light & Dark Mode",
+							"6 Themes",
+							"Custom Domain",
+						]}
+					/>
+					<PricingItem
+						name="Pro"
+						price={24}
+						perks={["SSL Encryption", "Light & Dark Mode", "9 Themes"]}
+					/>
+				</Wide>
+			</Container>
+		</section>
 	);
 };
 

@@ -5,3 +5,4 @@ export { default as Logo } from "./Logo";
 export { default as Testimonials } from "./Testimonials";
 export { default as Footer } from "./Footer";
 export { default as Brand } from "./Brand";
+export { default as Features } from "./Features";

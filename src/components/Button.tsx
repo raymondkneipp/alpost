@@ -29,7 +29,7 @@ const Button: React.FC<Props> = ({
 	const { color: themeColor, radius } = useTheme();
 
 	const variants = {
-		$all: `${className} inline-flex font-semibold text-center justify-center items-center transition hover:scale-105 active:scale-100 font-body ${getRadius(
+		$all: `${className} inline-flex font-semibold text-center justify-center items-center transition md:hover:scale-105 md:active:scale-100 font-body ${getRadius(
 			radius
 		)}`,
 		color: {

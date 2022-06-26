@@ -1,11 +1,19 @@
 import type { NextPage } from "next";
-import { Hero, Navbar, Pricing, Testimonials, Footer } from "@/components/home";
+import {
+	Hero,
+	Navbar,
+	Pricing,
+	Testimonials,
+	Footer,
+	Features,
+} from "@/components/home";
 
 const Home: NextPage = () => {
 	return (
 		<>
 			<Navbar />
 			<Hero />
+			<Features />
 			<Testimonials />
 			<Pricing />
 			<Footer />
