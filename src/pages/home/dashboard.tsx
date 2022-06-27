@@ -18,7 +18,7 @@ import { useRouter } from "next/router";
 import { GetServerSidePropsContext } from "next";
 import { Session } from "next-auth";
 
-export default function LoginPage() {
+export default function DashboardPage() {
 	const { data: session, status } = useSession();
 	const router = useRouter();
 
@@ -26,8 +26,8 @@ export default function LoginPage() {
 		return <p>...</p>;
 	}
 
-	if (status === "authenticated") {
-		router.push("/dashboard");
+	if (status === "unauthenticated") {
+		router.push("/login");
 		return null;
 	}
 
@@ -35,23 +35,12 @@ export default function LoginPage() {
 		<Container spacer>
 			<div className="absolute top-0 left-0 right-0 min-h-screen flex flex-col space-y-4 items-center justify-center">
 				<div className="max-w-sm w-full flex flex-col space-y-4">
-					<div className="flex flex-col items-center">
-						<Brand />
-						<div className="flex-1 flex flex-col self-stretch space-y-4 mt-4">
-							<Button
-								color="secondary"
-								onClick={() => signIn("github")}
-								size="lg"
-							>
-								<FaGithub size={30} className="mr-2" />
-								Continue with Github
-							</Button>
-							<Button color="secondary" size="lg">
-								<FaGoogle size={30} className="mr-2" />
-								Continue with Google
-							</Button>
-						</div>
-					</div>
+					<Text variant="h1" center>
+						Hello and Welcome {session?.user?.email}
+					</Text>
+					<Button color="secondary" onClick={() => signOut()}>
+						Sign Out
+					</Button>
 				</div>
 			</div>
 		</Container>
