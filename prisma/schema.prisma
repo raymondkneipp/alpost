@@ -31,6 +31,9 @@ model Site {
   zip       String @default("")
 
   news News[]
+
+  user   User   @relation(fields: [userId], references: [id])
+  userId String @unique
 }
 
 model News {
@@ -114,6 +117,7 @@ model User {
   image         String?
   accounts      Account[]
   sessions      Session[]
+  site          Site?
 }
 
 model VerificationToken {

@@ -6,3 +6,4 @@ export { default as Testimonials } from "./Testimonials";
 export { default as Footer } from "./Footer";
 export { default as Brand } from "./Brand";
 export { default as Features } from "./Features";
+export { default as SideNav } from "./SideNav";

@@ -3,9 +3,9 @@ import superjson from "superjson";
 
 import { siteRouter } from "./sites";
 import { newsRouter } from "./news";
+import { createRouter } from "./context";
 
-export const appRouter = trpc
-	.router()
+export const appRouter = createRouter()
 	.transformer(superjson)
 	.merge("sites.", siteRouter)
 	.merge("news.", newsRouter);

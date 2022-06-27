@@ -31,7 +31,9 @@ export default function CreatePage() {
 
 	const { mutate, isLoading, data } = trpc.useMutation("sites.create", {
 		onSuccess: (data) => {
-			window.location.replace(getDomain(data.subdomain));
+			if (data?.site) {
+				window.location.replace(getDomain(data?.site?.subdomain));
+			}
 		},
 	});
 

@@ -4,8 +4,8 @@ const Logo: React.FC = () => {
 	return (
 		<Image
 			src="/favicon.svg"
-			width={50}
-			height={50}
+			width={56}
+			height={56}
 			layout="fixed"
 			priority={true}
 			alt="ALPost logo"

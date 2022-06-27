@@ -2,9 +2,9 @@ import * as trpc from "@trpc/server";
 import { z } from "zod";
 import superjson from "superjson";
 import { prisma } from "../../db/client";
+import { createRouter } from "./context";
 
-export const newsRouter = trpc
-	.router()
+export const newsRouter = createRouter()
 	.transformer(superjson)
 	.query("get-all-news", {
 		input: z.object({ subdomain: z.string() }),
