@@ -6,7 +6,7 @@ import { Container } from "@/components";
 const Footer: React.FC = () => {
 	return (
 		<footer>
-			<Container centered spacer className="pb-8">
+			<Container centered spacer className="pb-4">
 				<Brand />
 				<div className="flex space-x-2">
 					<NavLink href="/#features">Features</NavLink>
