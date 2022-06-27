@@ -16,7 +16,8 @@ const Footer: React.FC = () => {
 
 				<hr className="mx-4 my-2 dark:border-neutral-800 w-full" />
 
-				<div className="flex justify-center items-center w-full">
+				<div className="flex justify-between items-center w-full flex-col space-y-2 sm:space-y-0 sm:flex-row">
+					<Text>&copy; {new Date().getFullYear()} ALPost</Text>
 					<Text href="https://raymondkneipp.com" variant="a">
 						Website by Raymond Kneipp
 					</Text>
