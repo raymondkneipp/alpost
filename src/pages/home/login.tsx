@@ -1,46 +1,35 @@
-import { useForm, SubmitHandler } from "react-hook-form";
-import {
-	CreateSiteInputType,
-	createSiteValidator,
-} from "shared/create-site-validator";
-import { zodResolver } from "@hookform/resolvers/zod";
-import { trpc } from "@/utils/trpc";
-import { Button, Container, Error, Input, Text } from "@/components";
-import { Brand, Logo } from "@/components/home";
-import getDomain from "@/utils/get-domain";
-import { Color, Radius } from "@prisma/client";
-import getBgColor from "@/utils/get-bg-color";
-import getRadius from "@/utils/get-radius";
-import { useSession, signIn, signOut, getSession } from "next-auth/react";
-import { FaGithub, FaGoogle } from "react-icons/fa";
-import getTextColor from "@/utils/get-text-color";
-import { useRouter } from "next/router";
-import { GetServerSidePropsContext } from "next";
-import { Session } from "next-auth";
+import { Button, Container, Error, Input, Text } from '@/components/shared';
+import { Brand, Logo } from '@/components/home';
+import { useSession, signIn, signOut, getSession } from 'next-auth/react';
+import { FaGithub, FaGoogle } from 'react-icons/fa';
+import { trpc } from '@/utils/trpc';
+import { useRouter } from 'next/router';
+import { useEffect } from 'react';
 
 export default function LoginPage() {
-	const { data: session, status } = useSession();
+	const session = useSession();
 	const router = useRouter();
 
-	if (status === "loading") {
-		return <p>...</p>;
-	}
+	useEffect(() => {
+		if (session.status === 'authenticated') {
+			router.push('/dashboard');
+		}
+	}, [session.status]);
 
-	if (status === "authenticated") {
-		router.push("/dashboard");
-		return null;
+	if (session.status === 'loading') {
+		return <p>loading...</p>;
 	}
 
 	return (
 		<Container spacer>
-			<div className="absolute top-0 left-0 right-0 min-h-screen flex flex-col space-y-4 items-center justify-center">
-				<div className="max-w-sm w-full flex flex-col space-y-4">
+			<div className="absolute top-0 left-0 right-0 flex flex-col items-center justify-center min-h-screen space-y-4">
+				<div className="flex flex-col w-full max-w-sm space-y-4">
 					<div className="flex flex-col items-center">
 						<Brand />
-						<div className="flex-1 flex flex-col self-stretch space-y-4 mt-4">
+						<div className="flex flex-col self-stretch flex-1 mt-4 space-y-4">
 							<Button
 								color="secondary"
-								onClick={() => signIn("github")}
+								onClick={() => signIn('github')}
 								size="lg"
 							>
 								<FaGithub size={30} className="mr-2" />

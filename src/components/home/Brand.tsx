@@ -1,6 +1,6 @@
-import Link from "next/link";
-import { Text } from "@/components";
-import { Logo } from "@/components/home";
+import Link from 'next/link';
+import { Text } from '@/components/shared';
+import { Logo } from '@/components/home';
 
 const Brand: React.FC = () => {
 	return (

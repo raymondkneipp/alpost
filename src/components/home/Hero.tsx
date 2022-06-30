@@ -1,7 +1,7 @@
-import { Container, Text, Button } from "@/components";
-import getDomain from "@/utils/get-domain";
-import getTextColor from "@/utils/get-text-color";
-import { FaPlay } from "react-icons/fa";
+import { Container, Text, Button } from '@/components/shared';
+import getDomain from '@/utils/get-domain';
+import getTextColor from '@/utils/get-text-color';
+import { FaPlay } from 'react-icons/fa';
 
 const Hero: React.FC = () => {
 	return (
@@ -18,7 +18,7 @@ const Hero: React.FC = () => {
 					<Button href="/login" color="usa" size="lg">
 						Get Started
 					</Button>
-					<Button href={getDomain("demo")} color="ghost" size="lg">
+					<Button href={getDomain('demo')} color="ghost" size="lg">
 						<FaPlay className="mr-2" />
 						View Demo
 					</Button>

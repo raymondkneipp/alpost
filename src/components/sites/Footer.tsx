@@ -1,14 +1,14 @@
-import { FaFacebook, FaInstagram, FaTwitter, FaYoutube } from "react-icons/fa";
-import { Tall, Container, Logo, Text, DList, DItem } from "@/components";
-import useSocials from "store/socials";
-import usePost from "store/post";
-import useAddress from "store/address";
+import { FaFacebook, FaInstagram, FaTwitter, FaYoutube } from 'react-icons/fa';
+import { Tall, Container, Logo, Text, DList, DItem } from '@/components/shared';
+import useSocials from 'store/socials';
+import usePost from 'store/post';
+import useAddress from 'store/address';
 
 const Footer: React.FC = () => {
 	const { name, num } = usePost();
 	const { facebook, twitter, instagram, youtube } = useSocials();
 	const socials =
-		facebook !== "" || twitter !== "" || instagram !== "" || youtube !== "";
+		facebook !== '' || twitter !== '' || instagram !== '' || youtube !== '';
 	const { street, city, state, zip } = useAddress();
 
 	return (
@@ -19,13 +19,13 @@ const Footer: React.FC = () => {
 						<>
 							<Logo />
 							<Text>
-								{name} American Legion Post {num} located on {street} {city},{" "}
+								{name} American Legion Post {num} located on {street} {city},{' '}
 								{state} {zip}
 							</Text>
 						</>
 					}
 				>
-					<div className="col-span-full flex items-start justify-between sm:justify-around flex-wrap gap-4">
+					<div className="flex flex-wrap items-start justify-between gap-4 col-span-full sm:justify-around">
 						<DList title="Pages">
 							<DItem>
 								<Text href="/" variant="a">
@@ -111,7 +111,7 @@ const Footer: React.FC = () => {
 					</div>
 				</Tall>
 
-				<div className="mt-8 flex items-center justify-center">
+				<div className="flex items-center justify-center mt-8">
 					<Text href="https://alpost.org" variant="a" center>
 						Website By ALPost
 					</Text>

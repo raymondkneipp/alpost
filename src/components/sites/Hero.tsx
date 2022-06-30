@@ -1,6 +1,6 @@
-import { Text, Container, Button } from "@/components";
-import { usePost } from "@/store";
-import Image from "next/image";
+import { Text, Container, Button } from '@/components/shared';
+import { usePost } from '@/store';
+import Image from 'next/image';
 
 const Hero: React.FC = () => {
 	const { num, name } = usePost();
@@ -14,7 +14,7 @@ const Hero: React.FC = () => {
 				objectFit="cover"
 				priority={true}
 			/>
-			<div className="relative min-h-screen bg-opacity-80 flex items-center bg-black">
+			<div className="relative flex items-center min-h-screen bg-black bg-opacity-80">
 				<Container className="max-w-screen-md" spacer centered>
 					<Text variant="h1" color="light" center>
 						Welcome to {name} American Legion Post {num}

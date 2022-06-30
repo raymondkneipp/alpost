@@ -1,9 +1,9 @@
-import { Button, Container, Text, List, Item, Wide } from "@/components";
-import getBgColor from "@/utils/get-bg-color";
-import getRadius from "@/utils/get-radius";
-import getTextColor from "@/utils/get-text-color";
-import { FaCheck } from "react-icons/fa";
-import useTheme from "store/theme";
+import { Button, Container, Text, List, Item, Wide } from '@/components/shared';
+import getBgColor from '@/utils/get-bg-color';
+import getRadius from '@/utils/get-radius';
+import getTextColor from '@/utils/get-text-color';
+import { FaCheck } from 'react-icons/fa';
+import useTheme from 'store/theme';
 
 type PricingItemProps = {
 	name: string;
@@ -24,8 +24,8 @@ const PricingItem: React.FC<PricingItemProps> = ({
 		<div
 			className={`p-4 flex flex-col space-y-4 ${getRadius(radius)} ${
 				special
-					? "bg-white dark:bg-neutral-800 shadow-xl order-first md:order-none"
-					: ""
+					? 'bg-white dark:bg-neutral-800 shadow-xl order-first md:order-none'
+					: ''
 			}`}
 		>
 			<div className="flex flex-col">
@@ -52,7 +52,7 @@ const PricingItem: React.FC<PricingItemProps> = ({
 			</List>
 
 			<div className="flex flex-col justify-end flex-1">
-				<Button href="/create" color={special ? "usa" : "secondary"}>
+				<Button href="/create" color={special ? 'usa' : 'secondary'}>
 					Buy {name}
 				</Button>
 			</div>
@@ -69,10 +69,10 @@ const Pricing: React.FC = () => {
 						name="Budget"
 						price={15}
 						perks={[
-							"SSL Encryption",
-							"Light & Dark Mode",
-							"3 Themes",
-							"Free Subdomain",
+							'SSL Encryption',
+							'Light & Dark Mode',
+							'3 Themes',
+							'Free Subdomain',
 						]}
 					/>
 					<PricingItem
@@ -80,16 +80,16 @@ const Pricing: React.FC = () => {
 						name="Basic"
 						price={19}
 						perks={[
-							"SSL Encryption",
-							"Light & Dark Mode",
-							"6 Themes",
-							"Custom Domain",
+							'SSL Encryption',
+							'Light & Dark Mode',
+							'6 Themes',
+							'Custom Domain',
 						]}
 					/>
 					<PricingItem
 						name="Pro"
 						price={24}
-						perks={["SSL Encryption", "Light & Dark Mode", "9 Themes"]}
+						perks={['SSL Encryption', 'Light & Dark Mode', '9 Themes']}
 					/>
 				</Wide>
 			</Container>

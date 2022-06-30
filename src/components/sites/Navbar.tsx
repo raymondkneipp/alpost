@@ -1,13 +1,13 @@
-import { Container, Logo, Text } from "@/components";
-import { NavLink } from "@/components/sites";
-import getTextColor from "@/utils/get-text-color";
-import { Color } from "@prisma/client";
-import { useTheme } from "@/store";
-import { useState, Fragment } from "react";
-import { Brand } from "@/components/home";
-import Link from "next/link";
-import { FaBars, FaTimes } from "react-icons/fa";
-import { Popover, Transition } from "@headlessui/react";
+import { Container, Logo, Text } from '@/components/shared';
+import { NavLink } from '@/components/sites';
+import getTextColor from '@/utils/get-text-color';
+import { Color } from '@prisma/client';
+import { useTheme } from '@/store';
+import { useState, Fragment } from 'react';
+import { Brand } from '@/components/home';
+import Link from 'next/link';
+import { FaBars, FaTimes } from 'react-icons/fa';
+import { Popover, Transition } from '@headlessui/react';
 
 type Props = {
 	post: string;
@@ -17,7 +17,7 @@ const Navbar: React.FC<Props> = ({ post }) => {
 	const { color } = useTheme();
 
 	return (
-		<nav className="bg-neutral-100 dark:bg-neutral-900 fixed top-0 left-0 right-0 shadow-md z-40">
+		<nav className="fixed top-0 left-0 right-0 z-40 shadow-md bg-neutral-100 dark:bg-neutral-900">
 			<Container>
 				<div className="flex items-center justify-between">
 					<div className="flex items-center space-x-2">
@@ -27,7 +27,7 @@ const Navbar: React.FC<Props> = ({ post }) => {
 						</Text>
 					</div>
 
-					<div className="md:flex items-center space-x-4 hidden">
+					<div className="items-center hidden space-x-4 md:flex">
 						<NavLink href="/">Home</NavLink>
 						<NavLink href="/about">About</NavLink>
 						<NavLink href="/news">News</NavLink>
@@ -38,7 +38,7 @@ const Navbar: React.FC<Props> = ({ post }) => {
 					<Popover className="md:hidden">
 						{({ open }) => (
 							<>
-								<Popover.Button className="w-10 h-10 hover:bg-neutral-200 dark:hover:bg-neutral-800 transition-colors flex items-center justify-center rounded-3xl">
+								<Popover.Button className="flex items-center justify-center w-10 h-10 transition-colors hover:bg-neutral-200 dark:hover:bg-neutral-800 rounded-3xl">
 									<FaBars size={20} />
 								</Popover.Button>
 
@@ -51,7 +51,7 @@ const Navbar: React.FC<Props> = ({ post }) => {
 									leaveFrom="opacity-100"
 									leaveTo="opacity-0"
 								>
-									<Popover.Overlay className="bg-neutral-400 dark:bg-neutral-700 fixed inset-0 opacity-50" />
+									<Popover.Overlay className="fixed inset-0 opacity-50 bg-neutral-400 dark:bg-neutral-700" />
 								</Transition>
 
 								<Transition
@@ -63,7 +63,7 @@ const Navbar: React.FC<Props> = ({ post }) => {
 									leaveFrom="transform opacity-100 scale-100"
 									leaveTo="transform opacity-0 scale-95"
 								>
-									<Popover.Panel className="absolute inset-x-0 m-4 mt-10 z-10 dark:bg-neutral-900 bg-neutral-100 p-4 rounded-3xl shadow-xl">
+									<Popover.Panel className="absolute inset-x-0 z-10 p-4 m-4 mt-10 shadow-xl dark:bg-neutral-900 bg-neutral-100 rounded-3xl">
 										<div className="grid grid-cols-1">
 											<NavLink href="/">Home</NavLink>
 											<NavLink href="/about">About</NavLink>

@@ -1,7 +1,7 @@
-import { Container, Logo, Text, Button } from "@/components";
-import { NavLink } from "@/components/sites";
-import { useTheme } from "@/store";
-import getBgColor from "@/utils/get-bg-color";
+import { Container, Logo, Text, Button } from '@/components/shared';
+import { NavLink } from '@/components/sites';
+import { useTheme } from '@/store';
+import getBgColor from '@/utils/get-bg-color';
 
 const CTA: React.FC = () => {
 	const { color } = useTheme();

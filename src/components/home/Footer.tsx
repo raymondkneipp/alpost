@@ -1,7 +1,6 @@
-import { Text } from "@/components";
-import { NavLink } from "@/components/sites";
-import { Brand } from "@/components/home";
-import { Container } from "@/components";
+import { Text, Container } from '@/components/shared';
+import { NavLink } from '@/components/sites';
+import { Brand } from '@/components/home';
 
 const Footer: React.FC = () => {
 	return (
@@ -14,9 +13,9 @@ const Footer: React.FC = () => {
 					<NavLink href="/#pricing">Pricing</NavLink>
 				</div>
 
-				<hr className="mx-4 my-2 dark:border-neutral-800 w-full" />
+				<hr className="w-full mx-4 my-2 dark:border-neutral-800" />
 
-				<div className="flex justify-between items-center w-full flex-col space-y-2 sm:space-y-0 sm:flex-row">
+				<div className="flex flex-col items-center justify-between w-full space-y-2 sm:space-y-0 sm:flex-row">
 					<Text>&copy; {new Date().getFullYear()} ALPost</Text>
 					<Text href="https://raymondkneipp.com" variant="a">
 						Website by Raymond Kneipp

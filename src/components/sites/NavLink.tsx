@@ -1,9 +1,9 @@
-import { Text } from "@/components";
-import getRadius from "@/utils/get-radius";
-import getTextColor from "@/utils/get-text-color";
-import { Color } from "@prisma/client";
-import { useRouter } from "next/router";
-import useTheme from "store/theme";
+import { Text } from '@/components/shared';
+import getRadius from '@/utils/get-radius';
+import getTextColor from '@/utils/get-text-color';
+import { Color } from '@prisma/client';
+import { useRouter } from 'next/router';
+import useTheme from 'store/theme';
 
 type Props = {
 	href: string;
@@ -19,7 +19,7 @@ const NavLink: React.FC<Props> = ({ href, children }) => {
 	return (
 		<Text
 			href={href}
-			color={active ? "primary" : "dark"}
+			color={active ? 'primary' : 'dark'}
 			className={`px-4 py-2 inline-block rounded-md md:hover:bg-neutral-200 dark:md:hover:bg-neutral-800 ${getRadius(
 				radius
 			)}`}

@@ -1,9 +1,9 @@
-import { Button, Container, Text, List, Item, Wide } from "@/components";
-import getBgColor from "@/utils/get-bg-color";
-import getRadius from "@/utils/get-radius";
-import getTextColor from "@/utils/get-text-color";
-import { FaCheck } from "react-icons/fa";
-import useTheme from "store/theme";
+import { Button, Container, Text, List, Item, Wide } from '@/components/shared';
+import getBgColor from '@/utils/get-bg-color';
+import getRadius from '@/utils/get-radius';
+import getTextColor from '@/utils/get-text-color';
+import { FaCheck } from 'react-icons/fa';
+import useTheme from 'store/theme';
 
 const Features: React.FC = () => {
 	return (

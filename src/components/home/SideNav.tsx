@@ -10,7 +10,7 @@ const SideNav: React.FC = () => {
 
 			<div className="p-4">
 				<NavLink href="/dashboard/">Home</NavLink>
-				<NavLink href="/dashboard/account">Account</NavLink>
+				<NavLink href="/dashboard/settings">Settings</NavLink>
 			</div>
 		</nav>
 	);

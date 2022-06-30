@@ -1,11 +1,11 @@
-import { Text, Container, Wide } from "@/components";
-import { NewsSkeleton, NewsEmpty } from "@/components/sites";
-import getRadius from "@/utils/get-radius";
-import { trpc } from "@/utils/trpc";
-import { News } from "@prisma/client";
-import Image from "next/image";
-import usePost from "store/post";
-import useTheme from "store/theme";
+import { Text, Container, Wide } from '@/components/shared';
+import { NewsSkeleton, NewsEmpty } from '@/components/sites';
+import getRadius from '@/utils/get-radius';
+import { trpc } from '@/utils/trpc';
+import { News } from '@prisma/client';
+import Image from 'next/image';
+import usePost from 'store/post';
+import useTheme from 'store/theme';
 
 type NewsItemProps = {
 	news: News;
@@ -34,11 +34,11 @@ const NewsItem: React.FC<NewsItemProps> = ({ news }) => {
 				</Text>
 				<Text>{news.content.slice(0, 100)}...</Text>
 				<Text color="primary">
-					{news.createdAt.toLocaleDateString("en-us", {
-						weekday: "long",
-						year: "numeric",
-						month: "short",
-						day: "numeric",
+					{news.createdAt.toLocaleDateString('en-us', {
+						weekday: 'long',
+						year: 'numeric',
+						month: 'short',
+						day: 'numeric',
 					})}
 				</Text>
 			</div>
@@ -53,7 +53,7 @@ type Props = {
 const News: React.FC<Props> = ({ simple }) => {
 	const { num: subdomain } = usePost();
 	const { data, isLoading } = trpc.useQuery([
-		"news.get-all-news",
+		'news.get-all-news',
 		{ subdomain },
 	]);
 
@@ -64,7 +64,7 @@ const News: React.FC<Props> = ({ simple }) => {
 			<Container spacer>
 				<Wide
 					master={
-						<Text variant={simple ? "h2" : "h1"}>Read The Latest News</Text>
+						<Text variant={simple ? 'h2' : 'h1'}>Read The Latest News</Text>
 					}
 				>
 					{isLoading || !data ? (

@@ -1,6 +1,6 @@
-import { Text } from "@/components";
-import getRadius from "@/utils/get-radius";
-import useTheme from "store/theme";
+import { Text } from '@/components/shared';
+import getRadius from '@/utils/get-radius';
+import useTheme from 'store/theme';
 
 const NewsEmpty: React.FC = () => {
 	const { radius } = useTheme();

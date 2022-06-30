@@ -1,19 +1,19 @@
-import { useState, Fragment } from "react";
-import { Text, Button, Container } from "@/components";
-import { Brand } from "@/components/home";
-import getTextColor from "@/utils/get-text-color";
-import Link from "next/link";
-import { FaBars, FaTimes } from "react-icons/fa";
-import useTheme from "store/theme";
-import { NavLink } from "../sites";
-import { Popover, Transition } from "@headlessui/react";
+import { useState, Fragment } from 'react';
+import { Text, Button, Container } from '@/components/shared';
+import { Brand } from '@/components/home';
+import getTextColor from '@/utils/get-text-color';
+import Link from 'next/link';
+import { FaBars, FaTimes } from 'react-icons/fa';
+import useTheme from 'store/theme';
+import { NavLink } from '../sites';
+import { Popover, Transition } from '@headlessui/react';
 
 const Navbar: React.FC = () => {
 	const { color } = useTheme();
 
 	return (
 		<nav className="py-10">
-			<Container className="flex items-center justify-between md:space-x-8 relative">
+			<Container className="relative flex items-center justify-between md:space-x-8">
 				<Brand />
 				<div className={`flex-1 hidden space-x-2 md:flex`}>
 					<NavLink href="/#features">Features</NavLink>
@@ -31,7 +31,7 @@ const Navbar: React.FC = () => {
 					<Popover className="md:hidden">
 						{({ open }) => (
 							<>
-								<Popover.Button className="w-10 h-10 hover:bg-neutral-200 dark:hover:bg-neutral-800 transition-colors flex items-center justify-center rounded-3xl">
+								<Popover.Button className="flex items-center justify-center w-10 h-10 transition-colors hover:bg-neutral-200 dark:hover:bg-neutral-800 rounded-3xl">
 									<FaBars size={20} />
 								</Popover.Button>
 
@@ -44,7 +44,7 @@ const Navbar: React.FC = () => {
 									leaveFrom="opacity-100"
 									leaveTo="opacity-0"
 								>
-									<Popover.Overlay className="bg-neutral-400 dark:bg-neutral-700 fixed inset-0 opacity-50" />
+									<Popover.Overlay className="fixed inset-0 opacity-50 bg-neutral-400 dark:bg-neutral-700" />
 								</Transition>
 
 								<Transition
@@ -56,7 +56,7 @@ const Navbar: React.FC = () => {
 									leaveFrom="transform opacity-100 scale-100"
 									leaveTo="transform opacity-0 scale-95"
 								>
-									<Popover.Panel className="absolute inset-x-0 m-4 z-10 dark:bg-neutral-900 bg-neutral-100 p-4 rounded-3xl shadow-xl">
+									<Popover.Panel className="absolute inset-x-0 z-10 p-4 m-4 shadow-xl dark:bg-neutral-900 bg-neutral-100 rounded-3xl">
 										<div className="grid grid-cols-1">
 											<NavLink href="/#features">Features</NavLink>
 											<NavLink href="/#testimonials">Testimonials</NavLink>
@@ -89,9 +89,9 @@ export default Navbar;
 //   return (
 //     <Menu as="div" className="relative inline-block text-left">
 //       <div>
-//         <Menu.Button className="inline-flex justify-center w-full rounded-md border border-gray-300 shadow-sm px-4 py-2 bg-white text-sm font-medium text-gray-700 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-100 focus:ring-indigo-500">
+//         <Menu.Button className="inline-flex justify-center w-full px-4 py-2 text-sm font-medium text-gray-700 bg-white border border-gray-300 rounded-md shadow-sm hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-100 focus:ring-indigo-500">
 //           Options
-//           <ChevronDownIcon className="-mr-1 ml-2 h-5 w-5" aria-hidden="true" />
+//           <ChevronDownIcon className="w-5 h-5 ml-2 -mr-1" aria-hidden="true" />
 //         </Menu.Button>
 //       </div>
 
@@ -104,7 +104,7 @@ export default Navbar;
 //         leaveFrom="transform opacity-100 scale-100"
 //         leaveTo="transform opacity-0 scale-95"
 //       >
-//         <Menu.Items className="origin-top-right absolute right-0 mt-2 w-56 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 focus:outline-none">
+//         <Menu.Items className="absolute right-0 w-56 mt-2 origin-top-right bg-white rounded-md shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none">
 //           <div className="py-1">
 //             <Menu.Item>
 //               {({ active }) => (

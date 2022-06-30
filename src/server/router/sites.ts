@@ -1,16 +1,18 @@
-import * as trpc from "@trpc/server";
-import { z } from "zod";
-import superjson from "superjson";
-import { prisma } from "../../db/client";
-import { createSiteValidator } from "../../shared/create-site-validator";
-import { createRouter } from "./context";
+import { z } from 'zod';
+import { createSiteValidator } from '../../shared/create-site-validator';
+import { createRouter } from './context';
+import { TRPCError } from '@trpc/server';
 
 export const siteRouter = createRouter()
-	.transformer(superjson)
-	.query("get-site", {
+	.query('get-all-sites', {
 		async resolve({ ctx }) {
-			if (ctx?.session && ctx?.session?.user && ctx?.session?.user?.id) {
-				return await prisma.site.findUnique({
+			return await ctx.prisma.site.findMany();
+		},
+	})
+	.query('get-site', {
+		async resolve({ ctx }) {
+			if (ctx.session) {
+				return await ctx.prisma.site.findUnique({
 					where: {
 						userId: ctx?.session?.user?.id,
 					},
@@ -18,18 +20,13 @@ export const siteRouter = createRouter()
 			}
 		},
 	})
-	.query("get-all-sites", {
-		async resolve() {
-			return await prisma.site.findMany();
-		},
-	})
-	.mutation("create", {
+	.mutation('create', {
 		input: createSiteValidator,
 		async resolve({ input, ctx }) {
-			if (ctx?.session && ctx?.session?.user && ctx?.session?.user?.id) {
-				return await prisma.user.update({
+			if (ctx?.session) {
+				return await ctx.prisma.user.update({
 					where: {
-						id: ctx.session.user.id,
+						id: ctx?.session?.user?.id,
 					},
 					data: {
 						site: {

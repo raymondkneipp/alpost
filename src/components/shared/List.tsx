@@ -1,5 +1,5 @@
-import { Text } from "@/components";
-import React from "react";
+import { Text } from '@/components/shared';
+import React from 'react';
 
 type ItemProps = {
 	children: React.ReactNode;

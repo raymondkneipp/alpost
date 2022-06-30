@@ -1,12 +1,12 @@
-import { trpc } from "@/utils/trpc";
-import { Button, Container, Logo, Text, Wide } from "@/components";
-import getRadius from "@/utils/get-radius";
-import getBgColor from "@/utils/get-bg-color";
-import getDomain from "@/utils/get-domain";
-import { Site } from "@prisma/client";
-import Image from "next/image";
-import useTheme from "store/theme";
-import getTextColor from "@/utils/get-text-color";
+import { trpc } from '@/utils/trpc';
+import { Button, Container, Logo, Text, Wide } from '@/components/shared';
+import getRadius from '@/utils/get-radius';
+import getBgColor from '@/utils/get-bg-color';
+import getDomain from '@/utils/get-domain';
+import { Site } from '@prisma/client';
+import Image from 'next/image';
+import useTheme from 'store/theme';
+import getTextColor from '@/utils/get-text-color';
 
 const TestimonialItem: React.FC<{ site: Site }> = ({ site }) => {
 	const { radius } = useTheme();
@@ -24,7 +24,7 @@ const TestimonialItem: React.FC<{ site: Site }> = ({ site }) => {
 				</Text>
 			</div>
 			<hr className="my-4 dark:border-neutral-700" />
-			<div className="flex items-center flex-row">
+			<div className="flex flex-row items-center">
 				<div className="flex-1">
 					<Text variant="h6" element="h3">
 						{site.subdomain} {site.name}
@@ -38,7 +38,7 @@ const TestimonialItem: React.FC<{ site: Site }> = ({ site }) => {
 };
 
 const Testimonials: React.FC = () => {
-	const { data, isLoading } = trpc.useQuery(["sites.get-all-sites"]);
+	const { data, isLoading } = trpc.useQuery(['sites.get-all-sites']);
 
 	if (isLoading || !data) {
 		return <div>Loading...</div>;

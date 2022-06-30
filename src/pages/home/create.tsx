@@ -1,15 +1,23 @@
-import { useForm, SubmitHandler } from "react-hook-form";
+import { useForm, SubmitHandler } from 'react-hook-form';
 import {
 	CreateSiteInputType,
 	createSiteValidator,
-} from "shared/create-site-validator";
-import { zodResolver } from "@hookform/resolvers/zod";
-import { trpc } from "@/utils/trpc";
-import { Button, Container, Error, Input, Logo, Text } from "@/components";
-import getDomain from "@/utils/get-domain";
-import { Color, Radius } from "@prisma/client";
-import getBgColor from "@/utils/get-bg-color";
-import getRadius from "@/utils/get-radius";
+} from 'shared/create-site-validator';
+import { zodResolver } from '@hookform/resolvers/zod';
+import { trpc } from '@/utils/trpc';
+import {
+	Button,
+	Container,
+	Error,
+	Input,
+	Logo,
+	Text,
+} from '@/components/shared';
+import getDomain from '@/utils/get-domain';
+import { Color, Radius } from '@prisma/client';
+import getBgColor from '@/utils/get-bg-color';
+import getRadius from '@/utils/get-radius';
+import { useRouter } from 'next/router';
 
 export default function CreatePage() {
 	const {
@@ -26,21 +34,23 @@ export default function CreatePage() {
 		},
 	});
 
-	const watchColor = watch("color");
-	const watchRadius = watch("radius");
+	const watchColor = watch('color');
+	const watchRadius = watch('radius');
 
-	const { mutate, isLoading, data } = trpc.useMutation("sites.create", {
+	const router = useRouter();
+
+	const { mutate, isLoading, data } = trpc.useMutation('sites.create', {
 		onSuccess: (data) => {
 			if (data?.site) {
-				window.location.replace(getDomain(data?.site?.subdomain));
+				router.push('/dashboard');
 			}
 		},
 	});
 
 	return (
 		<Container spacer>
-			<div className="absolute top-0 left-0 right-0 min-h-screen flex flex-col space-y-4 items-center justify-center">
-				<div className="max-w-sm w-full flex flex-col space-y-4">
+			<div className="absolute top-0 left-0 right-0 flex flex-col items-center justify-center min-h-screen space-y-4">
+				<div className="flex flex-col w-full max-w-sm space-y-4">
 					<Text variant="h1" center>
 						Create
 					</Text>
@@ -49,7 +59,7 @@ export default function CreatePage() {
 						What legion do you operate?
 					</Text>
 					<form
-						className="flex flex-col space-y-4 w-full"
+						className="flex flex-col w-full space-y-4"
 						onSubmit={handleSubmit((data) => {
 							mutate(data);
 						})}
@@ -57,7 +67,7 @@ export default function CreatePage() {
 						<Input
 							disabled={isLoading}
 							label="Legion Name"
-							register={register("name")}
+							register={register('name')}
 							placeholder="Ex. John Doe"
 						/>
 
@@ -66,7 +76,7 @@ export default function CreatePage() {
 						<Input
 							disabled={isLoading}
 							label="Post Number"
-							register={register("subdomain")}
+							register={register('subdomain')}
 							placeholder="Ex. 123"
 							type="number"
 						/>
@@ -80,7 +90,7 @@ export default function CreatePage() {
 						<Input
 							disabled={isLoading}
 							label="Street"
-							register={register("street")}
+							register={register('street')}
 							placeholder="Ex. 123 Main Street"
 						/>
 
@@ -89,7 +99,7 @@ export default function CreatePage() {
 						<Input
 							disabled={isLoading}
 							label="City"
-							register={register("city")}
+							register={register('city')}
 							placeholder="Ex. Exampleville"
 						/>
 
@@ -98,7 +108,7 @@ export default function CreatePage() {
 						<Input
 							disabled={isLoading}
 							label="State"
-							register={register("state")}
+							register={register('state')}
 						/>
 
 						<Error error={errors.state} />
@@ -106,7 +116,7 @@ export default function CreatePage() {
 						<Input
 							disabled={isLoading}
 							label="Zip"
-							register={register("zip")}
+							register={register('zip')}
 						/>
 
 						<Error error={errors.zip} />
@@ -118,7 +128,7 @@ export default function CreatePage() {
 						<Input
 							disabled={isLoading}
 							label="Facebook"
-							register={register("facebook")}
+							register={register('facebook')}
 						/>
 
 						<Error error={errors.facebook} />
@@ -126,7 +136,7 @@ export default function CreatePage() {
 						<Input
 							disabled={isLoading}
 							label="Instagram"
-							register={register("instagram")}
+							register={register('instagram')}
 						/>
 
 						<Error error={errors.instagram} />
@@ -134,7 +144,7 @@ export default function CreatePage() {
 						<Input
 							disabled={isLoading}
 							label="Twitter"
-							register={register("twitter")}
+							register={register('twitter')}
 						/>
 
 						<Error error={errors.twitter} />
@@ -142,7 +152,7 @@ export default function CreatePage() {
 						<Input
 							disabled={isLoading}
 							label="YouTube"
-							register={register("youtube")}
+							register={register('youtube')}
 						/>
 
 						<Error error={errors.youtube} />
@@ -151,14 +161,14 @@ export default function CreatePage() {
 							How would you like your site to look?
 						</Text>
 
-						<div className="flex flex-col space-y-1 flex-1">
+						<div className="flex flex-col flex-1 space-y-1">
 							<Text variant="h6" element="label" htmlFor="color">
 								Color
 							</Text>
 							<div className="flex space-x-2">
 								<select
-									{...register("color")}
-									className="rounded-md dark:bg-neutral-800 bg-neutral-200 text-black dark:text-white placeholder:text-neutral-400 border-transparent focus:border-neutral-300 dark:focus:border-neutral-700 focus:bg-transparent focus:ring-0 form-input disabled:cursor-not-allowed disabled:text-opacity-30 dark:disabled:text-opacity-30 flex-1"
+									{...register('color')}
+									className="flex-1 text-black border-transparent rounded-md dark:bg-neutral-800 bg-neutral-200 dark:text-white placeholder:text-neutral-400 focus:border-neutral-300 dark:focus:border-neutral-700 focus:bg-transparent focus:ring-0 form-input disabled:cursor-not-allowed disabled:text-opacity-30 dark:disabled:text-opacity-30"
 									id="color"
 								>
 									{Object.keys(Color).map((color, i) => (
@@ -178,14 +188,14 @@ export default function CreatePage() {
 
 						<Error error={errors.color} />
 
-						<div className="flex flex-col space-y-1 flex-1">
+						<div className="flex flex-col flex-1 space-y-1">
 							<Text variant="h6" element="label" htmlFor="radius">
 								Radius
 							</Text>
 							<div className="flex space-x-2">
 								<select
-									{...register("radius")}
-									className="rounded-md dark:bg-neutral-800 bg-neutral-200 text-black dark:text-white placeholder:text-neutral-400 border-transparent focus:border-neutral-300 dark:focus:border-neutral-700 focus:bg-transparent focus:ring-0 form-input disabled:cursor-not-allowed disabled:text-opacity-30 dark:disabled:text-opacity-30 flex-1"
+									{...register('radius')}
+									className="flex-1 text-black border-transparent rounded-md dark:bg-neutral-800 bg-neutral-200 dark:text-white placeholder:text-neutral-400 focus:border-neutral-300 dark:focus:border-neutral-700 focus:bg-transparent focus:ring-0 form-input disabled:cursor-not-allowed disabled:text-opacity-30 dark:disabled:text-opacity-30"
 									id="color"
 								>
 									{Object.keys(Radius).map((radius, i) => (
@@ -209,7 +219,7 @@ export default function CreatePage() {
 							disabled={isLoading}
 							type="submit"
 							value="Create"
-							className="dark:bg-white dark:text-black bg-black text-white rounded-md p-2"
+							className="p-2 text-white bg-black rounded-md dark:bg-white dark:text-black"
 						/>
 
 						<Button color="ghost" href="/">
