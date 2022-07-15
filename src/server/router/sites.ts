@@ -1,5 +1,6 @@
 import { z } from 'zod';
 import { createSiteValidator } from '../../shared/create-site-validator';
+import { updateThemeValidator } from '../../shared/update-theme-validator';
 import { createRouter } from './context';
 import { TRPCError } from '@trpc/server';
 
@@ -47,6 +48,22 @@ export const siteRouter = createRouter()
 					},
 					include: {
 						site: true,
+					},
+				});
+			}
+		},
+	})
+	.mutation('update-theme', {
+		input: updateThemeValidator,
+		async resolve({ input, ctx }) {
+			if (ctx?.session) {
+				return await ctx.prisma.site.update({
+					where: {
+						userId: ctx?.session?.user?.id,
+					},
+					data: {
+						color: input.color,
+						radius: input.radius,
 					},
 				});
 			}

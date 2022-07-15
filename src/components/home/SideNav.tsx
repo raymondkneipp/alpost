@@ -9,7 +9,7 @@ const SideNav: React.FC = () => {
 			</div>
 
 			<div className="p-4">
-				<NavLink href="/dashboard/">Home</NavLink>
+				<NavLink href="/dashboard">Home</NavLink>
 				<NavLink href="/dashboard/theme">Theme</NavLink>
 				<NavLink href="/dashboard/settings">Settings</NavLink>
 			</div>

@@ -19,10 +19,11 @@
 			"@/db/*": ["db/*"],
 			"@/backend/*": ["backend/*"],
 			"@/utils/*": ["utils/*"],
+			"@/store": ["store/index"],
 			"@/components/sites": ["components/sites/index"],
 			"@/components/home": ["components/home/index"],
 			"@/components/shared": ["components/shared/index"],
-			"@/store": ["store/index"]
+			"@/layouts/home": ["layouts/home/index"]
 		}
 	},
 	"include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],
