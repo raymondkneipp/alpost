@@ -68,6 +68,7 @@ export default function DashboardPage() {
 									color="primary"
 									href={getDomain(site?.data?.subdomain)}
 									size="lg"
+									target="_blank"
 								>
 									Visit Site
 								</Button>
