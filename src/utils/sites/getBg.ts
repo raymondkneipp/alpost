@@ -36,6 +36,8 @@ const getBg = (color: Color) => {
 			return 'bg-pink-700 dark:bg-pink-800';
 		case Color.ROSE:
 			return 'bg-rose-700 dark:bg-rose-800';
+		case Color.NEUTRAL:
+			return 'bg-neutral-700 dark:bg-neutral-800';
 	}
 };
 

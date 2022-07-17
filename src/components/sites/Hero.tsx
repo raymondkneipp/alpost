@@ -2,6 +2,8 @@ import { useContext } from 'react';
 import Image from 'next/future/image';
 import { Container } from '@/components/shared';
 import { GeneralContext } from '@/contexts/sites';
+import { ButtonLink } from '@/components/sites';
+import { Color } from '@prisma/client';
 
 const Hero: React.FC = () => {
 	const { name, subdomain } = useContext(GeneralContext);
@@ -20,6 +22,13 @@ const Hero: React.FC = () => {
 					<h1 className="text-6xl text-neutral-100 font-medium text-center">
 						Welcome to {name} American Legion Post {subdomain}
 					</h1>
+					<div className="grid grid-cols-6">
+						{Object.values(Color).map((c) => (
+							<ButtonLink href="/" color={Color[c]}>
+								hello
+							</ButtonLink>
+						))}
+					</div>
 				</Container>
 			</div>
 		</div>
