@@ -1,14 +1,14 @@
 import { AmericanLegionLogo } from '@/components/shared';
+import { GeneralContext } from '@/contexts/sites';
+import { useContext } from 'react';
 
-type Props = {
-	post: string;
-};
+const Brand: React.FC = () => {
+	const { subdomain } = useContext(GeneralContext);
 
-const Brand: React.FC<Props> = ({ post }) => {
 	return (
 		<div className="flex items-center">
 			<AmericanLegionLogo />
-			<span className="text-xl">{post}</span>
+			<span className="text-xl">{subdomain}</span>
 		</div>
 	);
 };

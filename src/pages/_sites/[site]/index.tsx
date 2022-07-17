@@ -20,7 +20,7 @@ const Site: NextPage<IndexProps> = ({ stringifiedData }) => {
 	return (
 		<Layout data={data}>
 			<Container>
-				<code>{stringifiedData}</code>
+				<h1>sites</h1>
 			</Container>
 		</Layout>
 	);
