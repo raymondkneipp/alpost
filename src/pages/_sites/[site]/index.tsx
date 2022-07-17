@@ -14,7 +14,7 @@ interface IndexProps {
 	stringifiedData: string;
 }
 
-const Site: NextPage<IndexProps> = ({ stringifiedData }) => {
+const HomePage: NextPage<IndexProps> = ({ stringifiedData }) => {
 	const data = JSON.parse(stringifiedData) as Site & { theme: Theme };
 
 	return (
@@ -26,7 +26,7 @@ const Site: NextPage<IndexProps> = ({ stringifiedData }) => {
 	);
 };
 
-export default Site;
+export default HomePage;
 
 export const getStaticPaths: GetStaticPaths<PathProps> = async () => {
 	const subdomains = await prisma.site.findMany({
@@ -45,7 +45,7 @@ export const getStaticPaths: GetStaticPaths<PathProps> = async () => {
 				site: path,
 			},
 		})),
-		fallback: true,
+		fallback: false, // TODO look into fallback on prod; set to true in platforms
 	};
 };
 
