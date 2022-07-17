@@ -15,7 +15,6 @@ interface IndexProps {
 }
 
 const Site: NextPage<IndexProps> = ({ stringifiedData }) => {
-	console.log(stringifiedData);
 	const data = JSON.parse(stringifiedData) as Site & { theme: Theme };
 
 	return (
