@@ -1,5 +1,5 @@
 import { Site } from '@prisma/client';
-import { Brand } from '@/components/sites';
+import { Brand, Navbar } from '@/components/sites';
 import { GeneralProvider } from '@/contexts/sites';
 
 type Props = {
@@ -10,10 +10,10 @@ type Props = {
 const Layout: React.FC<Props> = ({ children, data }) => {
 	return (
 		<GeneralProvider data={data}>
-			<div className="border-8 border-blue-500">
-				<Brand />
+			<>
+				<Navbar />
 				{children}
-			</div>
+			</>
 		</GeneralProvider>
 	);
 };
