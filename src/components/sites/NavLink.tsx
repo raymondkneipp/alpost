@@ -14,7 +14,9 @@ const NavLink: React.FC<Props> = ({ href, children }) => {
 	return (
 		<Link
 			href={href}
-			className={`py-2 px-4 hover:bg-red-500 ${getRadius(radius)}`}
+			className={`py-2 px-4 dark:text-white dark:hover:bg-neutral-700 transition ${getRadius(
+				radius
+			)}`}
 		>
 			{children}
 		</Link>
