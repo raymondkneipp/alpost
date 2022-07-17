@@ -7,6 +7,8 @@ const AmericanLegionLogo: React.FC<Props> = ({ size = 80 }) => {
 	return (
 		<Image
 			src="/shared/American-Legion-Emblem-borderless.png"
+			alt="American Legion Emblem"
+			priority={true}
 			width={size}
 			height={size}
 		/>
