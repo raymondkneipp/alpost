@@ -18,10 +18,12 @@
 		"paths": {
 			"@/components/app": ["components/app/index"],
 			"@/components/sites": ["components/sites/index"],
-			"@/components": ["components/index"],
+			"@/components/home": ["components/home/index"],
+			"@/components/shared": ["components/shared/index"],
 			"@/layouts/app": ["layouts/app/index"],
 			"@/layouts/sites": ["layouts/sites/index"],
-			"@/layouts": ["layouts/index"],
+			"@/layouts/home": ["layouts/home/index"],
+			"@/layouts/shared": ["layouts/shared/index"],
 			"@/prisma": ["server/db/client"]
 		}
 	},

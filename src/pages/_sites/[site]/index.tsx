@@ -1,9 +1,9 @@
 import { Layout } from '@/layouts/sites';
 import type { NextPage } from 'next';
-import { useRouter } from 'next/router';
 import { prisma } from '@/prisma';
 import type { GetStaticPaths, GetStaticProps } from 'next';
 import type { ParsedUrlQuery } from 'querystring';
+import { Container } from '@/components/shared';
 
 interface PathProps extends ParsedUrlQuery {
 	site: string;
@@ -16,8 +16,10 @@ interface IndexProps {
 const Site: NextPage<IndexProps> = ({ stringifiedData }) => {
 	return (
 		<Layout>
-			<h1>site</h1>
-			<p>{stringifiedData}</p>
+			<Container>
+				<h1>site</h1>
+				<code>{stringifiedData}</code>
+			</Container>
 		</Layout>
 	);
 };
