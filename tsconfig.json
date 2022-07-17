@@ -25,6 +25,7 @@
 			"@/layouts/home": ["layouts/home/index"],
 			"@/layouts/shared": ["layouts/shared/index"],
 			"@/contexts/sites": ["contexts/sites/index"],
+			"@/utils/sites": ["utils/sites/index"],
 			"@/prisma": ["server/db/client"]
 		}
 	},

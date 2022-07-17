@@ -4,7 +4,7 @@ import { prisma } from '@/prisma';
 import type { GetStaticPaths, GetStaticProps } from 'next';
 import type { ParsedUrlQuery } from 'querystring';
 import { Container } from '@/components/shared';
-import { Site } from '@prisma/client';
+import { Site, Theme } from '@prisma/client';
 
 interface PathProps extends ParsedUrlQuery {
 	site: string;
@@ -15,7 +15,8 @@ interface IndexProps {
 }
 
 const Site: NextPage<IndexProps> = ({ stringifiedData }) => {
-	const data = JSON.parse(stringifiedData) as Site;
+	console.log(stringifiedData);
+	const data = JSON.parse(stringifiedData) as Site & { theme: Theme };
 
 	return (
 		<Layout data={data}>
@@ -60,7 +61,7 @@ export const getStaticProps: GetStaticProps<IndexProps, PathProps> = async ({
 		where: {
 			subdomain: site,
 		},
-		// include: {},
+		include: { theme: true },
 	});
 
 	if (!data) return { notFound: true, revalidate: 10 };

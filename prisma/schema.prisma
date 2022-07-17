@@ -13,4 +13,46 @@ model Site {
   id        String @id @default(cuid())
   name      String
   subdomain String @unique
+
+  theme Theme?
+}
+
+model Theme {
+  id     String @id @default(cuid())
+  color  Color  @default(SKY)
+  radius Radius @default(MEDIUM)
+
+  site   Site   @relation(fields: [siteId], references: [id])
+  siteId String @unique
+}
+
+enum Color {
+  RED
+  ORANGE
+  AMBER
+  YELLOW
+  LIME
+  GREEN
+  EMERALD
+  TEAL
+  CYAN
+  SKY
+  BLUE
+  INDIGO
+  VIOLET
+  PURPLE
+  FUCHSIA
+  PINK
+  ROSE
+}
+
+enum Radius {
+  NONE
+  SMALL
+  REGULAR
+  MEDIUM
+  LARGE
+  XL
+  XXL
+  XXXL
 }
