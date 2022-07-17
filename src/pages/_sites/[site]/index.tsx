@@ -5,6 +5,7 @@ import type { GetStaticPaths, GetStaticProps } from 'next';
 import type { ParsedUrlQuery } from 'querystring';
 import { Container } from '@/components/shared';
 import { Site, Theme } from '@prisma/client';
+import { Hero } from '@/components/sites';
 
 interface PathProps extends ParsedUrlQuery {
 	site: string;
@@ -19,6 +20,7 @@ const HomePage: NextPage<IndexProps> = ({ stringifiedData }) => {
 
 	return (
 		<Layout data={data}>
+			<Hero />
 			<Container>
 				<h1>sites</h1>
 			</Container>
