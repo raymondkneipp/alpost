@@ -7,9 +7,9 @@ const Brand: React.FC = () => {
 	const { subdomain } = useContext(GeneralContext);
 
 	return (
-		<Link href="/" className="flex items-center">
+		<Link href="/" className="flex items-center space-x-2">
 			<AmericanLegionLogo />
-			<span className="text-xl">{subdomain}</span>
+			<span className="text-xl">Post {subdomain}</span>
 		</Link>
 	);
 };

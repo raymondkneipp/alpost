@@ -1,5 +1,5 @@
 import { Site } from '@prisma/client';
-import { Brand, Navbar } from '@/components/sites';
+import { Navbar } from '@/components/sites';
 import { GeneralProvider } from '@/contexts/sites';
 
 type Props = {
