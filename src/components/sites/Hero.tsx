@@ -20,7 +20,7 @@ const Hero: React.FC = () => {
 
 			<div className="absolute inset-0 bg-black/80">
 				<Container className="flex flex-col items-center justify-center h-full max-w-screen-lg space-y-4">
-					<h1 className="text-3xl font-bold text-center md:text-4xl lg:text-6xl text-neutral-100">
+					<h1 className="text-3xl font-medium text-center md:text-4xl lg:text-6xl text-neutral-100">
 						Welcome to {name} American Legion Post {subdomain}
 					</h1>
 					<div className="flex flex-wrap items-center justify-center gap-4">

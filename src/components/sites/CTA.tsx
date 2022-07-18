@@ -10,7 +10,7 @@ const CTA: React.FC = () => {
 	return (
 		<section className={`${getBg(color)} py-16`}>
 			<Container className="flex flex-col items-center justify-center max-w-screen-sm space-y-4 text-center">
-				<h2 className="text-2xl font-bold md:text-4xl text-neutral-100">
+				<h2 className="text-2xl font-medium md:text-4xl text-neutral-100">
 					Join Our Post Today!
 				</h2>
 				<p className="md:text-lg text-neutral-100 dark:text-neutral-300">

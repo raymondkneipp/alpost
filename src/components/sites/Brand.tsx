@@ -15,7 +15,7 @@ const Brand: React.FC = () => {
 			className={`flex items-center space-x-2 ${getRadius(radius)}`}
 		>
 			<AmericanLegionLogo />
-			<span className={`text-xl font-bold ${getFg(color)}`}>
+			<span className={`text-xl font-medium ${getFg(color)}`}>
 				Post {subdomain}
 			</span>
 		</Link>

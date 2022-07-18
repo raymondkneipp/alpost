@@ -16,7 +16,7 @@ const UpcomingEvent: React.FC = () => {
 				<Tall
 					master={
 						<>
-							<h2 className="items-start text-2xl font-bold md:text-4xl text-neutral-900 dark:text-neutral-100">
+							<h2 className="items-start text-2xl font-medium md:text-4xl text-neutral-900 dark:text-neutral-100">
 								Upcoming Event
 							</h2>
 							<p className="text-neutral-600 dark:text-neutral-400">

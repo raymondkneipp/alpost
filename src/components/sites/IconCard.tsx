@@ -32,7 +32,7 @@ const IconCard: React.FC<Props> = ({
 				{React.createElement(icon, { color: 'white', size: '24' })}
 			</div>
 			<div className="space-y-2">
-				<h3 className="text-xl font-bold text-neutral-900 dark:text-neutral-100">
+				<h3 className="text-xl font-medium text-neutral-900 dark:text-neutral-100">
 					{title}
 				</h3>
 				<p className="text-neutral-600 dark:text-neutral-400">{content}</p>
