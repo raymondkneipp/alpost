@@ -19,8 +19,7 @@ const UpcomingEvent: React.FC = () => {
 							Upcoming Event
 						</h2>
 						<p className="text-neutral-600 dark:text-neutral-400">
-							Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste iure
-							distinctio blanditiis possimus cumque.
+							Check out our upcoming events so you can get involved.
 						</p>
 						<ButtonLink href="/events" theme="secondary">
 							View All Events
@@ -31,22 +30,22 @@ const UpcomingEvent: React.FC = () => {
 				<IconCard
 					title="Who"
 					icon={HiUsers}
-					content="We welcome all to our meetings."
+					content="We welcome everyone to our meetings."
 				/>
 				<IconCard
 					title="Why"
 					icon={HiQuestionMarkCircle}
-					content="Monthly meeting"
+					content="We will be discussing goals for the next several months."
 				/>
 				<IconCard
 					title="When"
 					icon={HiClock}
-					content="September 25th from 5:00 pm to 7:00 pm"
+					content="Our Meeting will take place on Sunday, September 25th from 5:00 pm to 7:00 pm."
 				/>
 				<IconCard
 					title="Where"
 					icon={HiLocationMarker}
-					content="We will be meeting at the American Legion"
+					content="We will be meeting at the Exampleville American Legion."
 				/>
 			</Tall>
 		</Container>
