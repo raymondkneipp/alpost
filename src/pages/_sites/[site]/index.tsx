@@ -4,6 +4,7 @@ import {
 	Hero,
 	LatestNews,
 	MeetOfficers,
+	Statistics,
 	UpcomingEvent,
 } from '@/components/sites';
 import type { GetStaticPaths, GetStaticProps, NextPage } from 'next';
@@ -31,8 +32,9 @@ const HomePage: NextPage<IndexProps> = ({ stringifiedData }) => {
 	return (
 		<Layout data={data}>
 			<Hero />
-			<UpcomingEvent />
 			<LatestNews simple />
+			<UpcomingEvent />
+			<Statistics />
 			<MeetOfficers simple />
 			<CTA />
 		</Layout>
