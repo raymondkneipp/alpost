@@ -1,5 +1,11 @@
 import { Address, News, Officers, Site, Theme } from '@prisma/client';
-import { CTA, Hero, LatestNews, MeetOfficers } from '@/components/sites';
+import {
+	CTA,
+	Hero,
+	LatestNews,
+	MeetOfficers,
+	UpcomingEvent,
+} from '@/components/sites';
 import type { GetStaticPaths, GetStaticProps, NextPage } from 'next';
 
 import { Layout } from '@/layouts/sites';
@@ -25,6 +31,7 @@ const HomePage: NextPage<IndexProps> = ({ stringifiedData }) => {
 	return (
 		<Layout data={data}>
 			<Hero />
+			<UpcomingEvent />
 			<LatestNews simple />
 			<MeetOfficers simple />
 			<CTA />
