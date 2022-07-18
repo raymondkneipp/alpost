@@ -1,5 +1,5 @@
+import { Address, Site, Theme } from '@prisma/client';
 import type { GetStaticPaths, GetStaticProps, NextPage } from 'next';
-import { Site, Theme } from '@prisma/client';
 
 import { Hero } from '@/components/sites';
 import { Layout } from '@/layouts/sites';
@@ -15,7 +15,10 @@ interface IndexProps {
 }
 
 const HomePage: NextPage<IndexProps> = ({ stringifiedData }) => {
-	const data = JSON.parse(stringifiedData) as Site & { theme: Theme };
+	const data = JSON.parse(stringifiedData) as Site & {
+		theme: Theme;
+		address: Address;
+	};
 
 	return (
 		<Layout data={data}>
@@ -58,7 +61,7 @@ export const getStaticProps: GetStaticProps<IndexProps, PathProps> = async ({
 		where: {
 			subdomain: site,
 		},
-		include: { theme: true },
+		include: { theme: true, address: true },
 	});
 
 	if (!data) return { notFound: true, revalidate: 10 };

@@ -14,13 +14,25 @@ model Site {
   name      String
   subdomain String @unique
 
-  theme Theme?
+  theme   Theme?
+  address Address?
 }
 
 model Theme {
   id     String @id @default(cuid())
   color  Color  @default(SKY)
   radius Radius @default(MEDIUM)
+
+  site   Site   @relation(fields: [siteId], references: [id])
+  siteId String @unique
+}
+
+model Address {
+  id     String @id @default(cuid())
+  street String
+  city   String
+  state  String
+  zip    String
 
   site   Site   @relation(fields: [siteId], references: [id])
   siteId String @unique

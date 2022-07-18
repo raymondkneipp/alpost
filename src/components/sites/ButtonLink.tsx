@@ -24,17 +24,15 @@ const ButtonLink: React.FC<Props> = ({
 	const { radius, color } = useContext(ThemeContext);
 
 	const variants = {
-		$all: `text-neutral-100 font-bold transition ${getRadius(
-			radius
-		)} hover:brightness-125`,
+		$all: `font-bold transition ${getRadius(radius)} hover:brightness-125`,
 		size: {
 			sm: 'py-1 px-2',
 			md: 'py-2 px-4',
 			lg: 'py-3 px-6 sm:py-4 sm:px-8',
 		},
 		theme: {
-			primary: `${getBg(color)}`,
-			secondary: `bg-neutral-800`,
+			primary: `${getBg(color)} text-neutral-100`,
+			secondary: `bg-neutral-800 text-neutral-100`,
 			light: `bg-neutral-200 text-neutral-900`,
 		},
 	};

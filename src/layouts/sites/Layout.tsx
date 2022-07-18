@@ -1,21 +1,27 @@
+import { Address, Site, Theme } from '@prisma/client';
+import {
+	AddressProvider,
+	GeneralProvider,
+	ThemeProvider,
+} from '@/contexts/sites';
 import { Footer, Navbar } from '@/components/sites';
-import { GeneralProvider, ThemeProvider } from '@/contexts/sites';
-import { Site, Theme } from '@prisma/client';
 
 type Props = {
 	children: React.ReactNode;
-	data: Site & { theme: Theme };
+	data: Site & { theme: Theme; address: Address };
 };
 
 const Layout: React.FC<Props> = ({ children, data }) => {
 	return (
 		<GeneralProvider data={data}>
 			<ThemeProvider data={data.theme}>
-				<>
-					<Navbar />
-					{children}
-					<Footer />
-				</>
+				<AddressProvider data={data.address}>
+					<>
+						<Navbar />
+						{children}
+						<Footer />
+					</>
+				</AddressProvider>
 			</ThemeProvider>
 		</GeneralProvider>
 	);

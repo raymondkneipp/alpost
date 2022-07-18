@@ -1,3 +1,4 @@
+import { AddressContext, GeneralContext } from '@/contexts/sites';
 import {
 	AmericanLegionLogo,
 	Container,
@@ -6,12 +7,12 @@ import {
 } from '@/components/shared';
 
 import { Anchor } from '@/components/sites';
-import { GeneralContext } from '@/contexts/sites';
 import { Tall } from '@/layouts/shared';
 import { useContext } from 'react';
 
 const Footer: React.FC = () => {
 	const { name, subdomain } = useContext(GeneralContext);
+	const { street, city, state, zip } = useContext(AddressContext);
 
 	return (
 		<footer className="py-8">
@@ -21,8 +22,8 @@ const Footer: React.FC = () => {
 						<div className="space-y-4">
 							<AmericanLegionLogo />
 							<p className="text-neutral-600 dark:text-neutral-400">
-								{name} American Legion Post {subdomain} located on _______ ___,
-								____
+								{name} American Legion Post {subdomain} located on {street}{' '}
+								{city}, {state} {zip}
 							</p>
 						</div>
 					}
@@ -58,7 +59,7 @@ const Footer: React.FC = () => {
 					</DL>
 				</Tall>
 
-				<div className="flex flex-col items-center justify-center text-center">
+				<div className="flex flex-col items-center justify-center pt-4 text-center">
 					<Anchor href="https://alpost.org">Website by ALPost</Anchor>
 				</div>
 			</Container>
