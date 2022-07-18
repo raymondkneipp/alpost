@@ -24,7 +24,7 @@ const ButtonLink: React.FC<Props> = ({
 	const { radius, color } = useContext(ThemeContext);
 
 	const variants = {
-		$all: `text-neutral-100 font-medium transition ${getRadius(
+		$all: `text-neutral-100 font-bold transition ${getRadius(
 			radius
 		)} hover:brightness-125`,
 		size: {

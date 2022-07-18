@@ -1,4 +1,9 @@
-import { AmericanLegionLogo, Container } from '@/components/shared';
+import {
+	AmericanLegionLogo,
+	Container,
+	DescriptionListItem as DI,
+	DescriptionList as DL,
+} from '@/components/shared';
 
 import { GeneralContext } from '@/contexts/sites';
 import { Tall } from '@/layouts/shared';
@@ -14,25 +19,16 @@ const Footer: React.FC = () => {
 					master={
 						<div className="space-y-4">
 							<AmericanLegionLogo />
-							<p>
+							<p className="text-neutral-700 dark:text-neutral-300">
 								{name} American Legion Post {subdomain} located on _______ ___,
 								____
 							</p>
 						</div>
 					}
 				>
-					<p>
-						Lorem ipsum, dolor sit amet consectetur adipisicing elit. Numquam
-						qui dolore, quo eveniet recusandae vero tempore quam soluta minus,
-						impedit a eum dignissimos sequi maiores molestias mollitia adipisci
-						sapiente? Modi.
-					</p>
-					<p>
-						Lorem ipsum, dolor sit amet consectetur adipisicing elit. Numquam
-						qui dolore, quo eveniet recusandae vero tempore quam soluta minus,
-						impedit a eum dignissimos sequi maiores molestias mollitia adipisci
-						sapiente? Modi.
-					</p>
+					<DL title="Pages">
+						<DI>Home</DI>
+					</DL>
 				</Tall>
 
 				<div className="flex flex-col items-center justify-center text-center">

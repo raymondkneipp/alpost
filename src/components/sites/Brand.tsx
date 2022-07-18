@@ -1,8 +1,9 @@
-import Link from 'next/link';
-import { useContext } from 'react';
-import { AmericanLegionLogo } from '@/components/shared';
 import { GeneralContext, ThemeContext } from '@/contexts/sites';
 import { getFg, getRadius } from '@/utils/sites';
+
+import { AmericanLegionLogo } from '@/components/shared';
+import Link from 'next/link';
+import { useContext } from 'react';
 
 const Brand: React.FC = () => {
 	const { subdomain } = useContext(GeneralContext);
@@ -14,7 +15,7 @@ const Brand: React.FC = () => {
 			className={`flex items-center space-x-2 ${getRadius(radius)}`}
 		>
 			<AmericanLegionLogo />
-			<span className={`text-xl font-medium ${getFg(color)}`}>
+			<span className={`text-xl font-bold ${getFg(color)}`}>
 				Post {subdomain}
 			</span>
 		</Link>
