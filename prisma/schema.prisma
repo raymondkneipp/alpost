@@ -16,6 +16,7 @@ model Site {
 
   theme   Theme?
   address Address?
+  news    News[]
 }
 
 model Theme {
@@ -36,6 +37,16 @@ model Address {
 
   site   Site   @relation(fields: [siteId], references: [id])
   siteId String @unique
+}
+
+model News {
+  id        String   @id @default(cuid())
+  createdAt DateTime @default(now())
+  title     String   @db.VarChar(100)
+  content   String   @db.VarChar(2000)
+
+  site   Site   @relation(fields: [siteId], references: [id])
+  siteId String
 }
 
 enum Color {
