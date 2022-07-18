@@ -14,8 +14,8 @@ const CTA: React.FC = () => {
 					Join Our Post Today!
 				</h2>
 				<p className="md:text-lg text-neutral-100 dark:text-neutral-300">
-					Become a member of our post and be a part of the largest veteran
-					organization reaching over two million members.
+					Join our post and get involved with the nation's largest organization
+					for veterans of all ages.
 				</p>
 				<ButtonLink href="/apply" theme="light" size="lg">
 					Become a Member
