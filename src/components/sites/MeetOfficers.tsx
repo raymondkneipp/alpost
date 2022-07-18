@@ -52,39 +52,41 @@ const MeetOfficers: React.FC<MeetOfficersProps> = ({ simple = false }) => {
 	const { radius } = useContext(ThemeContext);
 
 	return (
-		<Container className="py-16">
-			<Wide
-				master={
-					<div>
-						<h2 className="text-2xl font-bold md:text-4xl text-neutral-900 dark:text-neutral-100">
-							Meet Our Officers
-						</h2>
-					</div>
-				}
-			>
-				<>
-					{officers.length > 0 ? (
-						<>
-							{officers
-								.slice(0, simple ? 3 : officers.length)
-								.map((officerItem) => (
-									<OfficerItem key={officerItem.id} data={officerItem} />
-								))}
-						</>
-					) : (
-						<div
-							className={`h-60 bg-neutral-200 dark:bg-neutral-800 col-span-full flex items-center justify-center ${getRadius(
-								radius
-							)}`}
-						>
-							<p className="text-lg text-neutral-600 dark:text-neutral-400">
-								We currently do not have any officers
-							</p>
+		<section className="py-16">
+			<Container>
+				<Wide
+					master={
+						<div>
+							<h2 className="text-2xl font-bold md:text-4xl text-neutral-900 dark:text-neutral-100">
+								Meet Our Officers
+							</h2>
 						</div>
-					)}
-				</>
-			</Wide>
-		</Container>
+					}
+				>
+					<>
+						{officers.length > 0 ? (
+							<>
+								{officers
+									.slice(0, simple ? 3 : officers.length)
+									.map((officerItem) => (
+										<OfficerItem key={officerItem.id} data={officerItem} />
+									))}
+							</>
+						) : (
+							<div
+								className={`h-60 bg-neutral-200 dark:bg-neutral-800 col-span-full flex items-center justify-center ${getRadius(
+									radius
+								)}`}
+							>
+								<p className="text-lg text-neutral-600 dark:text-neutral-400">
+									We currently do not have any officers
+								</p>
+							</div>
+						)}
+					</>
+				</Wide>
+			</Container>
+		</section>
 	);
 };
 

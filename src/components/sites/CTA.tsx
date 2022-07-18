@@ -8,7 +8,7 @@ const CTA: React.FC = () => {
 	const { color } = useContext(ThemeContext);
 
 	return (
-		<div className={`${getBg(color)} py-16`}>
+		<section className={`${getBg(color)} py-16`}>
 			<Container className="flex flex-col items-center justify-center max-w-screen-sm space-y-4 text-center">
 				<h2 className="text-2xl font-bold md:text-4xl text-neutral-100">
 					Join Our Post Today!
@@ -21,7 +21,7 @@ const CTA: React.FC = () => {
 					Become a Member
 				</ButtonLink>
 			</Container>
-		</div>
+		</section>
 	);
 };
 

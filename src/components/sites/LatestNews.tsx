@@ -50,37 +50,39 @@ const LatestNews: React.FC<LatestNewsProps> = ({ simple = false }) => {
 	const { radius } = useContext(ThemeContext);
 
 	return (
-		<Container className="py-16">
-			<Wide
-				master={
-					<div>
-						<h2 className="text-2xl font-bold md:text-4xl text-neutral-900 dark:text-neutral-100">
-							Read The Latest News
-						</h2>
-					</div>
-				}
-			>
-				<>
-					{news.length > 0 ? (
-						<>
-							{news.slice(0, simple ? 3 : news.length).map((newsItem) => (
-								<NewsItem key={newsItem.id} data={newsItem} />
-							))}
-						</>
-					) : (
-						<div
-							className={`h-60 bg-neutral-200 dark:bg-neutral-800 col-span-full flex items-center justify-center ${getRadius(
-								radius
-							)}`}
-						>
-							<p className="text-lg text-neutral-600 dark:text-neutral-400">
-								You are all caught up
-							</p>
+		<section className="py-16">
+			<Container>
+				<Wide
+					master={
+						<div>
+							<h2 className="text-2xl font-bold md:text-4xl text-neutral-900 dark:text-neutral-100">
+								Read The Latest News
+							</h2>
 						</div>
-					)}
-				</>
-			</Wide>
-		</Container>
+					}
+				>
+					<>
+						{news.length > 0 ? (
+							<>
+								{news.slice(0, simple ? 3 : news.length).map((newsItem) => (
+									<NewsItem key={newsItem.id} data={newsItem} />
+								))}
+							</>
+						) : (
+							<div
+								className={`h-60 bg-neutral-200 dark:bg-neutral-800 col-span-full flex items-center justify-center ${getRadius(
+									radius
+								)}`}
+							>
+								<p className="text-lg text-neutral-600 dark:text-neutral-400">
+									You are all caught up
+								</p>
+							</div>
+						)}
+					</>
+				</Wide>
+			</Container>
+		</section>
 	);
 };
 
