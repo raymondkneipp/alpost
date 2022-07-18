@@ -5,6 +5,7 @@ import {
 	DescriptionList as DL,
 } from '@/components/shared';
 
+import { Anchor } from '@/components/sites';
 import { GeneralContext } from '@/contexts/sites';
 import { Tall } from '@/layouts/shared';
 import { useContext } from 'react';
@@ -19,7 +20,7 @@ const Footer: React.FC = () => {
 					master={
 						<div className="space-y-4">
 							<AmericanLegionLogo />
-							<p className="text-neutral-700 dark:text-neutral-300">
+							<p className="text-neutral-600 dark:text-neutral-400">
 								{name} American Legion Post {subdomain} located on _______ ___,
 								____
 							</p>
@@ -27,14 +28,38 @@ const Footer: React.FC = () => {
 					}
 				>
 					<DL title="Pages">
-						<DI>Home</DI>
+						<DI>
+							<Anchor href="/">Home</Anchor>
+						</DI>
+						<DI>
+							<Anchor href="/about">About</Anchor>
+						</DI>
+						<DI>
+							<Anchor href="/news">News</Anchor>
+						</DI>
+						<DI>
+							<Anchor href="/events">Events</Anchor>
+						</DI>
+						<DI>
+							<Anchor href="/contact">Contact</Anchor>
+						</DI>
+					</DL>
+
+					<DL title="Other">
+						<DI>
+							<Anchor href="/affiliated">Affiliated Websites</Anchor>
+						</DI>
+						<DI>
+							<Anchor href="/apply">Apply</Anchor>
+						</DI>
+						<DI>
+							<Anchor href="https://app.alpost.org/login">Login</Anchor>
+						</DI>
 					</DL>
 				</Tall>
 
 				<div className="flex flex-col items-center justify-center text-center">
-					<a href="https://alpost.org" className="p-4">
-						Website by ALPost
-					</a>
+					<Anchor href="https://alpost.org">Website by ALPost</Anchor>
 				</div>
 			</Container>
 		</footer>
