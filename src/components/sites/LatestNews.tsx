@@ -1,11 +1,11 @@
 import { NewsContext, ThemeContext } from '@/contexts/sites';
+import { getFg, getRadius } from '@/utils/sites';
 
 import { Container } from '@/components/shared';
 import Image from 'next/future/image';
 import Link from 'next/link';
 import { News } from '@prisma/client';
 import { Wide } from '@/layouts/shared';
-import { getRadius } from '@/utils/sites';
 import { useContext } from 'react';
 
 type NewsItemProps = {
@@ -13,7 +13,7 @@ type NewsItemProps = {
 };
 
 const NewsItem: React.FC<NewsItemProps> = ({ data }) => {
-	const { radius } = useContext(ThemeContext);
+	const { radius, color } = useContext(ThemeContext);
 
 	return (
 		<Link href={`/news/${data.id}`}>
@@ -31,7 +31,7 @@ const NewsItem: React.FC<NewsItemProps> = ({ data }) => {
 						{data.content.substring(0, 100)}...
 					</p>
 					<footer className="pt-4 border-t border-neutral-300 dark:border-neutral-700">
-						<p className="text-sm text-neutral-600 dark:text-neutral-400">
+						<p className={`text-sm ${getFg(color)}`}>
 							{new Date(data.createdAt).toDateString()}
 						</p>
 					</footer>
