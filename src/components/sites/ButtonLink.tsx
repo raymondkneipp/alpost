@@ -1,9 +1,9 @@
-import { Color } from '@prisma/client';
+import { getBg, getRadius } from '@/utils/sites';
+
 import Link from 'next/link';
-import cn from 'variant-classnames';
-import { getBg, getFg, getRadius } from '@/utils/sites';
-import { useContext } from 'react';
 import { ThemeContext } from '@/contexts/sites';
+import cn from 'variant-classnames';
+import { useContext } from 'react';
 
 type Size = 'sm' | 'md' | 'lg';
 type Theme = 'primary' | 'secondary' | 'light';
@@ -30,7 +30,7 @@ const ButtonLink: React.FC<Props> = ({
 		size: {
 			sm: 'py-1 px-2',
 			md: 'py-2 px-4',
-			lg: 'py-4 px-8',
+			lg: 'py-3 px-6 sm:py-4 sm:px-8',
 		},
 		theme: {
 			primary: `${getBg(color)}`,
