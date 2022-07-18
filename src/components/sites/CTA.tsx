@@ -13,7 +13,7 @@ const CTA: React.FC = () => {
 				<h2 className="text-2xl font-bold md:text-4xl text-neutral-100">
 					Join Our Post Today!
 				</h2>
-				<p className="md:text-lg text-neutral-600 dark:text-neutral-300">
+				<p className="md:text-lg text-neutral-100 dark:text-neutral-300">
 					Become a member of our post and be a part of the largest veteran
 					organization reaching over two million members.
 				</p>
