@@ -5,6 +5,7 @@ export { default as CTA } from './CTA';
 export { default as Footer } from './Footer';
 export { default as Hero } from './Hero';
 export { default as LatestNews } from './LatestNews';
+export { default as MeetOfficers } from './MeetOfficers';
 export { default as MobileNav } from './MobileNav';
 export { default as MobileNavLink } from './MobileNavLink';
 export { default as Navbar } from './Navbar';
