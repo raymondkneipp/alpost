@@ -1,6 +1,6 @@
-import { Site, Theme } from '@prisma/client';
-import { Navbar } from '@/components/sites';
+import { Footer, Navbar } from '@/components/sites';
 import { GeneralProvider, ThemeProvider } from '@/contexts/sites';
+import { Site, Theme } from '@prisma/client';
 
 type Props = {
 	children: React.ReactNode;
@@ -14,6 +14,7 @@ const Layout: React.FC<Props> = ({ children, data }) => {
 				<>
 					<Navbar />
 					{children}
+					<Footer />
 				</>
 			</ThemeProvider>
 		</GeneralProvider>

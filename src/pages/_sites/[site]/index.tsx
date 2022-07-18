@@ -1,11 +1,10 @@
-import { Layout } from '@/layouts/sites';
-import type { NextPage } from 'next';
-import { prisma } from '@/prisma';
-import type { GetStaticPaths, GetStaticProps } from 'next';
-import type { ParsedUrlQuery } from 'querystring';
-import { Container } from '@/components/shared';
+import type { GetStaticPaths, GetStaticProps, NextPage } from 'next';
 import { Site, Theme } from '@prisma/client';
+
 import { Hero } from '@/components/sites';
+import { Layout } from '@/layouts/sites';
+import type { ParsedUrlQuery } from 'querystring';
+import { prisma } from '@/prisma';
 
 interface PathProps extends ParsedUrlQuery {
 	site: string;
@@ -21,9 +20,6 @@ const HomePage: NextPage<IndexProps> = ({ stringifiedData }) => {
 	return (
 		<Layout data={data}>
 			<Hero />
-			<Container>
-				<h1>sites</h1>
-			</Container>
 		</Layout>
 	);
 };
