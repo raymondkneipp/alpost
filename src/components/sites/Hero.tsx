@@ -1,29 +1,29 @@
-import { useContext } from 'react';
-import Image from 'next/future/image';
-import { Container } from '@/components/shared';
 import { GeneralContext, ThemeContext } from '@/contexts/sites';
+
 import { ButtonLink } from '@/components/sites';
-import { Color } from '@prisma/client';
+import { Container } from '@/components/shared';
+import Image from 'next/future/image';
+import { useContext } from 'react';
 
 const Hero: React.FC = () => {
 	const { name, subdomain } = useContext(GeneralContext);
 	const { color } = useContext(ThemeContext);
 	return (
-		<div className="w-screen h-screen relative">
+		<div className="relative w-screen h-screen">
 			<Image
 				src="/shared/american-flag.jpg"
 				width={1000}
 				height={1000}
 				alt="american flag"
-				className="h-screen w-screen object-cover object-center absolute inset-0"
+				className="absolute inset-0 object-cover object-center w-screen h-screen"
 			/>
 
-			<div className="bg-black/80 absolute inset-0">
+			<div className="absolute inset-0 bg-black/80">
 				<Container className="flex flex-col items-center justify-center h-full max-w-screen-md space-y-4">
-					<h1 className="text-6xl text-neutral-100 font-medium text-center">
+					<h1 className="text-3xl font-medium text-center md:text-6xl text-neutral-100">
 						Welcome to {name} American Legion Post {subdomain}
 					</h1>
-					<div className="flex items-center justify-center space-x-4">
+					<div className="flex flex-wrap items-center justify-center gap-4">
 						<ButtonLink href="/" theme="primary" size="lg">
 							Become a Member
 						</ButtonLink>
