@@ -45,6 +45,7 @@ enum Color {
   PINK
   ROSE
   NEUTRAL
+  WHITE
 }
 
 enum Radius {

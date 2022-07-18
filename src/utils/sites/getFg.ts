@@ -38,6 +38,8 @@ const getFg = (color: Color) => {
 			return 'text-rose-700 dark:text-rose-500';
 		case Color.NEUTRAL:
 			return 'text-neutral-700 dark:text-neutral-500';
+		case Color.WHITE:
+			return 'text-white';
 	}
 };
 

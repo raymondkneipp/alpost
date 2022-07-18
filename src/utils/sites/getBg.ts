@@ -1,6 +1,8 @@
 import { Color } from '@prisma/client';
 
-const getBg = (color: Color) => {
+type Shade = 'base' | 'lighter' | 'darker';
+
+const getBg = (color: Color, shade: Shade = 'base') => {
 	switch (color) {
 		case Color.RED:
 			return 'bg-red-700 dark:bg-red-800';
