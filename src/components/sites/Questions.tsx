@@ -1,7 +1,8 @@
 import { Disclosure, Transition } from '@headlessui/react';
 
+import { ButtonLink } from '@/components/sites';
 import { Container } from '@/components/shared';
-import { FAQContext } from 'contexts/sites/FAQContext';
+import { FAQContext } from '@/contexts/sites';
 import { HiOutlineChevronRight } from 'react-icons/hi';
 import { Tall } from '@/layouts/shared';
 import { useContext } from 'react';
@@ -52,9 +53,16 @@ const Questions: React.FC = () => {
 			<Container>
 				<Tall
 					master={
-						<h2 className="text-2xl font-medium font-heading md:text-4xl text-neutral-900 dark:text-neutral-100">
-							Frequently Asked Questions
-						</h2>
+						<>
+							<h2 className="text-2xl font-medium font-heading md:text-4xl text-neutral-900 dark:text-neutral-100">
+								Frequently Asked Questions
+							</h2>
+							<p className="max-w-lg text-lg text-neutral-600 dark:text-neutral-400">
+								Can't find the answer you are looking for? Please feel free to
+								reach out to us.
+							</p>
+							<ButtonLink href="/contact">Contact Us</ButtonLink>
+						</>
 					}
 				>
 					<div className="flex flex-col items-stretch divide-y col-span-full divide-neutral-200 dark:divide-neutral-800">

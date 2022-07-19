@@ -32,3 +32,9 @@
 - [ ] Offer free site to Williamsburg American Legion
 - [ ] Gather feedback
 - [ ] Schedule Zoom / Call CTA
+
+### Post Production Features
+
+- [ ] https://github.com/garmeeh/next-seo#corporate-contact
+- [ ] https://github.com/garmeeh/next-seo#faq-page
+- [ ] https://github.com/garmeeh/next-seo#social-profile
