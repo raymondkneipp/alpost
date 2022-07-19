@@ -54,11 +54,9 @@ const LatestNews: React.FC<LatestNewsProps> = ({ simple = false }) => {
 			<Container>
 				<Wide
 					master={
-						<div>
-							<h2 className="text-2xl font-medium font-heading md:text-4xl text-neutral-900 dark:text-neutral-100">
-								Read The Latest News
-							</h2>
-						</div>
+						<h2 className="text-2xl font-medium font-heading md:text-4xl text-neutral-900 dark:text-neutral-100">
+							Read The Latest News
+						</h2>
 					}
 				>
 					<>
