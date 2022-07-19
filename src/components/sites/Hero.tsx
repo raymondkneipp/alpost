@@ -1,13 +1,12 @@
-import { GeneralContext, ThemeContext } from '@/contexts/sites';
-
 import { ButtonLink } from '@/components/sites';
 import { Container } from '@/components/shared';
+import { GeneralContext } from '@/contexts/sites';
 import Image from 'next/future/image';
 import { useContext } from 'react';
 
 const Hero: React.FC = () => {
 	const { name, subdomain } = useContext(GeneralContext);
-	const { color } = useContext(ThemeContext);
+
 	return (
 		<section className="relative w-screen min-h-screen">
 			<Image
@@ -23,6 +22,11 @@ const Hero: React.FC = () => {
 					<h1 className="text-3xl font-medium text-center font-heading md:text-4xl lg:text-6xl text-neutral-100">
 						Welcome to {name} American Legion Post {subdomain}
 					</h1>
+					<p className="text-center md:max-w-2xl sm:max-w-md md:text-lg text-neutral-100 dark:text-neutral-300">
+						Lorem ipsum dolor sit amet consectetur adipisicing elit. Cupiditate,
+						ipsa? Minima velit voluptate reprehenderit exercitationem a
+						blanditiis hic no.
+					</p>
 					<div className="flex flex-wrap items-center justify-center gap-4">
 						<ButtonLink href="/" theme="primary" size="lg">
 							Become a Member

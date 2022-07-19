@@ -19,7 +19,7 @@ const UpcomingEvent: React.FC = () => {
 							<h2 className="items-start text-2xl font-medium font-heading md:text-4xl text-neutral-900 dark:text-neutral-100">
 								Upcoming Event
 							</h2>
-							<p className="text-neutral-600 dark:text-neutral-400">
+							<p className="text-lg text-neutral-600 dark:text-neutral-400">
 								Check out our upcoming events so you can get involved.
 							</p>
 							<ButtonLink href="/events" theme="secondary">
