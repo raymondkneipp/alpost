@@ -6,6 +6,7 @@ export { default as Footer } from './Footer';
 export { default as HallRental } from './HallRental';
 export { default as Hero } from './Hero';
 export { default as IconCard } from './IconCard';
+export { default as Info } from './Info';
 export { default as LatestNews } from './LatestNews';
 export { default as MeetOfficers } from './MeetOfficers';
 export { default as MobileNav } from './MobileNav';

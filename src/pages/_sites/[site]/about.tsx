@@ -1,8 +1,8 @@
 import { Address, News, Officers, Site, Socials, Theme } from '@prisma/client';
 import type { GetStaticPaths, GetStaticProps, NextPage } from 'next';
+import { Info, MeetOfficers } from '@/components/sites';
 
 import { Layout } from '@/layouts/sites';
-import { MeetOfficers } from '@/components/sites';
 import type { ParsedUrlQuery } from 'querystring';
 import { prisma } from '@/prisma';
 
@@ -25,6 +25,7 @@ const AboutPage: NextPage<AboutProps> = ({ stringifiedData }) => {
 
 	return (
 		<Layout data={data} title="About">
+			<Info />
 			<MeetOfficers />
 		</Layout>
 	);
