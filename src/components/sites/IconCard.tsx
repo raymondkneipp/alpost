@@ -9,7 +9,6 @@ interface Props {
 	title: string;
 	content: string;
 	stack?: boolean;
-	light?: boolean;
 	center?: boolean;
 }
 
