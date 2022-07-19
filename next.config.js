@@ -6,6 +6,10 @@ const nextConfig = {
 		images: { allowFutureImage: true },
 		newNextLinkBehavior: true,
 	},
+	i18n: {
+		locales: ['en'],
+		defaultLocale: 'en',
+	},
 };
 
 module.exports = nextConfig;

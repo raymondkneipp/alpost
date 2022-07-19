@@ -41,6 +41,7 @@ const Layout: React.FC<Props> = ({ children, data }) => {
 			<NextSeo
 				title="Home"
 				titleTemplate={`${data.name} American Legion Post ${data.subdomain} | %s`}
+				description={data.description}
 			/>
 			<GeneralProvider data={data}>
 				<ThemeProvider data={data.theme}>

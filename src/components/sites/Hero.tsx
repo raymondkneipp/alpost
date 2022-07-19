@@ -5,7 +5,7 @@ import Image from 'next/future/image';
 import { useContext } from 'react';
 
 const Hero: React.FC = () => {
-	const { name, subdomain } = useContext(GeneralContext);
+	const { name, subdomain, description } = useContext(GeneralContext);
 
 	return (
 		<section className="relative w-screen min-h-screen">
@@ -23,9 +23,7 @@ const Hero: React.FC = () => {
 						Welcome to {name} American Legion Post {subdomain}
 					</h1>
 					<p className="text-center md:max-w-2xl sm:max-w-md md:text-lg text-neutral-100 dark:text-neutral-300">
-						Lorem ipsum dolor sit amet consectetur adipisicing elit. Cupiditate,
-						ipsa? Minima velit voluptate reprehenderit exercitationem a
-						blanditiis hic no.
+						{description}
 					</p>
 					<div className="flex flex-wrap items-center justify-center gap-4">
 						<ButtonLink href="/" theme="primary" size="lg">
