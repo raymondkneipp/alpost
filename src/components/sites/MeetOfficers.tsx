@@ -56,11 +56,11 @@ const MeetOfficers: React.FC<MeetOfficersProps> = ({ simple = false }) => {
 			<Container>
 				<Wide
 					master={
-						<div>
+						<>
 							<h2 className="text-2xl font-medium md:text-4xl text-neutral-900 dark:text-neutral-100">
 								Meet Our Officers
 							</h2>
-						</div>
+						</>
 					}
 				>
 					<>

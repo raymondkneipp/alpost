@@ -1,6 +1,7 @@
 import { Address, News, Officers, Site, Theme } from '@prisma/client';
 import {
 	CTA,
+	HallRental,
 	Hero,
 	LatestNews,
 	MeetOfficers,
@@ -35,6 +36,7 @@ const HomePage: NextPage<IndexProps> = ({ stringifiedData }) => {
 			<LatestNews simple />
 			<UpcomingEvent />
 			<Statistics />
+			<HallRental />
 			<MeetOfficers simple />
 			<CTA />
 		</Layout>
