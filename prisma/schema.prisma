@@ -18,6 +18,7 @@ model Site {
   address  Address?
   news     News[]
   officers Officers[]
+  socials  Socials?
 }
 
 model Theme {
@@ -51,7 +52,6 @@ model News {
 }
 
 model Officers {
-
   id          String @id @default(cuid())
   name        String
   title       String
@@ -59,6 +59,19 @@ model Officers {
 
   site   Site   @relation(fields: [siteId], references: [id])
   siteId String
+}
+
+model Socials {
+  id        String @id @default(cuid())
+  facebook  String @default("https://www.facebook.com/americanlegionhq")
+  twitter   String @default("https://twitter.com/AmericanLegion")
+  instagram String @default("https://www.instagram.com/theamericanlegion/")
+  youtube   String @default("https://www.youtube.com/user/americanlegionHQ")
+  pinterest String @default("https://www.pinterest.com/talhq/")
+  linkedin  String @default("https://www.linkedin.com/company/the-american-legion/")
+
+  site   Site   @relation(fields: [siteId], references: [id])
+  siteId String @unique
 }
 
 enum Color {
