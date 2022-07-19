@@ -1,8 +1,10 @@
 import { Disclosure, Transition } from '@headlessui/react';
 
 import { Container } from '@/components/shared';
+import { FAQContext } from 'contexts/sites/FAQContext';
 import { HiOutlineChevronRight } from 'react-icons/hi';
 import { Tall } from '@/layouts/shared';
+import { useContext } from 'react';
 
 type FAQItemProps = {
 	question: string;
@@ -14,7 +16,7 @@ const FAQItem: React.FC<FAQItemProps> = ({ question, answer }) => {
 		<Disclosure as="div">
 			{({ open }) => (
 				<>
-					<Disclosure.Button className="flex justify-between w-full py-6 text-xl font-medium text-left font-heading text-neutral-900 dark:text-neutral-100 flex-center">
+					<Disclosure.Button className="flex justify-between w-full py-6 text-lg font-medium text-left font-heading text-neutral-900 dark:text-neutral-100 flex-center">
 						<span>{question}</span>
 						<div
 							className={`flex items-center justify-center transition ${
@@ -42,7 +44,9 @@ const FAQItem: React.FC<FAQItemProps> = ({ question, answer }) => {
 	);
 };
 
-const FAQ: React.FC = () => {
+const Questions: React.FC = () => {
+	const faq = useContext(FAQContext);
+
 	return (
 		<section className="py-16">
 			<Container>
@@ -54,22 +58,13 @@ const FAQ: React.FC = () => {
 					}
 				>
 					<div className="flex flex-col items-stretch divide-y col-span-full divide-neutral-200 dark:divide-neutral-800">
-						<FAQItem
-							question="Omnis eos fugiat assumenda impedit?"
-							answer="Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore quos quasi, perspiciatis neque nisi numquam quae autem ipsum consequatur, iste, veritatis obcaecati dicta maiores tempora. "
-						/>
-						<FAQItem
-							question="Omnis eos fugiat assumenda impedit?"
-							answer="Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore quos quasi, perspiciatis neque nisi numquam quae autem ipsum consequatur, iste, veritatis obcaecati dicta maiores tempora. "
-						/>
-						<FAQItem
-							question="Omnis eos fugiat assumenda impedit?"
-							answer="Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore quos quasi, perspiciatis neque nisi numquam quae autem ipsum consequatur, iste, veritatis obcaecati dicta maiores tempora. "
-						/>
-						<FAQItem
-							question="Omnis eos fugiat assumenda impedit?"
-							answer="Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore quos quasi, perspiciatis neque nisi numquam quae autem ipsum consequatur, iste, veritatis obcaecati dicta maiores tempora. "
-						/>
+						{faq.map((item) => (
+							<FAQItem
+								key={item.id}
+								question={item.question}
+								answer={item.answer}
+							/>
+						))}
 					</div>
 				</Tall>
 			</Container>
@@ -77,4 +72,4 @@ const FAQ: React.FC = () => {
 	);
 };
 
-export default FAQ;
+export default Questions;

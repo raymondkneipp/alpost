@@ -1,4 +1,12 @@
-import { Address, News, Officers, Site, Socials, Theme } from '@prisma/client';
+import {
+	Address,
+	FAQ,
+	News,
+	Officers,
+	Site,
+	Socials,
+	Theme,
+} from '@prisma/client';
 import {
 	AddressProvider,
 	GeneralProvider,
@@ -8,6 +16,7 @@ import {
 } from '@/contexts/sites';
 import { Footer, Navbar } from '@/components/sites';
 
+import { FAQProvider } from 'contexts/sites/FAQContext';
 import { NewsProvider } from 'contexts/sites/NewsContext';
 import { NextSeo } from 'next-seo';
 
@@ -20,6 +29,7 @@ type Props = {
 		news: News[];
 		officers: Officers[];
 		socials: Socials;
+		faq: FAQ[];
 	};
 };
 
@@ -66,9 +76,11 @@ const Layout: React.FC<Props> = ({ children, data, title }) => {
 						<NewsProvider data={data.news}>
 							<OfficersProvider data={data.officers}>
 								<SocialsProvider data={data.socials}>
-									<Navbar />
-									<main>{children}</main>
-									<Footer />
+									<FAQProvider data={data.faq}>
+										<Navbar />
+										<main>{children}</main>
+										<Footer />
+									</FAQProvider>
 								</SocialsProvider>
 							</OfficersProvider>
 						</NewsProvider>

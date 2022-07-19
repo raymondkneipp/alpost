@@ -20,6 +20,7 @@ model Site {
   news     News[]
   officers Officers[]
   socials  Socials?
+  faq      FAQ[]
 }
 
 model Theme {
@@ -73,6 +74,15 @@ model Socials {
 
   site   Site   @relation(fields: [siteId], references: [id])
   siteId String @unique
+}
+
+model FAQ {
+  id       String @id @default(cuid())
+  question String
+  answer   String @db.VarChar(2000)
+
+  site   Site   @relation(fields: [siteId], references: [id])
+  siteId String
 }
 
 enum Color {

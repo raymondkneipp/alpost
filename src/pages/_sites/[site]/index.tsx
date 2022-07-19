@@ -1,4 +1,12 @@
-import { Address, News, Officers, Site, Socials, Theme } from '@prisma/client';
+import {
+	Address,
+	FAQ,
+	News,
+	Officers,
+	Site,
+	Socials,
+	Theme,
+} from '@prisma/client';
 import {
 	CTA,
 	HallRental,
@@ -29,6 +37,7 @@ const HomePage: NextPage<IndexProps> = ({ stringifiedData }) => {
 		news: News[];
 		officers: Officers[];
 		socials: Socials;
+		faq: FAQ[];
 	};
 
 	return (
@@ -88,6 +97,7 @@ export const getStaticProps: GetStaticProps<IndexProps, PathProps> = async ({
 			},
 			officers: true,
 			socials: true,
+			faq: true,
 		},
 	});
 
