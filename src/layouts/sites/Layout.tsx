@@ -10,6 +10,7 @@ import { Footer, Navbar } from '@/components/sites';
 
 import Head from 'next/head';
 import { NewsProvider } from 'contexts/sites/NewsContext';
+import { NextSeo } from 'next-seo';
 
 type Props = {
 	children: React.ReactNode;
@@ -37,6 +38,10 @@ const Layout: React.FC<Props> = ({ children, data }) => {
 					rel="stylesheet"
 				/>
 			</Head>
+			<NextSeo
+				title="Home"
+				titleTemplate={`${data.name} American Legion Post ${data.subdomain} | %s`}
+			/>
 			<GeneralProvider data={data}>
 				<ThemeProvider data={data.theme}>
 					<AddressProvider data={data.address}>
