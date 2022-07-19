@@ -13,6 +13,7 @@ import { NextSeo } from 'next-seo';
 
 type Props = {
 	children: React.ReactNode;
+	title: string;
 	data: Site & {
 		theme: Theme;
 		address: Address;
@@ -22,11 +23,11 @@ type Props = {
 	};
 };
 
-const Layout: React.FC<Props> = ({ children, data }) => {
+const Layout: React.FC<Props> = ({ children, data, title }) => {
 	return (
 		<>
 			<NextSeo
-				title="Home"
+				title={title}
 				titleTemplate={`${data.name} American Legion Post ${data.subdomain} | %s`}
 				description={data.description}
 				additionalLinkTags={[

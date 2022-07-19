@@ -22,7 +22,7 @@ const Hero: React.FC = () => {
 					<h1 className="text-3xl font-medium text-center font-heading md:text-4xl lg:text-6xl text-neutral-100">
 						Welcome to {name} American Legion Post {subdomain}
 					</h1>
-					<p className="text-center md:max-w-2xl sm:max-w-md md:text-lg text-neutral-100 dark:text-neutral-300">
+					<p className="text-center md:max-w-2xl sm:max-w-md md:text-lg text-neutral-300">
 						{description}
 					</p>
 					<div className="flex flex-wrap items-center justify-center gap-4">

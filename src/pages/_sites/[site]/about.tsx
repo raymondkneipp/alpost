@@ -1,16 +1,8 @@
 import { Address, News, Officers, Site, Socials, Theme } from '@prisma/client';
-import {
-	CTA,
-	HallRental,
-	Hero,
-	LatestNews,
-	MeetOfficers,
-	Statistics,
-	UpcomingEvent,
-} from '@/components/sites';
 import type { GetStaticPaths, GetStaticProps, NextPage } from 'next';
 
 import { Layout } from '@/layouts/sites';
+import { MeetOfficers } from '@/components/sites';
 import type { ParsedUrlQuery } from 'querystring';
 import { prisma } from '@/prisma';
 
@@ -18,11 +10,11 @@ interface PathProps extends ParsedUrlQuery {
 	site: string;
 }
 
-interface IndexProps {
+interface AboutProps {
 	stringifiedData: string;
 }
 
-const HomePage: NextPage<IndexProps> = ({ stringifiedData }) => {
+const AboutPage: NextPage<AboutProps> = ({ stringifiedData }) => {
 	const data = JSON.parse(stringifiedData) as Site & {
 		theme: Theme;
 		address: Address;
@@ -32,19 +24,13 @@ const HomePage: NextPage<IndexProps> = ({ stringifiedData }) => {
 	};
 
 	return (
-		<Layout data={data} title="Home">
-			<Hero />
-			<LatestNews simple />
-			<UpcomingEvent />
-			<Statistics />
-			<HallRental />
-			<MeetOfficers simple />
-			<CTA />
+		<Layout data={data} title="About">
+			<MeetOfficers />
 		</Layout>
 	);
 };
 
-export default HomePage;
+export default AboutPage;
 
 export const getStaticPaths: GetStaticPaths<PathProps> = async () => {
 	const subdomains = await prisma.site.findMany({
@@ -67,7 +53,7 @@ export const getStaticPaths: GetStaticPaths<PathProps> = async () => {
 	};
 };
 
-export const getStaticProps: GetStaticProps<IndexProps, PathProps> = async ({
+export const getStaticProps: GetStaticProps<AboutProps, PathProps> = async ({
 	params,
 }) => {
 	if (!params) throw new Error('No path parameters found');
