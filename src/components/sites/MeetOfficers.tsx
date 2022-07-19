@@ -12,7 +12,7 @@ type OfficerItemProps = {
 };
 
 const OfficerItem: React.FC<OfficerItemProps> = ({ data }) => {
-	const { radius, color } = useContext(ThemeContext);
+	const { radius } = useContext(ThemeContext);
 
 	return (
 		<article
