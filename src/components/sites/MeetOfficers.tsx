@@ -31,9 +31,7 @@ const OfficerItem: React.FC<OfficerItemProps> = ({ data }) => {
 					<h3 className="text-xl font-medium font-heading text-neutral-900 dark:text-neutral-100">
 						{data.name}
 					</h3>
-					<p className="text-lg text-neutral-600 dark:text-neutral-400">
-						{data.title}
-					</p>
+					<p className="text-neutral-600 dark:text-neutral-400">{data.title}</p>
 				</div>
 			</div>
 			<p className="text-neutral-600 dark:text-neutral-400">
