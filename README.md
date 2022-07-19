@@ -4,15 +4,15 @@
 
 ### Sites
 
-> Complete by July 29th
+> Complete by July 28th
 
 ### Home
 
-> Complete by August 5th
+> Complete by August 1nd
 
 ### Marketing
 
-> Complete by September 30th
+> Begin Marketing August 1nd
 
 - [ ] Contact American Legion Headquarters
 - [ ] LinkedIn
@@ -24,16 +24,11 @@
 
 > Complete by August 31th
 
-### Beta Release
+### Release
 
 > Complete by September 10th
 
 - [ ] Contact American Legion Headquarters?
 - [ ] Offer free site to Williamsburg American Legion
 - [ ] Gather feedback
-
-### Production Release
-
 - [ ] Schedule Zoom / Call CTA
-
-> Complete by October 1st
