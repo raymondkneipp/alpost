@@ -1,5 +1,6 @@
 import {
 	Address,
+	Contact,
 	FAQ,
 	News,
 	Officers,
@@ -38,6 +39,7 @@ const HomePage: NextPage<IndexProps> = ({ stringifiedData }) => {
 		officers: Officers[];
 		socials: Socials;
 		faq: FAQ[];
+		contact: Contact;
 	};
 
 	return (
@@ -98,6 +100,7 @@ export const getStaticProps: GetStaticProps<IndexProps, PathProps> = async ({
 			officers: true,
 			socials: true,
 			faq: true,
+			contact: true,
 		},
 	});
 

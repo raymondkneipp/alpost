@@ -1,5 +1,6 @@
 import {
 	Address,
+	Contact,
 	FAQ,
 	News,
 	Officers,
@@ -9,7 +10,7 @@ import {
 } from '@prisma/client';
 import type { GetStaticPaths, GetStaticProps, NextPage } from 'next';
 
-import { Contact } from '@/components/sites';
+import { ContactUs } from '@/components/sites';
 import { Layout } from '@/layouts/sites';
 import type { ParsedUrlQuery } from 'querystring';
 import { prisma } from '@/prisma';
@@ -30,11 +31,12 @@ const ContactPage: NextPage<ContactProps> = ({ stringifiedData }) => {
 		officers: Officers[];
 		socials: Socials;
 		faq: FAQ[];
+		contact: Contact;
 	};
 
 	return (
 		<Layout data={data} title="News">
-			<Contact />
+			<ContactUs />
 		</Layout>
 	);
 };
@@ -84,6 +86,7 @@ export const getStaticProps: GetStaticProps<ContactProps, PathProps> = async ({
 			officers: true,
 			socials: true,
 			faq: true,
+			contact: true,
 		},
 	});
 

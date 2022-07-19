@@ -1,5 +1,6 @@
 import {
 	Address,
+	Contact,
 	FAQ,
 	News,
 	Officers,
@@ -30,6 +31,7 @@ const NewsPage: NextPage<NewsProps> = ({ stringifiedData }) => {
 		officers: Officers[];
 		socials: Socials;
 		faq: FAQ[];
+		contact: Contact;
 	};
 
 	return (
@@ -84,6 +86,7 @@ export const getStaticProps: GetStaticProps<NewsProps, PathProps> = async ({
 			officers: true,
 			socials: true,
 			faq: true,
+			contact: true,
 		},
 	});
 

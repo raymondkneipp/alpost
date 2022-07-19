@@ -1,5 +1,6 @@
 import {
 	Address,
+	Contact,
 	FAQ,
 	News,
 	Officers,
@@ -9,6 +10,7 @@ import {
 } from '@prisma/client';
 import {
 	AddressProvider,
+	ContactProvider,
 	GeneralProvider,
 	OfficersProvider,
 	SocialsProvider,
@@ -30,6 +32,7 @@ type Props = {
 		officers: Officers[];
 		socials: Socials;
 		faq: FAQ[];
+		contact: Contact;
 	};
 };
 
@@ -77,9 +80,11 @@ const Layout: React.FC<Props> = ({ children, data, title }) => {
 							<OfficersProvider data={data.officers}>
 								<SocialsProvider data={data.socials}>
 									<FAQProvider data={data.faq}>
-										<Navbar />
-										<main>{children}</main>
-										<Footer />
+										<ContactProvider data={data.contact}>
+											<Navbar />
+											<main>{children}</main>
+											<Footer />
+										</ContactProvider>
 									</FAQProvider>
 								</SocialsProvider>
 							</OfficersProvider>

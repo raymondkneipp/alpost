@@ -21,6 +21,7 @@ model Site {
   officers Officers[]
   socials  Socials?
   faq      FAQ[]
+  contact  Contact?
 }
 
 model Theme {
@@ -83,6 +84,15 @@ model FAQ {
 
   site   Site   @relation(fields: [siteId], references: [id])
   siteId String
+}
+
+model Contact {
+  id    String @id @default(cuid())
+  email String
+  phone String
+
+  site   Site   @relation(fields: [siteId], references: [id])
+  siteId String @unique
 }
 
 enum Color {

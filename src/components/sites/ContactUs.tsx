@@ -1,3 +1,4 @@
+import { AddressContext, ContactContext } from '@/contexts/sites';
 import {
 	Container,
 	DescriptionListItem as DI,
@@ -6,7 +7,6 @@ import {
 import { HiLocationMarker, HiMail, HiPhone } from 'react-icons/hi';
 import React, { useContext } from 'react';
 
-import { AddressContext } from '@/contexts/sites';
 import { Anchor } from '@/components/sites';
 import { IconType } from 'react-icons';
 import { Tall } from '@/layouts/shared';
@@ -33,8 +33,9 @@ const ContactMethod: React.FC<ContactMethodProps> = ({
 	);
 };
 
-const Contact: React.FC = () => {
+const ContactUs: React.FC = () => {
 	const { street, city, state, zip } = useContext(AddressContext);
+	const { email, phone } = useContext(ContactContext);
 
 	return (
 		<section className="py-16">
@@ -52,18 +53,18 @@ const Contact: React.FC = () => {
 							<DL title="Other Ways to Reach Us">
 								<ContactMethod
 									icon={HiPhone}
-									content="456-456-4567"
-									href="tel:435-456-4564"
+									content={phone}
+									href={`tel:${phone}`}
 								/>
 								<ContactMethod
 									icon={HiMail}
-									content="rerflas@lsdfj.dsf"
-									href="mailto:aslkdf@saldf.asdfl"
+									content={email}
+									href={`mailto:${email}`}
 								/>
 								<ContactMethod
 									icon={HiLocationMarker}
 									content={`${street} ${city}, ${state} ${zip}`}
-									href="google.com"
+									href="/"
 								/>
 							</DL>
 						</>
@@ -99,4 +100,4 @@ const Contact: React.FC = () => {
 	);
 };
 
-export default Contact;
+export default ContactUs;
