@@ -66,11 +66,9 @@ const Layout: React.FC<Props> = ({ children, data, title }) => {
 						<NewsProvider data={data.news}>
 							<OfficersProvider data={data.officers}>
 								<SocialsProvider data={data.socials}>
-									<>
-										<Navbar />
-										{children}
-										<Footer />
-									</>
+									<Navbar />
+									<main>{children}</main>
+									<Footer />
 								</SocialsProvider>
 							</OfficersProvider>
 						</NewsProvider>
