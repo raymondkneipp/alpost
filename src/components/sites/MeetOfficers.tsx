@@ -28,7 +28,7 @@ const OfficerItem: React.FC<OfficerItemProps> = ({ data }) => {
 					className={`${getRadius(radius)}`}
 				/>
 				<div className="flex flex-col items-center space-y-2 sm:items-start">
-					<h3 className="text-xl font-medium text-neutral-900 dark:text-neutral-100">
+					<h3 className="text-xl font-medium font-heading text-neutral-900 dark:text-neutral-100">
 						{data.name}
 					</h3>
 					<p className="text-lg text-neutral-600 dark:text-neutral-400">
@@ -57,7 +57,7 @@ const MeetOfficers: React.FC<MeetOfficersProps> = ({ simple = false }) => {
 				<Wide
 					master={
 						<>
-							<h2 className="text-2xl font-medium md:text-4xl text-neutral-900 dark:text-neutral-100">
+							<h2 className="text-2xl font-medium font-heading md:text-4xl text-neutral-900 dark:text-neutral-100">
 								Meet Our Officers
 							</h2>
 						</>

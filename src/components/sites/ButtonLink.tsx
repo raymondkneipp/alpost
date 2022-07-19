@@ -24,7 +24,9 @@ const ButtonLink: React.FC<Props> = ({
 	const { radius, color } = useContext(ThemeContext);
 
 	const variants = {
-		$all: `font-medium transition text-center ${getRadius(radius)}`,
+		$all: `font-medium font-heading transition text-center ${getRadius(
+			radius
+		)}`,
 		size: {
 			sm: 'py-1 px-2',
 			md: 'py-2 px-4',

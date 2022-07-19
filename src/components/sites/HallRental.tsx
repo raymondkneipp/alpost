@@ -27,10 +27,10 @@ const PricingItem: React.FC<PricingItemProps> = ({
 				radius
 			)}`}
 		>
-			<h3 className="text-xl font-medium text-neutral-900 dark:text-neutral-100">
+			<h3 className="text-xl font-medium font-heading text-neutral-900 dark:text-neutral-100">
 				{name}
 			</h3>
-			<h4 className="flex items-baseline space-x-2 text-5xl font-medium text-neutral-900 dark:text-neutral-100">
+			<h4 className="flex items-baseline space-x-2 text-5xl font-medium font-heading text-neutral-900 dark:text-neutral-100">
 				<span>${price}</span>
 				<span className="text-sm text-neutral-600 dark:text-neutral-400">
 					/ hr
@@ -64,7 +64,7 @@ const HallRental: React.FC = () => {
 				<Wide
 					master={
 						<>
-							<h2 className="text-2xl font-medium md:text-4xl text-neutral-900 dark:text-neutral-100">
+							<h2 className="text-2xl font-medium font-heading md:text-4xl text-neutral-900 dark:text-neutral-100">
 								Rent Our Hall
 							</h2>
 							<p className="max-w-lg text-lg text-neutral-600 dark:text-neutral-400">

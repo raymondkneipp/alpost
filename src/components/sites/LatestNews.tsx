@@ -24,7 +24,7 @@ const NewsItem: React.FC<NewsItemProps> = ({ data }) => {
 			>
 				<Image src="/shared/american-flag.jpg" width={800} height={400} />
 				<div className="flex flex-col flex-1 p-4 space-y-4">
-					<h3 className="text-xl font-medium text-neutral-900 dark:text-neutral-100">
+					<h3 className="text-xl font-medium font-heading text-neutral-900 dark:text-neutral-100">
 						{data.title}
 					</h3>
 					<p className="flex-1 text-neutral-600 dark:text-neutral-400">
@@ -55,7 +55,7 @@ const LatestNews: React.FC<LatestNewsProps> = ({ simple = false }) => {
 				<Wide
 					master={
 						<div>
-							<h2 className="text-2xl font-medium md:text-4xl text-neutral-900 dark:text-neutral-100">
+							<h2 className="text-2xl font-medium font-heading md:text-4xl text-neutral-900 dark:text-neutral-100">
 								Read The Latest News
 							</h2>
 						</div>
