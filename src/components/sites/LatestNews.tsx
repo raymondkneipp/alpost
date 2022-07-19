@@ -16,7 +16,7 @@ const NewsItem: React.FC<NewsItemProps> = ({ data }) => {
 	const { radius, color } = useContext(ThemeContext);
 
 	return (
-		<Link href={`/news/${data.id}`}>
+		<Link href={`/news/${data.id}`} className="flex flex-1">
 			<article
 				className={`${getRadius(
 					radius

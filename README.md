@@ -8,7 +8,7 @@
 
 ### Home
 
-> Complete by August 1nd
+> Complete by August 1st
 
 ### Marketing
 

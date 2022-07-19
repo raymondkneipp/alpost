@@ -9,11 +9,11 @@ const Hero: React.FC = () => {
 	const { name, subdomain } = useContext(GeneralContext);
 	const { color } = useContext(ThemeContext);
 	return (
-		<section className="relative w-screen h-screen">
+		<section className="relative w-screen min-h-screen">
 			<Image
 				src="/shared/american-flag.jpg"
-				width={1000}
-				height={1000}
+				width={1200}
+				height={1200}
 				alt="american flag"
 				className="absolute inset-0 object-cover object-center w-screen h-screen"
 			/>
