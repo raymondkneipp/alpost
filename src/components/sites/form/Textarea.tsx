@@ -14,7 +14,7 @@ const Textarea: React.FC<Props> = ({ id, placeholder = '', required }) => {
 
 	return (
 		<textarea
-			rows={8}
+			rows={6}
 			id={id}
 			required={required}
 			placeholder={placeholder}

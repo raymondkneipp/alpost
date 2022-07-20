@@ -26,7 +26,7 @@ const ContactMethod: React.FC<ContactMethodProps> = ({
 			<Anchor href={href}>
 				<span className="flex space-x-2">
 					{React.createElement(icon, { size: 24 })}
-					<span>{content}</span>
+					<span className="select-all">{content}</span>
 				</span>
 			</Anchor>
 		</DI>
