@@ -26,6 +26,7 @@ const OfficerItem: React.FC<OfficerItemProps> = ({ data }) => {
 					width={100}
 					height={100}
 					className={`${getRadius(radius)}`}
+					alt={`${data.name} portrait`}
 				/>
 				<div className="flex flex-col items-center space-y-2 sm:items-start">
 					<h3 className="text-xl font-medium font-heading text-neutral-900 dark:text-neutral-100">
