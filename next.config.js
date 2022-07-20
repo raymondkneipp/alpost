@@ -10,9 +10,6 @@ const nextConfig = {
 		locales: ['en'],
 		defaultLocale: 'en',
 	},
-	images: {
-		domains: ['i.pravatar.cc'],
-	},
 };
 
 module.exports = nextConfig;

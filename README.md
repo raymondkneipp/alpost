@@ -44,3 +44,5 @@
 - [ ] fix https://nextjs.org/docs/messages/no-stylesheets-in-head-component
 - [ ] possible affiliated websites
 - [ ] add news image
+- [ ] add officer image
+- [ ] add officer contact info
