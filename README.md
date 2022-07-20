@@ -39,3 +39,4 @@
 - [ ] https://github.com/garmeeh/next-seo#faq-page
 - [ ] https://github.com/garmeeh/next-seo#social-profile
 - [ ] Emails ex. johndoe@demo.alpost.org
+- [ ] Add google maps to contact page
