@@ -9,6 +9,8 @@ import {
 	Theme,
 } from '@prisma/client';
 
+import type { ParsedUrlQuery } from 'querystring';
+
 export interface _SiteData extends Site {
 	theme: Theme;
 	address: Address;
@@ -17,4 +19,8 @@ export interface _SiteData extends Site {
 	socials: Socials;
 	faq: FAQ[];
 	contact: Contact;
+}
+
+export interface PathProps extends ParsedUrlQuery {
+	site: string;
 }

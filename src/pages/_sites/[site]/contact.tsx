@@ -1,14 +1,9 @@
 import type { GetStaticPaths, GetStaticProps, NextPage } from 'next';
+import { PathProps, _SiteData } from '@/types';
 
 import { ContactUs } from '@/components/sites';
 import { Layout } from '@/layouts/sites';
-import type { ParsedUrlQuery } from 'querystring';
-import { _SiteData } from '@/types';
 import { prisma } from '@/prisma';
-
-interface PathProps extends ParsedUrlQuery {
-	site: string;
-}
 
 interface ContactProps {
 	stringifiedData: string;
