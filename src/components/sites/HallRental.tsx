@@ -50,7 +50,7 @@ const PricingItem: React.FC<PricingItemProps> = ({
 					</li>
 				))}
 			</ul>
-			<ButtonLink href="/" theme="primary">
+			<ButtonLink href="/contact" theme="primary">
 				Buy {name}
 			</ButtonLink>
 		</article>
