@@ -26,10 +26,10 @@ const Hero: React.FC = () => {
 						{description}
 					</p>
 					<div className="flex flex-wrap items-center justify-center gap-4">
-						<ButtonLink href="/" theme="primary" size="lg">
+						<ButtonLink href="/apply" theme="primary" size="lg">
 							Become a Member
 						</ButtonLink>
-						<ButtonLink href="/" theme="light" size="lg">
+						<ButtonLink href="/contact" theme="light" size="lg">
 							Contact Us
 						</ButtonLink>
 					</div>
