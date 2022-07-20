@@ -46,3 +46,4 @@
 - [ ] add news image
 - [ ] add officer image
 - [ ] add officer contact info
+- [ ] add markdown to news
