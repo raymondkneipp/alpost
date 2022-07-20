@@ -77,7 +77,7 @@ const HallRental: React.FC = () => {
 					<>
 						<PricingItem
 							name="Half Hall"
-							description="Vetustas tamen suo loco conservanda; maxima est enim vis vetustatis et consuetudinis."
+							description="If you budget is tight, only book the half of the hall that you need."
 							perks={[
 								'100 seats',
 								'1 keg',
@@ -89,13 +89,19 @@ const HallRental: React.FC = () => {
 						/>
 						<PricingItem
 							name="Full Hall"
-							description="Quin in ipso equo, cuius modo feci mentionem, si nulla res impediat, nemo est."
-							perks={['200 seats', '2 kegs', 'Access to kitchen', '20 tables']}
+							description="For larger parties, you can rent the entire hall."
+							perks={[
+								'200 seats',
+								'2 kegs',
+								'1 bartender',
+								'Access to kitchen',
+								'20 tables',
+							]}
 							price={75}
 						/>
 						<PricingItem
 							name="Holiday"
-							description="Maxima est enim vis vetustatis et consuetudinis. quin in ipso equo, cuius modo."
+							description="Have you decided what to do for the holidays? Consider a party at our location."
 							perks={[
 								'200 seats',
 								'3 kegs',
