@@ -5,7 +5,7 @@ export const config = {
 		'/',
 		'/([^/.]*)', // exclude `/public` files by matching all paths except for paths containing `.` (e.g. /logo.png)
 		'/site/:path*',
-		'/post/:path*',
+		'/news/:path*',
 		'/_sites/:path*',
 	],
 };
@@ -54,5 +54,6 @@ export default function middleware(req: NextRequest) {
 
 	// rewrite everything else to `/_sites/[site] dynamic route
 	url.pathname = `/_sites/${currentHost}${url.pathname}`;
+	console.log({ url, hostname, currentHost });
 	return NextResponse.rewrite(url);
 }
