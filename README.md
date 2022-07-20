@@ -47,3 +47,4 @@
 - [ ] add officer image
 - [ ] add officer contact info
 - [ ] add markdown to news
+- [ ] order, show, and hide components on home page
