@@ -10,6 +10,9 @@ const nextConfig = {
 		locales: ['en'],
 		defaultLocale: 'en',
 	},
+	images: {
+		domains: ['picsum.photos', 'i.pravatar.cc'],
+	},
 };
 
 module.exports = nextConfig;

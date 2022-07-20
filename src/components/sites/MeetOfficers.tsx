@@ -22,7 +22,7 @@ const OfficerItem: React.FC<OfficerItemProps> = ({ data }) => {
 		>
 			<div className="flex flex-col items-center space-y-4 sm:space-x-4 sm:flex-row sm:space-y-0">
 				<Image
-					src="/shared/officer.png"
+					src={`https://i.pravatar.cc/150?u=${data.id}`}
 					width={100}
 					height={100}
 					className={`${getRadius(radius)}`}

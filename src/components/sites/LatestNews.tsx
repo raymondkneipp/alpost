@@ -23,7 +23,7 @@ const NewsItem: React.FC<NewsItemProps> = ({ data }) => {
 				)} overflow-hidden bg-neutral-200 dark:bg-neutral-800 flex flex-col`}
 			>
 				<Image
-					src="/shared/american-flag.jpg"
+					src={`https://picsum.photos/600/300?random=${data.id}`}
 					width={800}
 					height={400}
 					alt={data.title}
