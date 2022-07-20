@@ -16,7 +16,7 @@ import {
 	SocialsProvider,
 	ThemeProvider,
 } from '@/contexts/sites';
-import { Footer, Navbar } from '@/components/sites';
+import { Banner, Footer, Navbar } from '@/components/sites';
 
 import { FAQProvider } from 'contexts/sites/FAQContext';
 import { NewsProvider } from 'contexts/sites/NewsContext';
@@ -81,6 +81,7 @@ const Layout: React.FC<Props> = ({ children, data, title }) => {
 								<SocialsProvider data={data.socials}>
 									<FAQProvider data={data.faq}>
 										<ContactProvider data={data.contact}>
+											<Banner />
 											<Navbar />
 											<main>{children}</main>
 											<Footer />
