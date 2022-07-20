@@ -26,7 +26,8 @@
 			"@/layouts/shared": ["layouts/shared/index"],
 			"@/contexts/sites": ["contexts/sites/index"],
 			"@/utils/sites": ["utils/sites/index"],
-			"@/prisma": ["server/db/client"]
+			"@/prisma": ["server/db/client"],
+			"@/types": ["types/index"]
 		}
 	},
 	"include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],

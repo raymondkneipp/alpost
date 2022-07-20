@@ -1,18 +1,9 @@
-import {
-	Address,
-	Contact,
-	FAQ,
-	News,
-	Officers,
-	Site,
-	Socials,
-	Theme,
-} from '@prisma/client';
 import type { GetStaticPaths, GetStaticProps, NextPage } from 'next';
 import { Info, MeetOfficers, Questions } from '@/components/sites';
 
 import { Layout } from '@/layouts/sites';
 import type { ParsedUrlQuery } from 'querystring';
+import { _SiteData } from '@/types';
 import { prisma } from '@/prisma';
 
 interface PathProps extends ParsedUrlQuery {
@@ -24,15 +15,7 @@ interface AboutProps {
 }
 
 const AboutPage: NextPage<AboutProps> = ({ stringifiedData }) => {
-	const data = JSON.parse(stringifiedData) as Site & {
-		theme: Theme;
-		address: Address;
-		news: News[];
-		officers: Officers[];
-		socials: Socials;
-		faq: FAQ[];
-		contact: Contact;
-	};
+	const data = JSON.parse(stringifiedData) as _SiteData;
 
 	return (
 		<Layout data={data} title="About">
