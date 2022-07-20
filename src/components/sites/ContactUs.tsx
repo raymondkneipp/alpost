@@ -47,8 +47,8 @@ const ContactUs: React.FC = () => {
 								Contact Us
 							</h2>
 							<p className="text-lg text-neutral-600 dark:text-neutral-400">
-								Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio
-								minima nisi adipisci numquam molestias nam quas minus dolore
+								Want to get in touch? We'd love to hear from you. Here's how you
+								can reach us...
 							</p>
 							<DL title="Other Ways to Reach Us">
 								<ContactMethod
