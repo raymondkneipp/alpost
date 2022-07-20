@@ -97,11 +97,13 @@ model Contact {
 }
 
 model Banner {
-  id      String @id @default(cuid())
-  content String @db.VarChar(150)
-  theme   Color  @default(YELLOW)
-  site    Site   @relation(fields: [siteId], references: [id])
-  siteId  String @unique
+  id      String  @id @default(cuid())
+  content String  @default("Welcome to our legion website!") @db.VarChar(150)
+  theme   Color   @default(YELLOW)
+  show    Boolean @default(true)
+
+  site   Site   @relation(fields: [siteId], references: [id])
+  siteId String @unique
 }
 
 enum Color {
