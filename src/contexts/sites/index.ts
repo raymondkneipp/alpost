@@ -1,4 +1,5 @@
 export * from './AddressContext';
+export * from './BannerContext';
 export * from './ContactContext';
 export * from './FAQContext';
 export * from './GeneralContext';

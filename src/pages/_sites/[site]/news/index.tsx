@@ -61,6 +61,7 @@ export const getStaticProps: GetStaticProps<SitePageProps, PathProps> = async ({
 			socials: true,
 			faq: true,
 			contact: true,
+			banner: true,
 		},
 	});
 

@@ -22,6 +22,7 @@ model Site {
   socials  Socials?
   faq      FAQ[]
   contact  Contact?
+  banner   Banner?
 }
 
 model Theme {
@@ -93,6 +94,13 @@ model Contact {
 
   site   Site   @relation(fields: [siteId], references: [id])
   siteId String @unique
+}
+
+model Banner {
+  id      String @id @default(cuid())
+  content String @db.VarChar(150)
+  site    Site   @relation(fields: [siteId], references: [id])
+  siteId  String @unique
 }
 
 enum Color {

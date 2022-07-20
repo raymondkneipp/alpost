@@ -1,5 +1,6 @@
 import {
 	Address,
+	Banner,
 	Contact,
 	FAQ,
 	News,
@@ -19,6 +20,7 @@ export interface _SiteData extends Site {
 	socials: Socials;
 	faq: FAQ[];
 	contact: Contact;
+	banner: Banner;
 }
 
 export interface PathProps extends ParsedUrlQuery {
