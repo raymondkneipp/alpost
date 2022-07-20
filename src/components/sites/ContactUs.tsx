@@ -1,4 +1,5 @@
 import { AddressContext, ContactContext } from '@/contexts/sites';
+import { Anchor, ContactForm } from '@/components/sites';
 import {
 	Container,
 	DescriptionListItem as DI,
@@ -7,7 +8,6 @@ import {
 import { HiLocationMarker, HiMail, HiPhone } from 'react-icons/hi';
 import React, { useContext } from 'react';
 
-import { Anchor } from '@/components/sites';
 import { IconType } from 'react-icons';
 import { Tall } from '@/layouts/shared';
 
@@ -70,30 +70,7 @@ const ContactUs: React.FC = () => {
 						</>
 					}
 				>
-					<p>
-						Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum
-						perspiciatis consectetur possimus voluptatibus nam? Minus voluptates
-						soluta voluptate quis cupiditate, fuga adipisci autem, magni iure ea
-						dolor dolorem non quo.
-					</p>
-					<p>
-						Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum
-						perspiciatis consectetur possimus voluptatibus nam? Minus voluptates
-						soluta voluptate quis cupiditate, fuga adipisci autem, magni iure ea
-						dolor dolorem non quo.
-					</p>
-					<p>
-						Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum
-						perspiciatis consectetur possimus voluptatibus nam? Minus voluptates
-						soluta voluptate quis cupiditate, fuga adipisci autem, magni iure ea
-						dolor dolorem non quo.
-					</p>
-					<p>
-						Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum
-						perspiciatis consectetur possimus voluptatibus nam? Minus voluptates
-						soluta voluptate quis cupiditate, fuga adipisci autem, magni iure ea
-						dolor dolorem non quo.
-					</p>
+					<ContactForm />
 				</Tall>
 			</Container>
 		</section>
