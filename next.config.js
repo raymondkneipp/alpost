@@ -11,7 +11,7 @@ const nextConfig = {
 		defaultLocale: 'en',
 	},
 	images: {
-		domains: ['picsum.photos', 'i.pravatar.cc'],
+		domains: ['i.pravatar.cc'],
 	},
 };
 

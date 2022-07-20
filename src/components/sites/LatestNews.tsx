@@ -2,7 +2,6 @@ import { NewsContext, ThemeContext } from '@/contexts/sites';
 import { getFg, getRadius } from '@/utils/sites';
 
 import { Container } from '@/components/shared';
-import Image from 'next/future/image';
 import Link from 'next/link';
 import { News } from '@prisma/client';
 import { Wide } from '@/layouts/shared';
@@ -22,12 +21,12 @@ const NewsItem: React.FC<NewsItemProps> = ({ data }) => {
 					radius
 				)} overflow-hidden bg-neutral-200 dark:bg-neutral-800 flex flex-col`}
 			>
-				<Image
-					src={`https://picsum.photos/600/300?random=${data.id}`}
+				{/* <Image
+					src="/shared/american-flag.jpg"
 					width={800}
 					height={400}
 					alt={data.title}
-				/>
+				/> */}
 				<div className="flex flex-col flex-1 p-4 space-y-4">
 					<h3 className="text-xl font-medium font-heading text-neutral-900 dark:text-neutral-100">
 						{data.title}
