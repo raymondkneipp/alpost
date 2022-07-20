@@ -24,3 +24,7 @@ export interface _SiteData extends Site {
 export interface PathProps extends ParsedUrlQuery {
 	site: string;
 }
+
+export interface SitePageProps {
+	stringifiedData: string;
+}

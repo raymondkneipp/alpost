@@ -1,15 +1,11 @@
 import type { GetStaticPaths, GetStaticProps, NextPage } from 'next';
-import { PathProps, _SiteData } from '@/types';
+import { PathProps, SitePageProps, _SiteData } from '@/types';
 
 import { ContactUs } from '@/components/sites';
 import { Layout } from '@/layouts/sites';
 import { prisma } from '@/prisma';
 
-interface ContactProps {
-	stringifiedData: string;
-}
-
-const ContactPage: NextPage<ContactProps> = ({ stringifiedData }) => {
+const ContactPage: NextPage<SitePageProps> = ({ stringifiedData }) => {
 	const data = JSON.parse(stringifiedData) as _SiteData;
 
 	return (
@@ -42,7 +38,7 @@ export const getStaticPaths: GetStaticPaths<PathProps> = async () => {
 	};
 };
 
-export const getStaticProps: GetStaticProps<ContactProps, PathProps> = async ({
+export const getStaticProps: GetStaticProps<SitePageProps, PathProps> = async ({
 	params,
 }) => {
 	if (!params) throw new Error('No path parameters found');

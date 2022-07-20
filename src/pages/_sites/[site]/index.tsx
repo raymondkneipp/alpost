@@ -8,16 +8,12 @@ import {
 	UpcomingEvent,
 } from '@/components/sites';
 import type { GetStaticPaths, GetStaticProps, NextPage } from 'next';
-import { PathProps, _SiteData } from '@/types';
+import { PathProps, SitePageProps, _SiteData } from '@/types';
 
 import { Layout } from '@/layouts/sites';
 import { prisma } from '@/prisma';
 
-interface IndexProps {
-	stringifiedData: string;
-}
-
-const HomePage: NextPage<IndexProps> = ({ stringifiedData }) => {
+const HomePage: NextPage<SitePageProps> = ({ stringifiedData }) => {
 	const data = JSON.parse(stringifiedData) as _SiteData;
 
 	return (
@@ -56,7 +52,7 @@ export const getStaticPaths: GetStaticPaths<PathProps> = async () => {
 	};
 };
 
-export const getStaticProps: GetStaticProps<IndexProps, PathProps> = async ({
+export const getStaticProps: GetStaticProps<SitePageProps, PathProps> = async ({
 	params,
 }) => {
 	if (!params) throw new Error('No path parameters found');
