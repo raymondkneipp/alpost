@@ -41,3 +41,5 @@
 - [ ] Emails ex. johndoe@demo.alpost.org
 - [ ] Add google maps to contact page
 - [ ] Focus styles
+- [ ] fix https://nextjs.org/docs/messages/no-stylesheets-in-head-component
+- [ ] possible affiliated websites

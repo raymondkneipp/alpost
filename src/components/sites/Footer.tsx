@@ -83,9 +83,6 @@ const Footer: React.FC = () => {
 
 						<DL title="Other">
 							<DI>
-								<Anchor href="/affiliated">Affiliated Sites</Anchor>
-							</DI>
-							<DI>
 								<Anchor href="/apply">Apply</Anchor>
 							</DI>
 							<DI>
