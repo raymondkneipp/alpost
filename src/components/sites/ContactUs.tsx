@@ -64,7 +64,9 @@ const ContactUs: React.FC = () => {
 								<ContactMethod
 									icon={HiLocationMarker}
 									content={`${street} ${city}, ${state} ${zip}`}
-									href="/"
+									href={`https://www.google.com/maps/search/${encodeURIComponent(
+										`${street} ${city}, ${state} ${zip}`
+									)}`}
 								/>
 							</DL>
 						</>
