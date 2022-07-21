@@ -18,14 +18,18 @@ type Props = {
 	children: React.ReactNode;
 	title: string;
 	data: _SiteData;
+	titleTemplate?: string;
 };
 
-const Layout: React.FC<Props> = ({ children, data, title }) => {
+const Layout: React.FC<Props> = ({ children, data, title, titleTemplate }) => {
 	return (
 		<>
 			<NextSeo
 				title={title}
-				titleTemplate={`${data.name} American Legion Post ${data.subdomain} | %s`}
+				titleTemplate={
+					titleTemplate ||
+					`${data.name} American Legion Post ${data.subdomain} | %s`
+				}
 				description={data.description}
 				additionalLinkTags={[
 					{
