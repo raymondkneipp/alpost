@@ -1,6 +1,7 @@
 import type { GetStaticPaths, GetStaticProps, NextPage } from 'next';
 import { SitePageProps, _SiteData } from '@/types';
 
+import { Layout } from '@/layouts/sites';
 import { News } from '@prisma/client';
 import { ParsedUrlQuery } from 'querystring';
 import { prisma } from '@/prisma';
@@ -24,13 +25,13 @@ const NewsPostPage: NextPage<PageProps> = ({
 	const post = JSON.parse(stringifiedPost) as News;
 
 	return (
-		// <Layout data={data} title="CHANGE ME">
-		<div className="space-y-10">
-			<h1>{post.title}</h1>
+		<Layout data={data} title="CHANGE ME">
+			<div className="space-y-10">
+				<h1>{post.title}</h1>
 
-			<h1>{data.name}</h1>
-		</div>
-		// </Layout>
+				<h1>{data.name}</h1>
+			</div>
+		</Layout>
 	);
 };
 
