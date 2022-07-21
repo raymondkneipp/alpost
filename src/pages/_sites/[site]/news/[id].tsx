@@ -1,12 +1,17 @@
 import type { GetStaticPaths, GetStaticProps, NextPage } from 'next';
-import { PathProps, SitePageProps, _SiteData } from '@/types';
+import { SitePageProps, _SiteData } from '@/types';
 
-import { Layout } from '@/layouts/sites';
 import { News } from '@prisma/client';
+import { ParsedUrlQuery } from 'querystring';
 import { prisma } from '@/prisma';
 
 interface PageProps extends SitePageProps {
 	stringifiedPost: string;
+}
+
+interface PathProps extends ParsedUrlQuery {
+	site: string;
+	id: string;
 }
 
 const NewsPostPage: NextPage<PageProps> = ({
@@ -16,12 +21,15 @@ const NewsPostPage: NextPage<PageProps> = ({
 	const data = JSON.parse(stringifiedData) as _SiteData;
 	const post = JSON.parse(stringifiedPost) as News;
 
-	console.log(post);
-
 	return (
-		<Layout data={data} title={post.title}>
-			<h1>{stringifiedPost}</h1>
-		</Layout>
+		// <Layout data={data} title="CHANGE ME">
+		<div className="space-y-10">
+			<h1>{typeof stringifiedPost}</h1>
+			<h1>{typeof post}</h1>
+			<h1>{typeof stringifiedData}</h1>
+			<h1>{typeof data}</h1>
+		</div>
+		// </Layout>
 	);
 };
 
@@ -95,6 +103,22 @@ export const getStaticProps: GetStaticProps<SitePageProps, PathProps> = async ({
 	});
 
 	if (!data) return { notFound: true, revalidate: 10 };
+
+	console.log('--------------------------------------------');
+	console.log();
+	console.log('DATA:', typeof data);
+	console.log();
+	console.log('STRINGIFIED_DATA:', typeof JSON.stringify(data));
+	console.log();
+	console.log('PARSED_DATA:', typeof JSON.parse(JSON.stringify(data)));
+	console.log();
+	console.log('POST:', typeof post);
+	console.log();
+	console.log('STRINGIFIED_POST:', typeof JSON.stringify(post));
+	console.log();
+	console.log('PARSED_POST:', typeof JSON.parse(JSON.stringify(post)));
+	console.log();
+	console.log('--------------------------------------------');
 
 	return {
 		props: {
