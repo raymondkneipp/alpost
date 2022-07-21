@@ -11,9 +11,9 @@ const Info: React.FC = () => {
 				<Tall
 					master={
 						<>
-							<h2 className="text-2xl font-medium font-heading md:text-4xl text-neutral-900 dark:text-neutral-100">
+							<h1 className="text-2xl font-medium font-heading md:text-4xl text-neutral-900 dark:text-neutral-100">
 								About Our Post
-							</h2>
+							</h1>
 							<p className="max-w-lg text-lg text-neutral-600 dark:text-neutral-400">
 								Lorem ipsum, dolor sit amet consectetur adipisicing elit.
 								Libero, dolorem cumque sint adipisci dolores vero modi assumenda

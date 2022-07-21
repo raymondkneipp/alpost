@@ -29,9 +29,13 @@ const NewsPostPage: NextPage<PageProps> = ({
 			title={post.title}
 			titleTemplate={`%s | Post ${data.subdomain}`}
 		>
-			<Container>
-				<h1>{post.title}</h1>
-			</Container>
+			<section className="py-16">
+				<Container>
+					<h1 className="text-2xl font-medium font-heading md:text-4xl text-neutral-900 dark:text-neutral-100">
+						{post.title}
+					</h1>
+				</Container>
+			</section>
 		</Layout>
 	);
 };

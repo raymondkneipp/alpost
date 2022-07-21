@@ -43,9 +43,9 @@ const ContactUs: React.FC = () => {
 				<Tall
 					master={
 						<>
-							<h2 className="items-start text-2xl font-medium font-heading md:text-4xl text-neutral-900 dark:text-neutral-100">
+							<h1 className="items-start text-2xl font-medium font-heading md:text-4xl text-neutral-900 dark:text-neutral-100">
 								Contact Us
-							</h2>
+							</h1>
 							<p className="text-lg text-neutral-600 dark:text-neutral-400">
 								Want to get in touch? We&apos;d love to hear from you.
 								Here&apos;s how you can reach us...
