@@ -5,7 +5,10 @@ import { Container } from '@/components/shared';
 import { Layout } from '@/layouts/sites';
 import { News } from '@prisma/client';
 import { ParsedUrlQuery } from 'querystring';
+import { ThemeContext } from 'contexts/sites/ThemeContext';
+import { getFg } from '@/utils/sites';
 import { prisma } from '@/prisma';
+import { useContext } from 'react';
 
 interface PageProps extends SitePageProps {
 	stringifiedPost: string;
@@ -23,6 +26,8 @@ const NewsPostPage: NextPage<PageProps> = ({
 	const data = JSON.parse(stringifiedData) as _SiteData;
 	const post = JSON.parse(stringifiedPost) as News;
 
+	const { color } = useContext(ThemeContext);
+
 	return (
 		<Layout
 			data={data}
@@ -30,10 +35,18 @@ const NewsPostPage: NextPage<PageProps> = ({
 			titleTemplate={`%s | Post ${data.subdomain}`}
 		>
 			<section className="py-16">
-				<Container>
+				<Container className="space-y-4 max-w-prose">
 					<h1 className="text-2xl font-medium font-heading md:text-4xl text-neutral-900 dark:text-neutral-100">
 						{post.title}
 					</h1>
+
+					<p className={`${getFg(color)}`}>
+						{new Date(post.createdAt).toDateString()}
+					</p>
+
+					<p className="text-neutral-600 dark:text-neutral-400">
+						{post.content}
+					</p>
 				</Container>
 			</section>
 		</Layout>
