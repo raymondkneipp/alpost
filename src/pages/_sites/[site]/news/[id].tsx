@@ -19,8 +19,6 @@ const NewsPostPage: NextPage<PageProps> = ({
 	stringifiedData,
 	stringifiedPost,
 }) => {
-	console.log('data', typeof stringifiedData);
-	console.log('post', typeof stringifiedPost);
 	const data = JSON.parse(stringifiedData) as _SiteData;
 	const post = JSON.parse(stringifiedPost) as News;
 
@@ -105,22 +103,6 @@ export const getStaticProps: GetStaticProps<SitePageProps, PathProps> = async ({
 	});
 
 	if (!data) return { notFound: true, revalidate: 10 };
-
-	console.log('--------------------------------------------');
-	console.log();
-	console.log('DATA:', typeof data);
-	console.log();
-	console.log('STRINGIFIED_DATA:', typeof JSON.stringify(data));
-	console.log();
-	console.log('PARSED_DATA:', typeof JSON.parse(JSON.stringify(data)));
-	console.log();
-	console.log('POST:', typeof post);
-	console.log();
-	console.log('STRINGIFIED_POST:', typeof JSON.stringify(post));
-	console.log();
-	console.log('PARSED_POST:', typeof JSON.parse(JSON.stringify(post)));
-	console.log();
-	console.log('--------------------------------------------');
 
 	return {
 		props: {
