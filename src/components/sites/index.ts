@@ -17,6 +17,7 @@ export { default as Hero } from './Hero';
 export { default as IconCard } from './IconCard';
 export { default as Info } from './Info';
 export { default as LatestNews } from './LatestNews';
+export { default as ListEvents } from './ListEvents';
 export { default as MeetOfficers } from './MeetOfficers';
 export { default as MobileNav } from './MobileNav';
 export { default as MobileNavLink } from './MobileNavLink';

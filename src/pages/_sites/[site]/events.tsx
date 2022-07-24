@@ -3,6 +3,7 @@ import { PathProps, SitePageProps, _SiteData } from '@/types';
 
 import { Container } from '@/components/shared';
 import { Layout } from '@/layouts/sites';
+import { ListEvents } from '@/components/sites';
 import { prisma } from '@/prisma';
 
 const EventsPage: NextPage<SitePageProps> = ({ stringifiedData }) => {
@@ -15,6 +16,8 @@ const EventsPage: NextPage<SitePageProps> = ({ stringifiedData }) => {
 					<h1 className="items-start text-2xl font-medium font-heading md:text-4xl text-neutral-900 dark:text-neutral-100">
 						Upcoming Events
 					</h1>
+
+					<ListEvents />
 				</Container>
 			</section>
 		</Layout>
