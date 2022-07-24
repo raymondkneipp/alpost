@@ -2,6 +2,7 @@ import { ButtonLink, IconCard } from '@/components/sites';
 import {
 	HiClock,
 	HiLocationMarker,
+	HiOutlineArrowRight,
 	HiQuestionMarkCircle,
 	HiUsers,
 } from 'react-icons/hi';
@@ -23,7 +24,10 @@ const UpcomingEvent: React.FC = () => {
 								Check out our upcoming events so you can get involved.
 							</p>
 							<ButtonLink href="/events" theme="secondary">
-								View All Events
+								<span className="flex items-center space-x-2">
+									<span>All Events</span>
+									<HiOutlineArrowRight />
+								</span>
 							</ButtonLink>
 						</>
 					}
