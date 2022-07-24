@@ -1,6 +1,8 @@
 import { OfficersContext, ThemeContext } from '@/contexts/sites';
 
+import ButtonLink from './ButtonLink';
 import { Container } from '@/components/shared';
+import { HiOutlineArrowRight } from 'react-icons/hi';
 import { Officers } from '@prisma/client';
 import { Wide } from '@/layouts/shared';
 import { getRadius } from '@/utils/sites';
@@ -50,7 +52,7 @@ const MeetOfficers: React.FC<MeetOfficersProps> = ({ simple = false }) => {
 	const { radius } = useContext(ThemeContext);
 
 	return (
-		<section className="py-16">
+		<section className="py-16" id="officers">
 			<Container>
 				<Wide
 					master={
@@ -58,6 +60,18 @@ const MeetOfficers: React.FC<MeetOfficersProps> = ({ simple = false }) => {
 							<h2 className="text-2xl font-medium font-heading md:text-4xl text-neutral-900 dark:text-neutral-100">
 								Meet Our Officers
 							</h2>
+							<p className="text-neutral-600 dark:text-neutral-400">
+								Meet the extraordinary members in charge and responsible for our
+								post.
+							</p>
+							{simple && (
+								<ButtonLink href="/about#officers">
+									<span className="flex items-center space-x-2">
+										<span>All Officers</span>
+										<HiOutlineArrowRight />
+									</span>
+								</ButtonLink>
+							)}
 						</>
 					}
 				>
