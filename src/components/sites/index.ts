@@ -24,4 +24,5 @@ export { default as Navbar } from './Navbar';
 export { default as NavLink } from './NavLink';
 export { default as Questions } from './Questions';
 export { default as Statistics } from './Statistics';
+export { default as Steps } from './Steps';
 export { default as UpcomingEvent } from './UpcomingEvent';
