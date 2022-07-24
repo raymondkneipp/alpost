@@ -1,4 +1,4 @@
-import { getBorder, getFg, getPlaceholder, getRadius } from '@/utils/sites';
+import { getBorder, getPlaceholder, getRadius } from '@/utils/sites';
 
 import { ThemeContext } from '@/contexts/sites';
 import { useContext } from 'react';
@@ -18,9 +18,9 @@ const Textarea: React.FC<Props> = ({ id, placeholder = '', required }) => {
 			id={id}
 			required={required}
 			placeholder={placeholder}
-			className={`py-2 px-3 bg-transparent border-2 border-opacity-30 dark:border-opacity-30 focus:border-opacity-100 dark:focus:border-opacity-100 focus:outline-none transition ${getPlaceholder(
+			className={`py-2 px-3 bg-transparent border-2 border-opacity-30 dark:border-opacity-30 focus:border-opacity-100 dark:focus:border-opacity-100 focus:outline-none transition text-neutral-900 dark:text-neutral-100 ${getPlaceholder(
 				color
-			)} ${getFg(color)} ${getBorder(color)} ${getRadius(radius)}`}
+			)} ${getBorder(color)} ${getRadius(radius)}`}
 		></textarea>
 	);
 };
