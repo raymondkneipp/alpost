@@ -64,14 +64,6 @@ const MeetOfficers: React.FC<MeetOfficersProps> = ({ simple = false }) => {
 								Meet the extraordinary members in charge and responsible for our
 								post.
 							</p>
-							{simple && (
-								<ButtonLink href="/about#officers">
-									<span className="flex items-center space-x-2">
-										<span>All Officers</span>
-										<HiOutlineArrowRight />
-									</span>
-								</ButtonLink>
-							)}
 						</>
 					}
 				>
@@ -97,6 +89,17 @@ const MeetOfficers: React.FC<MeetOfficersProps> = ({ simple = false }) => {
 						)}
 					</>
 				</Wide>
+
+				{simple && (
+					<div className="flex items-start mt-8">
+						<ButtonLink href="/about#officers">
+							<span className="flex items-center space-x-2">
+								<span>All Officers</span>
+								<HiOutlineArrowRight />
+							</span>
+						</ButtonLink>
+					</div>
+				)}
 			</Container>
 		</section>
 	);
