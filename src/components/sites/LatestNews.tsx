@@ -1,7 +1,9 @@
 import { NewsContext, ThemeContext } from '@/contexts/sites';
 import { getFg, getRadius } from '@/utils/sites';
 
+import { ButtonLink } from '@/components/sites';
 import { Container } from '@/components/shared';
+import { HiOutlineArrowRight } from 'react-icons/hi';
 import Link from 'next/link';
 import { News } from '@prisma/client';
 import { Wide } from '@/layouts/shared';
@@ -60,9 +62,11 @@ const LatestNews: React.FC<LatestNewsProps> = ({ simple = false }) => {
 					master={
 						<>
 							{simple ? (
-								<h2 className="text-2xl font-medium font-heading md:text-4xl text-neutral-900 dark:text-neutral-100">
-									Read The Latest News
-								</h2>
+								<>
+									<h2 className="text-2xl font-medium font-heading md:text-4xl text-neutral-900 dark:text-neutral-100">
+										Read The Latest News
+									</h2>
+								</>
 							) : (
 								<h1 className="text-2xl font-medium font-heading md:text-4xl text-neutral-900 dark:text-neutral-100">
 									Read The Latest News
@@ -91,6 +95,17 @@ const LatestNews: React.FC<LatestNewsProps> = ({ simple = false }) => {
 						)}
 					</>
 				</Wide>
+
+				{simple && (
+					<div className="flex items-start mt-8">
+						<ButtonLink href="/news">
+							<span className="flex items-center space-x-2">
+								<span>All News</span>
+								<HiOutlineArrowRight />
+							</span>
+						</ButtonLink>
+					</div>
+				)}
 			</Container>
 		</section>
 	);

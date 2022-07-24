@@ -1,6 +1,6 @@
 import { OfficersContext, ThemeContext } from '@/contexts/sites';
 
-import ButtonLink from './ButtonLink';
+import { ButtonLink } from '@/components/sites';
 import { Container } from '@/components/shared';
 import { HiOutlineArrowRight } from 'react-icons/hi';
 import { Officers } from '@prisma/client';
