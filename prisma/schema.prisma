@@ -23,6 +23,7 @@ model Site {
   faq      FAQ[]
   contact  Contact?
   banner   Banner?
+  stats    Stat[]
 }
 
 model Theme {
@@ -104,6 +105,15 @@ model Banner {
 
   site   Site   @relation(fields: [siteId], references: [id])
   siteId String @unique
+}
+
+model Stat {
+  id      String @id @default(cuid())
+  title   String
+  content String
+
+  site   Site   @relation(fields: [siteId], references: [id])
+  siteId String
 }
 
 enum Color {

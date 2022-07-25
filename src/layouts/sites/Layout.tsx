@@ -5,6 +5,7 @@ import {
 	GeneralProvider,
 	OfficersProvider,
 	SocialsProvider,
+	StatsProvider,
 	ThemeProvider,
 } from '@/contexts/sites';
 import { Banner, Footer, Navbar } from '@/components/sites';
@@ -70,10 +71,12 @@ const Layout: React.FC<Props> = ({ children, data, title, titleTemplate }) => {
 									<FAQProvider data={data.faq}>
 										<ContactProvider data={data.contact}>
 											<BannerProvider data={data.banner}>
-												<Banner />
-												<Navbar />
-												<main>{children}</main>
-												<Footer />
+												<StatsProvider data={data.stats}>
+													<Banner />
+													<Navbar />
+													<main>{children}</main>
+													<Footer />
+												</StatsProvider>
 											</BannerProvider>
 										</ContactProvider>
 									</FAQProvider>

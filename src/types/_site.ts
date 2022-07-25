@@ -7,6 +7,7 @@ import {
 	Officers,
 	Site,
 	Socials,
+	Stat,
 	Theme,
 } from '@prisma/client';
 
@@ -21,6 +22,7 @@ export interface _SiteData extends Site {
 	faq: FAQ[];
 	contact: Contact;
 	banner: Banner;
+	stats: Stat[];
 }
 
 export interface PathProps extends ParsedUrlQuery {

@@ -1,6 +1,7 @@
+import { StatsContext, ThemeContext } from '@/contexts/sites';
+
 import { Container } from '@/components/shared';
 import { HiTrendingUp } from 'react-icons/hi';
-import { ThemeContext } from '@/contexts/sites';
 import { getFg } from '@/utils/sites';
 import { useContext } from 'react';
 
@@ -12,7 +13,7 @@ type StatisticsItemProps = {
 const StatisticsItem: React.FC<StatisticsItemProps> = ({ title, content }) => {
 	const { color } = useContext(ThemeContext);
 	return (
-		<dl className="flex flex-col items-center sm:items-start">
+		<dl className="flex flex-col items-center p-4 basis-1/3">
 			<dt className="uppercase text-neutral-600 dark:text-neutral-400">
 				{title}
 			</dt>
@@ -27,16 +28,18 @@ const StatisticsItem: React.FC<StatisticsItemProps> = ({ title, content }) => {
 };
 
 const Statistics: React.FC = () => {
+	const stats = useContext(StatsContext);
+
 	return (
 		<section className="py-16 my-16 bg-neutral-200 dark:bg-neutral-800">
 			<Container className="flex flex-col items-center space-y-8">
 				<h2 className="text-2xl font-medium font-heading md:text-4xl text-neutral-900 dark:text-neutral-100">
 					What Makes Our Post Great?
 				</h2>
-				<div className="flex flex-col items-center justify-around w-full space-y-4 sm:space-y-0 sm:flex-row sm:items-start">
-					<StatisticsItem title="Funds Raised" content="$130,532" />
-					<StatisticsItem title="Volunteer Hours" content="45,328" />
-					<StatisticsItem title="Members" content="152" />
+				<div className="flex flex-col flex-wrap items-center justify-around w-full sm:space-y-0 sm:flex-row sm:items-start">
+					{stats.map((stat) => (
+						<StatisticsItem title={stat.title} content={stat.content} />
+					))}
 				</div>
 			</Container>
 		</section>
