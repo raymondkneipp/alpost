@@ -1,9 +1,9 @@
 import { StatsContext, ThemeContext } from '@/contexts/sites';
 
 import { Container } from '@/components/shared';
-import { HiTrendingUp } from 'react-icons/hi';
 import { getFg } from '@/utils/sites';
 import { useContext } from 'react';
+import { HiTrendingUp } from 'react-icons/hi';
 
 type StatisticsItemProps = {
 	title: string;
@@ -38,7 +38,11 @@ const Statistics: React.FC = () => {
 				</h2>
 				<div className="flex flex-col flex-wrap items-center justify-around w-full sm:space-y-0 sm:flex-row sm:items-start">
 					{stats.map((stat) => (
-						<StatisticsItem title={stat.title} content={stat.content} />
+						<StatisticsItem
+							title={stat.title}
+							content={stat.content}
+							key={stat.id}
+						/>
 					))}
 				</div>
 			</Container>
