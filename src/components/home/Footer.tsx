@@ -13,6 +13,12 @@ const Footer: React.FC = () => {
 						<NavLink href="#pricing">Pricing</NavLink>
 					</div>
 				</div>
+				<a
+					href="https://raymondkneipp.com"
+					className="text-blue-900 underline transition dark:text-blue-300 decoration-blue-900/25 dark:decoration-blue-300/25 hover:decoration-blue-900 dark:hover:decoration-blue-300"
+				>
+					Website by Raymond Kneipp
+				</a>
 			</Container>
 		</footer>
 	);
