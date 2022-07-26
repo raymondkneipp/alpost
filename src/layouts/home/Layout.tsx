@@ -10,8 +10,7 @@ const Layout: React.FC<Props> = ({ children }) => {
 	return (
 		<>
 			<NextSeo
-				title="Home"
-				titleTemplate="American Legion Website Builder | alpost | %s"
+				title="alpost - American Legion Website Builder"
 				description=""
 				additionalLinkTags={[
 					{
