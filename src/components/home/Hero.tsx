@@ -5,7 +5,7 @@ const Hero: React.FC = () => {
 	return (
 		<section className="py-24">
 			<Container className="flex flex-col items-center max-w-screen-md space-y-6 text-center">
-				<h1 className="text-2xl font-medium text-neutral-900 dark:text-neutral-100 sm:text-4xl md:text-6xl font-heading">
+				<h1 className="text-3xl font-medium text-neutral-900 dark:text-neutral-100 sm:text-5xl md:text-6xl font-heading">
 					The <span className="text-red-700 dark:text-red-400">Best</span>{' '}
 					American Legion Website Builder
 				</h1>
