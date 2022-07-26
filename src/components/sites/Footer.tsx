@@ -1,14 +1,16 @@
+import { Brand as AlpostBrand } from '@/components/home';
+import {
+	AmericanLegionLogo,
+	Container,
+	DescriptionList as DL,
+	DescriptionListItem as DI,
+} from '@/components/shared';
 import {
 	AddressContext,
 	GeneralContext,
 	SocialsContext,
 } from '@/contexts/sites';
-import {
-	AmericanLegionLogo,
-	Container,
-	DescriptionListItem as DI,
-	DescriptionList as DL,
-} from '@/components/shared';
+import React, { useContext } from 'react';
 import {
 	FaFacebook,
 	FaInstagram,
@@ -17,11 +19,11 @@ import {
 	FaTwitter,
 	FaYoutube,
 } from 'react-icons/fa';
-import React, { useContext } from 'react';
 
 import { Anchor } from '@/components/sites';
-import { IconType } from 'react-icons';
 import { Tall } from '@/layouts/shared';
+import Link from 'next/link';
+import { IconType } from 'react-icons';
 
 type SocialItemProps = {
 	account: string;
@@ -118,7 +120,10 @@ const Footer: React.FC = () => {
 				</Tall>
 
 				<div className="flex flex-col items-center justify-center pt-4 text-center">
-					<Anchor href="https://alpost.org">Website by ALPost</Anchor>
+					{/* <Anchor href="https://alpost.org">Website by ALPost</Anchor> */}
+					<Link href="https://alpost.org">
+						<AlpostBrand />
+					</Link>
 				</div>
 			</Container>
 		</footer>
