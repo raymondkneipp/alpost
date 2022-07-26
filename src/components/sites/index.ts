@@ -23,6 +23,7 @@ export { default as MobileNav } from './MobileNav';
 export { default as MobileNavLink } from './MobileNavLink';
 export { default as Navbar } from './Navbar';
 export { default as NavLink } from './NavLink';
+export { default as Post } from './Post';
 export { default as Questions } from './Questions';
 export { default as Statistics } from './Statistics';
 export { default as Steps } from './Steps';

@@ -1,16 +1,11 @@
 import type { GetStaticPaths, GetStaticProps, NextPage } from 'next';
 import { SitePageProps, _SiteData } from '@/types';
 
-import { ButtonLink } from '@/components/sites';
-import { Container } from '@/components/shared';
-import { HiOutlineArrowLeft } from 'react-icons/hi';
 import { Layout } from '@/layouts/sites';
 import { News } from '@prisma/client';
 import { ParsedUrlQuery } from 'querystring';
-import { ThemeContext } from 'contexts/sites/ThemeContext';
-import { getFg } from '@/utils/sites';
+import { Post } from '@/components/sites';
 import { prisma } from '@/prisma';
-import { useContext } from 'react';
 
 interface PageProps extends SitePageProps {
 	stringifiedPost: string;
@@ -28,37 +23,13 @@ const NewsPostPage: NextPage<PageProps> = ({
 	const data = JSON.parse(stringifiedData) as _SiteData;
 	const post = JSON.parse(stringifiedPost) as News;
 
-	const { color } = useContext(ThemeContext);
-
 	return (
 		<Layout
 			data={data}
 			title={post.title}
 			titleTemplate={`%s | Post ${data.subdomain}`}
 		>
-			<section className="py-16">
-				<Container className="flex flex-col items-start space-y-4 max-w-prose">
-					<ButtonLink href="/news">
-						<span className="inline-flex items-center space-x-2">
-							<HiOutlineArrowLeft size={16} />
-							<span>All News</span>
-						</span>
-					</ButtonLink>
-					<h1 className="text-2xl font-medium font-heading md:text-4xl text-neutral-900 dark:text-neutral-100">
-						{post.title}
-					</h1>
-
-					<p className={`${getFg(color)}`}>
-						{new Date(post.createdAt).toDateString()}
-					</p>
-
-					<hr className="border-neutral-200 dark:border-neutral-800" />
-
-					<p className="text-neutral-600 dark:text-neutral-400">
-						{post.content}
-					</p>
-				</Container>
-			</section>
+			<Post post={post} />
 		</Layout>
 	);
 };
