@@ -7,7 +7,7 @@ const Logo: React.FC = () => {
 				srcSet="/home/logo-dark.svg"
 				media="(prefers-color-scheme: dark)"
 			/>
-			<Image src="/home/logo.svg" width="60" height="30" />
+			<Image src="/home/logo.svg" width="60" height="30" alt="alpost logo" />
 		</picture>
 	);
 };
