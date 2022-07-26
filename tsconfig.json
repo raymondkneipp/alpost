@@ -27,7 +27,8 @@
 			"@/contexts/sites": ["contexts/sites/index"],
 			"@/utils/sites": ["utils/sites/index"],
 			"@/prisma": ["server/db/client"],
-			"@/types": ["types/index"]
+			"@/types": ["types/index"],
+			"@/styles": ["styles/globals.css"]
 		}
 	},
 	"include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],
