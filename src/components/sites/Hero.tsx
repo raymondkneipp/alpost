@@ -10,7 +10,7 @@ const Hero: React.FC = () => {
 	return (
 		<section className="relative w-screen min-h-screen">
 			<Image
-				src="/shared/american-flag.jpg"
+				src="/sites/american-flag.jpg"
 				width={1200}
 				height={1200}
 				alt="american flag"

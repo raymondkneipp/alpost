@@ -1,12 +1,12 @@
 import { OfficersContext, ThemeContext } from '@/contexts/sites';
 
-import { ButtonLink } from '@/components/sites';
 import { Container } from '@/components/shared';
-import { HiOutlineArrowRight } from 'react-icons/hi';
-import { Officers } from '@prisma/client';
+import { ButtonLink } from '@/components/sites';
 import { Wide } from '@/layouts/shared';
 import { getRadius } from '@/utils/sites';
+import { Officers } from '@prisma/client';
 import { useContext } from 'react';
+import { HiOutlineArrowRight } from 'react-icons/hi';
 
 type OfficerItemProps = {
 	data: Officers;
@@ -23,7 +23,7 @@ const OfficerItem: React.FC<OfficerItemProps> = ({ data }) => {
 		>
 			<div className="flex flex-col items-center space-y-4 sm:space-x-4 sm:flex-row sm:space-y-0">
 				{/* <Image
-					src="/shared/officer.png"
+					src="/sites/officer.png"
 					width={100}
 					height={100}
 					className={`${getRadius(radius)}`}
