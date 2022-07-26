@@ -1,3 +1,4 @@
+import { Navbar } from '@/components/home';
 import { NextSeo } from 'next-seo';
 
 type Props = {
@@ -27,7 +28,8 @@ const Layout: React.FC<Props> = ({ children }) => {
 					},
 				]}
 			/>
-			<main className="bg-blue-900">{children}</main>
+			<Navbar />
+			<main>{children}</main>
 		</>
 	);
 };
