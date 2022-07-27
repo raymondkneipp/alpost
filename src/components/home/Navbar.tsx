@@ -1,5 +1,5 @@
 import { Brand, ButtonLink, NavLink } from '@/components/home';
-import { Container } from '@/components/shared';
+import { Container } from '@/layouts/shared';
 import Link from 'next/link';
 
 const Navbar: React.FC = () => {

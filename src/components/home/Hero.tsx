@@ -1,5 +1,5 @@
 import { ButtonLink, NavLink } from '@/components/home';
-import { Container } from '@/components/shared';
+import { Container } from '@/layouts/shared';
 
 const Hero: React.FC = () => {
 	return (

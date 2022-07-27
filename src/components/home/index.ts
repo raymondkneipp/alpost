@@ -7,4 +7,5 @@ export { default as Hero } from './Hero';
 export { default as Logo } from './Logo';
 export { default as Navbar } from './Navbar';
 export { default as NavLink } from './NavLink';
+export { default as Pricing } from './Pricing';
 export { default as Waitlist } from './Waitlist';

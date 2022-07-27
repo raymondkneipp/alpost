@@ -1,5 +1,5 @@
 import { EmailGrabber } from '@/components/home';
-import { Container } from '@/components/shared';
+import { Container } from '@/layouts/shared';
 
 const Waitlist: React.FC = () => {
 	return (

@@ -1,5 +1,5 @@
 import { Anchor, Brand } from '@/components/home';
-import { Container } from '@/components/shared';
+import { Container } from '@/layouts/shared';
 import Link from 'next/link';
 
 const Footer: React.FC = () => {
