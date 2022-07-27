@@ -26,8 +26,19 @@ const Layout: React.FC<Props> = ({ children }) => {
 						rel: 'stylesheet',
 						href: 'https://fonts.googleapis.com/css2?family=Inter&family=Lexend:wght@500&display=swap',
 					},
+					{
+						rel: 'icon',
+						type: 'image/svg+xml',
+						href: '/shared/favicon.svg',
+					},
+					{
+						rel: 'icon',
+						type: 'image/png',
+						href: '/shared/favicon.png',
+					},
 				]}
 			/>
+
 			<Navbar />
 			<main>{children}</main>
 			<Footer />
