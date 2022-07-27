@@ -1,7 +1,7 @@
 import { Popover, Transition } from '@headlessui/react';
 import { Fragment } from 'react';
 
-import { MobileNavLink } from '@/components/home';
+import { ButtonLink, MobileNavLink } from '@/components/home';
 import { HiOutlineMenu } from 'react-icons/hi';
 
 const MobileNav: React.FC = () => {
@@ -39,10 +39,7 @@ const MobileNav: React.FC = () => {
 						<Popover.Panel
 							className={`absolute z-10 inset-x-0 bg-neutral-100 dark:bg-neutral-900 mx-4 mt-10 p-2 rounded-sm`}
 						>
-							<div className="flex flex-col">
-								<Popover.Button as={MobileNavLink} href="/">
-									Home
-								</Popover.Button>
+							<div className="flex flex-col space-y-3">
 								<Popover.Button as={MobileNavLink} href="#features">
 									Features
 								</Popover.Button>
@@ -51,6 +48,9 @@ const MobileNav: React.FC = () => {
 								</Popover.Button>
 								<Popover.Button as={MobileNavLink} href="#pricing">
 									Pricing
+								</Popover.Button>
+								<Popover.Button as={ButtonLink} href="#waitlist">
+									Join Waitlist
 								</Popover.Button>
 							</div>
 						</Popover.Panel>
