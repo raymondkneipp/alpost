@@ -9,7 +9,7 @@ const Navbar: React.FC = () => {
 				<Link href="/">
 					<Brand />
 				</Link>
-				<div className="flex items-center space-x-6">
+				<div className="items-center hidden space-x-3 md:flex">
 					<NavLink href="#features">Features</NavLink>
 					<NavLink href="#testimonials">Testimonials</NavLink>
 					<NavLink href="#pricing">Pricing</NavLink>

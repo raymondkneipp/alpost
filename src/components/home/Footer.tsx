@@ -10,7 +10,7 @@ const Footer: React.FC = () => {
 					<Brand />
 				</Link>
 				<div>
-					<div className="flex items-center space-x-12">
+					<div className="flex flex-wrap items-center justify-center gap-x-12 gap-y-3">
 						<Anchor href="#features">Features</Anchor>
 						<Anchor href="#testimonials">Testimonials</Anchor>
 						<Anchor href="#pricing">Pricing</Anchor>

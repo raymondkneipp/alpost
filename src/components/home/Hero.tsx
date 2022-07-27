@@ -14,7 +14,7 @@ const Hero: React.FC = () => {
 					et obcaecati magnam necessitatibus dolorem doloribus doloremque sit
 					harum.
 				</p>
-				<div className="flex flex-wrap items-center space-x-6">
+				<div className="flex flex-wrap items-center justify-center gap-6">
 					<ButtonLink href="#waitlist">Join Waitlist</ButtonLink>
 					<NavLink href="https://demo.alpost.org">View Demo</NavLink>
 				</div>

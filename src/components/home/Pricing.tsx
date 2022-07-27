@@ -17,7 +17,7 @@ const PricingItem: React.FC<Props> = ({
 	return (
 		<div
 			className={`flex flex-col flex-1 space-y-3 rounded-sm p-6 ${
-				special ? 'bg-white dark:bg-neutral-800' : ''
+				special ? 'bg-white dark:bg-neutral-800 shadow-lg' : ''
 			}`}
 		>
 			<div className="space-y-1">
@@ -31,7 +31,7 @@ const PricingItem: React.FC<Props> = ({
 			</div>
 			<div className="flex-1">
 				{perks.map((perk) => (
-					<div className="flex py-3 space-x-3">
+					<div className="flex py-3 space-x-3" key={perk}>
 						<span className="text-green-900 dark:text-green-300">
 							<HiCheck size={24} />
 						</span>
