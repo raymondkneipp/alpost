@@ -1,4 +1,4 @@
-import { Brand, NavLink } from '@/components/home';
+import { Anchor, Brand } from '@/components/home';
 import { Container } from '@/components/shared';
 import Link from 'next/link';
 
@@ -10,10 +10,10 @@ const Footer: React.FC = () => {
 					<Brand />
 				</Link>
 				<div>
-					<div className="flex items-center space-x-6">
-						<NavLink href="#features">Features</NavLink>
-						<NavLink href="#testimonials">Testimonials</NavLink>
-						<NavLink href="#pricing">Pricing</NavLink>
+					<div className="flex items-center space-x-12">
+						<Anchor href="#features">Features</Anchor>
+						<Anchor href="#testimonials">Testimonials</Anchor>
+						<Anchor href="#pricing">Pricing</Anchor>
 					</div>
 				</div>
 				<a
