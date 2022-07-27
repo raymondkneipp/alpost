@@ -1,6 +1,6 @@
 import { StatsContext, ThemeContext } from '@/contexts/sites';
 
-import { Container } from '@/components/shared';
+import { Container } from '@/layouts/shared';
 import { getFg } from '@/utils/sites';
 import { useContext } from 'react';
 import { HiTrendingUp } from 'react-icons/hi';

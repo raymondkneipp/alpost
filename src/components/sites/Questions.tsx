@@ -1,11 +1,10 @@
 import { Disclosure, Transition } from '@headlessui/react';
 
 import { ButtonLink } from '@/components/sites';
-import { Container } from '@/components/shared';
 import { FAQContext } from '@/contexts/sites';
-import { HiOutlineChevronRight } from 'react-icons/hi';
-import { Tall } from '@/layouts/shared';
+import { Container, Tall } from '@/layouts/shared';
 import { useContext } from 'react';
+import { HiOutlineChevronRight } from 'react-icons/hi';
 
 type FAQItemProps = {
 	question: string;

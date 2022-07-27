@@ -1,8 +1,8 @@
-import type { GetStaticPaths, GetStaticProps, NextPage } from 'next';
 import { LabeledInput, Steps, Submit } from '@/components/sites';
 import { PathProps, SitePageProps, _SiteData } from '@/types';
+import type { GetStaticPaths, GetStaticProps, NextPage } from 'next';
 
-import { Container } from '@/components/shared';
+import { Container } from '@/layouts/shared';
 import { Layout } from '@/layouts/sites';
 import { prisma } from '@/prisma';
 

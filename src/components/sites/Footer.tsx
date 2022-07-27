@@ -1,7 +1,6 @@
 import { Brand as AlpostBrand } from '@/components/home';
 import {
 	AmericanLegionLogo,
-	Container,
 	DescriptionList as DL,
 	DescriptionListItem as DI,
 } from '@/components/shared';
@@ -21,7 +20,7 @@ import {
 } from 'react-icons/fa';
 
 import { Anchor } from '@/components/sites';
-import { Tall } from '@/layouts/shared';
+import { Container, Tall } from '@/layouts/shared';
 import Link from 'next/link';
 import { IconType } from 'react-icons';
 

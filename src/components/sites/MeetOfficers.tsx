@@ -1,8 +1,7 @@
 import { OfficersContext, ThemeContext } from '@/contexts/sites';
 
-import { Container } from '@/components/shared';
 import { ButtonLink } from '@/components/sites';
-import { Wide } from '@/layouts/shared';
+import { Container, Wide } from '@/layouts/shared';
 import { getRadius } from '@/utils/sites';
 import { Officers } from '@prisma/client';
 import { useContext } from 'react';
@@ -60,7 +59,7 @@ const MeetOfficers: React.FC<MeetOfficersProps> = ({ simple = false }) => {
 							<h2 className="text-2xl font-medium font-heading md:text-4xl text-neutral-900 dark:text-neutral-100">
 								Meet Our Officers
 							</h2>
-							<p className="text-neutral-600 dark:text-neutral-400">
+							<p className="max-w-lg text-neutral-600 dark:text-neutral-400">
 								Meet the extraordinary members in charge and responsible for our
 								post.
 							</p>

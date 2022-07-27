@@ -1,5 +1,5 @@
-import { Container } from '@/components/shared';
 import { ButtonLink } from '@/components/sites';
+import { Container } from '@/layouts/shared';
 import { getFg } from '@/utils/sites';
 import { News } from '@prisma/client';
 import { ThemeContext } from 'contexts/sites/ThemeContext';

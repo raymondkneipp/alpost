@@ -7,8 +7,7 @@ import {
 	HiUsers,
 } from 'react-icons/hi';
 
-import { Container } from '@/components/shared';
-import { Tall } from '@/layouts/shared';
+import { Container, Tall } from '@/layouts/shared';
 
 const UpcomingEvent: React.FC = () => {
 	return (

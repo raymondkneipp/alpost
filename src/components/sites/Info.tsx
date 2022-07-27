@@ -1,8 +1,7 @@
-import { Container } from '@/components/shared';
+import { IconCard } from '@/components/sites';
+import { Container, Tall } from '@/layouts/shared';
 import { FaBullseye } from 'react-icons/fa';
 import { HiFlag } from 'react-icons/hi';
-import IconCard from './IconCard';
-import { Tall } from '@/layouts/shared';
 
 const Info: React.FC = () => {
 	return (

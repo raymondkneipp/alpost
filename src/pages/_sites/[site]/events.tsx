@@ -1,9 +1,9 @@
-import type { GetStaticPaths, GetStaticProps, NextPage } from 'next';
 import { PathProps, SitePageProps, _SiteData } from '@/types';
+import type { GetStaticPaths, GetStaticProps, NextPage } from 'next';
 
-import { Container } from '@/components/shared';
-import { Layout } from '@/layouts/sites';
 import { ListEvents } from '@/components/sites';
+import { Container } from '@/layouts/shared';
+import { Layout } from '@/layouts/sites';
 import { prisma } from '@/prisma';
 
 const EventsPage: NextPage<SitePageProps> = ({ stringifiedData }) => {

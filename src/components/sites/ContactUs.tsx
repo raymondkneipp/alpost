@@ -1,15 +1,14 @@
-import { AddressContext, ContactContext } from '@/contexts/sites';
-import { Anchor, ContactForm } from '@/components/sites';
 import {
-	Container,
-	DescriptionListItem as DI,
 	DescriptionList as DL,
+	DescriptionListItem as DI,
 } from '@/components/shared';
-import { HiLocationMarker, HiMail, HiPhone } from 'react-icons/hi';
+import { Anchor, ContactForm } from '@/components/sites';
+import { AddressContext, ContactContext } from '@/contexts/sites';
 import React, { useContext } from 'react';
+import { HiLocationMarker, HiMail, HiPhone } from 'react-icons/hi';
 
+import { Container, Tall } from '@/layouts/shared';
 import { IconType } from 'react-icons';
-import { Tall } from '@/layouts/shared';
 
 type ContactMethodProps = {
 	icon: IconType;

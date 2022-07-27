@@ -1,6 +1,6 @@
 import { Brand, MobileNav, NavLink } from '@/components/sites';
 
-import { Container } from '@/components/shared';
+import { Container } from '@/layouts/shared';
 
 const Navbar: React.FC = () => {
 	return (

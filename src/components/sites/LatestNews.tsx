@@ -2,12 +2,11 @@ import { NewsContext, ThemeContext } from '@/contexts/sites';
 import { getFg, getRadius } from '@/utils/sites';
 
 import { ButtonLink } from '@/components/sites';
-import { Container } from '@/components/shared';
-import { HiOutlineArrowRight } from 'react-icons/hi';
-import Link from 'next/link';
+import { Container, Wide } from '@/layouts/shared';
 import { News } from '@prisma/client';
-import { Wide } from '@/layouts/shared';
+import Link from 'next/link';
 import { useContext } from 'react';
+import { HiOutlineArrowRight } from 'react-icons/hi';
 
 type NewsItemProps = {
 	data: News;

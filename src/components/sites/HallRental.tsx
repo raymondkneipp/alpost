@@ -1,11 +1,10 @@
 import { getFg, getRadius } from '@/utils/sites';
 
 import { ButtonLink } from '@/components/sites';
-import { Container } from '@/components/shared';
-import { HiCheck } from 'react-icons/hi';
 import { ThemeContext } from '@/contexts/sites';
-import { Wide } from '@/layouts/shared';
+import { Container, Wide } from '@/layouts/shared';
 import { useContext } from 'react';
+import { HiCheck } from 'react-icons/hi';
 
 type PricingItemProps = {
 	name: string;

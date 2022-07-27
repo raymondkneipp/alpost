@@ -1,6 +1,6 @@
 import { ButtonLink } from '@/components/sites';
-import { Container } from '@/components/shared';
 import { ThemeContext } from '@/contexts/sites';
+import { Container } from '@/layouts/shared';
 import { getBg } from '@/utils/sites';
 import { useContext } from 'react';
 
