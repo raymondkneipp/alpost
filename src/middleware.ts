@@ -46,7 +46,11 @@ export default function middleware(req: NextRequest) {
 	}
 
 	// rewrite root application to `/home` folder
-	if (hostname === 'localhost:3000') {
+	if (
+		hostname === 'localhost:3000' ||
+		hostname === 'alpost.org' ||
+		hostname === 'alpost.vercel.app'
+	) {
 		//  || hostname === 'platformize.vercel.app'
 		url.pathname = `/home${url.pathname}`;
 		return NextResponse.rewrite(url);
