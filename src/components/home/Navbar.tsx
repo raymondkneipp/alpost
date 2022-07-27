@@ -1,4 +1,4 @@
-import { Brand, ButtonLink, NavLink } from '@/components/home';
+import { Brand, ButtonLink, MobileNav, NavLink } from '@/components/home';
 import { Container } from '@/layouts/shared';
 import Link from 'next/link';
 
@@ -9,6 +9,9 @@ const Navbar: React.FC = () => {
 				<Link href="/">
 					<Brand />
 				</Link>
+
+				<MobileNav />
+
 				<div className="items-center hidden space-x-3 md:flex">
 					<NavLink href="#features">Features</NavLink>
 					<NavLink href="#testimonials">Testimonials</NavLink>

@@ -5,6 +5,8 @@ export { default as EmailGrabber } from './EmailGrabber';
 export { default as Footer } from './Footer';
 export { default as Hero } from './Hero';
 export { default as Logo } from './Logo';
+export { default as MobileNav } from './MobileNav';
+export { default as MobileNavLink } from './MobileNavLink';
 export { default as Navbar } from './Navbar';
 export { default as NavLink } from './NavLink';
 export { default as Pricing } from './Pricing';
