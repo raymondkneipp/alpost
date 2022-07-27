@@ -1,37 +1,97 @@
-import { ButtonLink } from '@/components/home';
 import { Container, Wide } from '@/layouts/shared';
+import { HiCheck } from 'react-icons/hi';
+
+type Props = {
+	name: string;
+	price: number;
+	perks: string[];
+	special?: boolean;
+};
+
+const PricingItem: React.FC<Props> = ({
+	name,
+	price,
+	perks,
+	special = false,
+}) => {
+	return (
+		<div
+			className={`flex flex-col flex-1 space-y-3 rounded-sm p-6 ${
+				special ? 'bg-white dark:bg-neutral-800' : ''
+			}`}
+		>
+			<div className="space-y-1">
+				<h3 className="text-lg font-medium font-heading sm:text-xl md:text-2xl">
+					{name}
+				</h3>
+				<h4 className="text-4xl font-medium font-heading sm:text-5xl md:text-5xl">
+					${price}
+				</h4>
+				<p className="text-sm">per month</p>
+			</div>
+			<div className="flex-1">
+				{perks.map((perk) => (
+					<div className="flex py-3 space-x-3">
+						<span className="text-green-900 dark:text-green-300">
+							<HiCheck size={24} />
+						</span>
+						<span className="text-blue-900 dark:text-blue-300">{perk}</span>
+					</div>
+				))}
+			</div>
+		</div>
+	);
+};
 
 const Pricing: React.FC = () => {
 	return (
-		<section className="py-12" id="pricing">
+		<section className="py-24" id="pricing">
 			<Container>
 				<Wide
 					master={
 						<>
 							<h2 className="text-2xl font-medium text-neutral-900 dark:text-neutral-100 sm:text-3xl md:text-4xl font-heading">
-								Everything you need for{' '}
-								<span className="text-red-700 dark:text-red-400">
-									$15 a month
-								</span>
+								Pricing Plans
 							</h2>
-							<p className="text-lg text-blue-900 dark:text-blue-300">
-								Lorem ipsum dolor, sit amet consectetur adipisicing elit.
-								Laudantium et obcaecati magnam necessitatibus dolorem doloribus
-								doloremque sit harum.
-							</p>
-							<ButtonLink href="#waitlist">Join Waitlist</ButtonLink>
 						</>
 					}
 				>
-					<div className="space-y-3">
-						<h3 className="font-medium font-heading">All-on-one Platform</h3>
-						<p className="text-blue-900 dark:text-blue-300">
-							Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-							Consectetur optio quaerat magnam enim, quidem ducimus iusto culpa
-							consequatur provident adipisci consequuntur exercitationem earum
-							asperiores similique nam veniam velit? Laboriosam, tempore?
-						</p>
-					</div>
+					<PricingItem
+						name="Budget"
+						price={15}
+						perks={[
+							'Ready to Use Website',
+							'SSL Encryption',
+							'Light & Dark Mode',
+							'1 Theme',
+							'Free Subdomain',
+						]}
+					/>
+					<PricingItem
+						name="Basic"
+						price={19}
+						perks={[
+							'Ready to Use Website',
+							'SSL Encryption',
+							'Light & Dark Mode',
+							'5 Themes',
+							'Free Subdomain',
+							'Custom Domain',
+						]}
+						special
+					/>
+					<PricingItem
+						name="Pro"
+						price={24}
+						perks={[
+							'Ready to Use Website',
+							'SSL Encryption',
+							'Light & Dark Mode',
+							'17 Themes',
+							'Free Subdomain',
+							'Custom Domain',
+						]}
+					/>
 				</Wide>
 			</Container>
 		</section>
