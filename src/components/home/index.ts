@@ -1,5 +1,6 @@
 export { default as Brand } from './Brand';
 export { default as ButtonLink } from './ButtonLink';
+export { default as EmailGrabber } from './EmailGrabber';
 export { default as Footer } from './Footer';
 export { default as Hero } from './Hero';
 export { default as Logo } from './Logo';
