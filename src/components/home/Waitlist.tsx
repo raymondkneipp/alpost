@@ -10,8 +10,8 @@ const Waitlist: React.FC = () => {
 						Join The Waitlist to Get Early Access
 					</h2>
 					<p className="text-lg text-neutral-200 dark:text-neutral-800">
-						Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ab et
-						atque excepturi vel a deleniti cum, voluptatem sed facilis.
+						Your new legion website is coming soon! We will notify you via email
+						when you can start building a website for your legion.
 					</p>
 				</div>
 				<EmailGrabber />
