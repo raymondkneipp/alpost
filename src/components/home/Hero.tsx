@@ -10,9 +10,8 @@ const Hero: React.FC = () => {
 					American Legion Website Builder
 				</h1>
 				<p className="text-blue-900 dark:text-blue-300">
-					Lorem ipsum dolor, sit amet consectetur adipisicing elit. Laudantium
-					et obcaecati magnam necessitatibus dolorem doloribus doloremque sit
-					harum.
+					Feature-rich and easy-to-use online website builder that allows the
+					creation of a web presence for American Legion Posts.
 				</p>
 				<div className="flex flex-wrap items-center justify-center gap-6">
 					<ButtonLink href="#waitlist">Join Waitlist</ButtonLink>

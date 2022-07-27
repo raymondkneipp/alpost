@@ -1,6 +1,6 @@
-import type { NextPage } from 'next';
 import { Layout } from '@/layouts/app';
-import { Container } from '@/components/shared';
+import { Container } from '@/layouts/shared';
+import type { NextPage } from 'next';
 
 const Home: NextPage = () => {
 	return (
