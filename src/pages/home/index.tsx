@@ -1,6 +1,7 @@
 import {
 	Features,
 	Hero,
+	Preview,
 	Pricing,
 	Testimonials,
 	Waitlist,
@@ -14,6 +15,7 @@ const Home: NextPage = () => {
 		<Layout>
 			<Hero />
 			<Features />
+			<Preview />
 			<Testimonials />
 			<Pricing />
 			<Waitlist />

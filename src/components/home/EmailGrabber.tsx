@@ -16,7 +16,7 @@ const EmailGrabber: React.FC = () => {
 				/>
 				<button
 					type="submit"
-					className="px-6 py-3 rounded-sm bg-neutral-100 text-neutral-900 dark:bg-neutral-900 dark:text-neutral-100"
+					className="px-6 py-3 text-red-700 transition rounded-sm bg-neutral-100 dark:bg-neutral-900 dark:text-red-400 hover:bg-neutral-200 dark:hover:bg-neutral-800"
 				>
 					Join Waitlist
 				</button>

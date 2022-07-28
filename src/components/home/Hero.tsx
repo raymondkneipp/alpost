@@ -1,4 +1,4 @@
-import { ButtonLink, NavLink } from '@/components/home';
+import { ButtonLink } from '@/components/home';
 import { Container } from '@/layouts/shared';
 
 const Hero: React.FC = () => {
@@ -15,7 +15,9 @@ const Hero: React.FC = () => {
 				</p>
 				<div className="flex flex-wrap items-center justify-center gap-6">
 					<ButtonLink href="#waitlist">Join Waitlist</ButtonLink>
-					<NavLink href="https://demo.alpost.org">View Demo</NavLink>
+					<ButtonLink href="https://demo.alpost.org" theme="secondary">
+						View Demo
+					</ButtonLink>
 				</div>
 			</Container>
 		</section>
