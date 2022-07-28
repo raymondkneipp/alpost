@@ -35,7 +35,7 @@ const Features: React.FC = () => {
 						news posts.
 					</IconCard>
 					<IconCard icon={HiCalendar} title="Events">
-						You don't have to miss an event again when you create an event
+						You don&apos;t have to miss an event again when you create an event
 						listing on your Web site.
 					</IconCard>
 					<IconCard icon={HiColorSwatch} title="Customizable Design">
@@ -51,7 +51,6 @@ const Features: React.FC = () => {
 					<IconCard icon={HiCash} title="Hall Rental">
 						Make renting your hall easier with an online form.
 					</IconCard>
-
 					<IconCard icon={HiChatAlt2} title="Engage With Visitors">
 						Visitors can easily get in touch using the contact form in your
 						website.
