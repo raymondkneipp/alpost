@@ -16,44 +16,22 @@ import {
 } from 'react-icons/hi';
 
 import { IconCard } from '@/components/home';
+import Image from 'next/future/image';
 
 const Features: React.FC = () => {
 	return (
-		<section className="py-24" id="features">
-			<Container className="space-y-24">
-				<Wide
-					master={
-						<>
-							<h2 className="text-2xl font-medium text-neutral-900 dark:text-neutral-100 sm:text-3xl md:text-4xl font-heading">
-								Features
-							</h2>
-						</>
-					}
-				>
-					<IconCard icon={HiSpeakerphone} title="Announcements">
-						Make sure members know vital events with banner notifications and
-						news posts.
-					</IconCard>
-					<IconCard icon={HiCalendar} title="Events">
-						You don&apos;t have to miss an event again when you create an event
-						listing on your Web site.
-					</IconCard>
+		<section className="py-24 space-y-24 overflow-hidden" id="features">
+			<Container className="grid items-center gap-24 lg:grid-cols-2">
+				<div className="space-y-12">
+					<h2 className="text-2xl font-medium text-neutral-900 dark:text-neutral-100 sm:text-3xl md:text-4xl font-heading">
+						Features
+					</h2>
 					<IconCard icon={HiColorSwatch} title="Customizable Design">
 						We offer 17 different themes for you to choose from, along with many
 						other settings to change the look of your site.
 					</IconCard>
 					<IconCard icon={HiMoon} title="Dark Mode">
 						By default, light and dark modes are provided.
-					</IconCard>
-					<IconCard icon={HiChartBar} title="Statistics">
-						Present your post in a way that highlights why it is the best.
-					</IconCard>
-					<IconCard icon={HiCash} title="Hall Rental">
-						Make renting your hall easier with an online form.
-					</IconCard>
-					<IconCard icon={HiChatAlt2} title="Engage With Visitors">
-						Visitors can easily get in touch using the contact form in your
-						website.
 					</IconCard>
 					<IconCard icon={HiSparkles} title="Modern Design">
 						We offer well-designed and easy to navigate websites.
@@ -62,8 +40,41 @@ const Features: React.FC = () => {
 						We offer a fast, search engine optimized site to gain and retain
 						members.
 					</IconCard>
-				</Wide>
+				</div>
+				<Image
+					src="/home/screenshot.png"
+					width="1000"
+					height="500"
+					className="rounded-sm shadow-2xl"
+				/>
+			</Container>
 
+			<Container className="grid items-center gap-24 lg:grid-cols-2">
+				<Image
+					src="/home/news.png"
+					width="1000"
+					height="500"
+					className="order-last rounded-sm shadow-2xl lg:order-first"
+				/>
+				<div className="space-y-12">
+					<IconCard icon={HiSpeakerphone} title="Announcements">
+						Make sure members know vital events with banner notifications and
+						news posts.
+					</IconCard>
+					<IconCard icon={HiCalendar} title="Events">
+						You don&apos;t have to miss an event again when you create an event
+						listing on your Web site.
+					</IconCard>
+					<IconCard icon={HiChartBar} title="Statistics">
+						Present your post in a way that highlights why it is the best.
+					</IconCard>
+					<IconCard icon={HiCash} title="Hall Rental">
+						Make renting your hall easier with an online form.
+					</IconCard>
+				</div>
+			</Container>
+
+			<Container>
 				<Wide
 					master={
 						<>

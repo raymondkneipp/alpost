@@ -12,4 +12,5 @@ export { default as MobileNavLink } from './MobileNavLink';
 export { default as Navbar } from './Navbar';
 export { default as NavLink } from './NavLink';
 export { default as Pricing } from './Pricing';
+export { default as Testimonials } from './Testimonials';
 export { default as Waitlist } from './Waitlist';

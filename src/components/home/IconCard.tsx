@@ -14,7 +14,7 @@ const IconCard: React.FC<Props> = ({ icon, title, children }) => {
 				{React.createElement(icon, { size: 24 })}
 			</div>
 			<div className="flex flex-col space-y-1">
-				<h3 className="text-xl font-medium text-red-700 dark:text-red-400 font-heading">
+				<h3 className="text-xl font-medium text-neutral-900 dark:text-neutral-100 font-heading">
 					{title}
 				</h3>
 				<p className="text-blue-900 dark:text-blue-300">{children}</p>
