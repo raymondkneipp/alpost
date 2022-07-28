@@ -17,7 +17,7 @@ const PricingItem: React.FC<Props> = ({
 	return (
 		<div
 			className={`flex flex-col flex-1 space-y-3 rounded-sm p-6 ${
-				special ? 'bg-white dark:bg-neutral-800 shadow-lg' : ''
+				special ? 'bg-white dark:bg-neutral-800 shadow-2xl' : ''
 			}`}
 		>
 			<div className="space-y-1">
