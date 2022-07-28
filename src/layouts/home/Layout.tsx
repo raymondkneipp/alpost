@@ -37,6 +37,20 @@ const Layout: React.FC<Props> = ({ children }) => {
 						href: '/shared/favicon.png',
 					},
 				]}
+				openGraph={{
+					type: 'website',
+					url: `https://alpost.org`,
+					title: `alpost - American Legion Website Builder`,
+					description: '',
+					images: [
+						{
+							url: 'https://alpost.org/shared/american-flag.jpg',
+							width: 800,
+							height: 600,
+							alt: 'American Flag',
+						},
+					],
+				}}
 			/>
 
 			<Navbar />

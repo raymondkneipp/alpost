@@ -59,7 +59,7 @@ const Layout: React.FC<Props> = ({ children, data, title, titleTemplate }) => {
 				]}
 				openGraph={{
 					type: 'website',
-					url: 'https://www.example.com/page',
+					url: `https://${data.subdomain}.alpost.org`,
 					title: `${data.name} American Legion Post ${data.subdomain}`,
 					description: `${data.description}`,
 					images: [
