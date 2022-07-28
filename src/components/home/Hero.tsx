@@ -9,7 +9,7 @@ const Hero: React.FC = () => {
 					The <span className="text-red-700 dark:text-red-400">Best</span>{' '}
 					American Legion Website Builder
 				</h1>
-				<p className="text-blue-900 dark:text-blue-300">
+				<p className="text-lg text-blue-900 dark:text-blue-300">
 					Feature-rich and easy-to-use online website builder that allows the
 					creation of a web presence for American Legion Posts.
 				</p>

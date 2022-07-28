@@ -27,7 +27,9 @@ const PricingItem: React.FC<Props> = ({
 				<h4 className="text-4xl font-medium font-heading sm:text-5xl md:text-5xl">
 					${price}
 				</h4>
-				<p className="text-sm text-blue-900 dark:text-blue-300">per month</p>
+				<p className="text-sm text-neutral-600 dark:text-neutral-400">
+					per month
+				</p>
 			</div>
 			<div className="flex-1">
 				{perks.map((perk) => (
@@ -76,7 +78,6 @@ const Pricing: React.FC = () => {
 							'Light & Dark Mode',
 							'5 Themes',
 							'Free Subdomain',
-							'Custom Domain',
 						]}
 						special
 					/>
@@ -89,7 +90,6 @@ const Pricing: React.FC = () => {
 							'Light & Dark Mode',
 							'17 Themes',
 							'Free Subdomain',
-							'Custom Domain',
 						]}
 					/>
 				</Wide>
