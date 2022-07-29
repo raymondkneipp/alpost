@@ -12,7 +12,11 @@ const Preview: React.FC = () => {
 					You can get an idea of what your online legion experience could be
 					like by looking at this sample site.
 				</p>
-				<ButtonLink href="https://demo.alpost.org" theme="secondary">
+				<ButtonLink
+					href="https://demo.alpost.org"
+					theme="secondary"
+					target="_blank"
+				>
 					View Demo
 				</ButtonLink>
 			</Container>

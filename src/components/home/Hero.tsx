@@ -15,7 +15,11 @@ const Hero: React.FC = () => {
 				</p>
 				<div className="flex flex-wrap items-center justify-center gap-6">
 					<ButtonLink href="#waitlist">Join Waitlist</ButtonLink>
-					<ButtonLink href="https://demo.alpost.org" theme="secondary">
+					<ButtonLink
+						href="https://demo.alpost.org"
+						theme="secondary"
+						target="_blank"
+					>
 						View Demo
 					</ButtonLink>
 				</div>
