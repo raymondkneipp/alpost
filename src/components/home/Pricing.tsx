@@ -55,6 +55,11 @@ const Pricing: React.FC = () => {
 							<h2 className="text-2xl font-medium text-neutral-900 dark:text-neutral-100 sm:text-3xl md:text-4xl font-heading">
 								Pricing Plans
 							</h2>
+							<p className="text-lg text-blue-900 dark:text-blue-300">
+								Save up to{' '}
+								<span className="text-red-700 dark:text-red-400">38%</span>{' '}
+								compared to the leading competitor.
+							</p>
 						</>
 					}
 				>
